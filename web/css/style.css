@@ -1,0 +1,57 @@
+/*////////////////////////Head////////////////////////*/
+#head_p {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    }
+
+#head_zagolovok {
+    width: 20%;
+    height: 80px;
+    text-align: center;
+    float: left;
+    }
+
+#panel_button {
+    width: 80%;
+    height: 80px;
+    display: flex;
+    }
+
+.panel_button_detal {
+    margin: auto;
+}
+
+.btn_m {
+    width: 250px;
+    height: 50px;
+    font-size: 18pt;
+    background-color: gainsboro;
+    border: 2px solid gainsboro;
+}
+/*////////////////////////Middle///////////////////////*/
+#midl_p {
+    background-color: gainsboro;
+    display: block;
+    width: 100%;
+    height: 150px;
+}
+
+.block_detal {
+    display: inline-block;
+    text-align: center;
+    width: 19.8%;
+    height: 150px;
+}
+
+.edt {
+    width: 200px;
+}
+.btn_e {
+    width: 100px;
+    height: 30px;
+    font-size: 13pt;
+}
+.btn_invisible {
+    opasity: 0;
+}

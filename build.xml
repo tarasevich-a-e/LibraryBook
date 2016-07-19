@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="library" default="start.tomcat">
+
+    <property name="dest.dir" value="web/WEB-INF/classes"/>
+    <property name="dir.lib" value="./lib"/>
+    <property name="project.name" value="library"/>
+    <property name="build.dir" value="./web"/>
+    <property name="tomcat.service.name" value="tomcat8"/>
+    <property name="tomcat.webapps" value="C:/Program Files/Apache Software Foundation/apache-tomcat-8.5.4/webapps"/>
+    <property name="tomcat.bin" value="C:/Program Files/Apache Software Foundation/apache-tomcat-8.5.4/bin"/>
+
+    <path id="common_library">
+        <pathelement location="lib/javax.servlet.jar"/>
+        <pathelement location="lib/gson-2.2.2.jar"/>
+        <pathelement location="lib/mysql-connector-java-5.1.39-bin.jar"/>
+    </path>
+
+    <target name="clear">
+        <delete dir="${dest.dir}"/>
+        <delete dir="${tomcat.webapps}/${project.name}"/>
+        <delete file="${tomcat.webapps}/${project.name}.war"/>
+    </target>
+
+    <target name="make_dest_dir">
+        <mkdir dir="${dest.dir}"/>
+    </target>
+
+    <target name="compile" depends="clear, make_dest_dir">
+        <javac srcdir="src" destdir="${dest.dir}" failonerror="true" fork="true" encoding="UTF-8" debug="on">
+        <!--failonerror=true - если при компиляции какого-либо из файлов произойдет ошибка, ни одного файла classes не появится-->
+        <!--fork=true - используется отдельная виртуальная машина-->
+        <classpath refid="common_library"/>
+        </javac>
+    </target>
+
+    <target name="copy" depends="compile">
+        <copy todir="web/WEB-INF/lib">
+            <fileset dir="${dir.lib}/">
+                <include name="*.*"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="war" depends="copy">
+        <delete file="./${project.name}.war"/>
+        <war
+                compress = "true"
+                encoding = "utf-8"
+                warfile = "./${project.name}.war"
+                webxml="web/WEB-INF/web.xml">
+            <fileset dir="${build.dir}" excludes="WEB-INF/web.xml"/>
+        </war>
+    </target>
+
+    <target name="copy2" depends="war">
+        <copy todir="${tomcat.webapps}">
+            <fileset dir="./">
+                <include name="*.war"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="start.tomcat" depends="copy2">
+        <exec executable="startup.bat" dir="${tomcat.bin}">
+
+        </exec>
+    </target>
+
+    <target name="debug.tomcat" depends="copy2">
+        <exec executable="cmd" dir="${tomcat.bin}">
+            <arg value="/c"/>
+            <arg value="catalina.bat jpda start"/>
+        </exec>
+    </target>
+
+    <target name="stop.tomcat">
+        <exec executable="shutdown.bat" dir="${tomcat.bin}">
+
+        </exec>
+    </target>
+</project>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+<!--Панель выбора действий-->
+<div id="head_p" ng-controller="ctrlHead">
+    <div id="head_zagolovok">
+        <h1>Библиотека</h1>
+    </div>
+    <div id="panel_button">
+        <div class="panel_button_detal">
+            <button class="btn_m" id="find" ng-click="ButtonPush(1)">Поиск</button>
+        </div>
+        <div class="panel_button_detal">
+            <button class="btn_m" id="add" ng-click="ButtonPush(2)">Добавить</button>
+        </div>
+        <div class="panel_button_detal">
+            <button class="btn_m" id="redact" ng-click="ButtonPush(3)">Изменить</button>
+        </div>
+        <div class="panel_button_detal">
+            <button class="btn_m" id="del" ng-click="ButtonPush(4)">Удалить</button>
+        </div>
+    </div>
+</div>
+<!--Ввод данных для действия-->
+<!--form id="send_d" action="WorkServlet"></form-->
+<div id="midl_p" ng-controller="ctrlMid">
+        <div class="block_detal">
+            <h3>Раздел</h3>
+            <select class="edt" ng-model="type_b">
+                <option>Все</option>
+                <option>Экономика</option>
+                <option>Программирование</option>
+                <option>Политология</option>
+                <option>Математика</option>
+                <option>Философия</option>
+            </select>
+        </div>
+        <div class="block_detal">
+            <h3>Название книги</h3>
+            <input type="text" class="edt" ng-model="name_b">
+        </div>
+        <div class="block_detal">
+            <h3>Автор</h3>
+            <input type="text" class="edt" ng-model="author_b">
+        </div>
+        <div class="block_detal">
+            <h3>Дата выпуска</h3>
+            <input type="text" class="edt" ng-model="release_b">
+        </div>
+        <div class="block_detal">
+                <button class="btn_e" ng-click="sendDate()">ОК</button>
+                <button class="btn_e">Отмена</button>
+        </div>
+</div>
+<!--Вывод БД-->
+<div id="foot_p">
+
+</div>
+</body>
+</html>
