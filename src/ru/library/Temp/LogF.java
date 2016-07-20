@@ -1,7 +1,6 @@
-package ru.library;
+package ru.library.Temp;
 
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.io.*;
 
 public class LogF {
     private String filename = "log_prog.txt";
@@ -12,15 +11,14 @@ public class LogF {
 
     public void createLog() {
         try {
-            this.printWriter = new PrintWriter(System.getProperty("user.dir") + "\\" + this.filename);
+            this.printWriter = new PrintWriter(new OutputStreamWriter(new FileOutputStream(System.getProperty("user.dir") + "\\" + this.filename, true)));
         } catch (FileNotFoundException var2) {
             var2.printStackTrace();
         }
-
     }
 
     public void writeLog(String str) {
-        this.printWriter.write(str + "\n");
+        this.printWriter.println(str);
         this.printWriter.flush();
     }
 
