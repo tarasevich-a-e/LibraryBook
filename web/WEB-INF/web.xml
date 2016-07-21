@@ -4,17 +4,83 @@
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
-    <listener>
-        <listener-class>ru.library.InitListener</listener-class>
-    </listener>
-
+    <!--Убрать, начальные настройки-->
     <servlet>
         <servlet-name>Servlet</servlet-name>
         <servlet-class>ru.library.Servlet</servlet-class>
     </servlet>
+    <!---->
+    <servlet>
+        <servlet-name>ServletStart</servlet-name>
+        <servlet-class>ru.library.UserInterface.ServletStart</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletSignUp</servlet-name>
+        <servlet-class>ru.library.UserInterface.ServletSingUp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletSignIn</servlet-name>
+        <servlet-class>ru.library.UserInterface.ServletSignIn</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletFindBook</servlet-name>
+        <servlet-class>ru.library.UserInterface.ServletFindBook</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletAddBook</servlet-name>
+        <servlet-class>ru.library.UserInterface.ServletAddBook</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletRedactBook</servlet-name>
+        <servlet-class>ru.library.UserInterface.ServletRedactBook</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletDeleteBook</servlet-name>
+        <servlet-class>ru.library.UserInterface.ServletDeleteBook</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletUser</servlet-name>
+        <servlet-class>ru.library.UserInterface.ServletUser</servlet-class>
+    </servlet>
 
+    <!--Убрать, начальные настройки-->
     <servlet-mapping>
         <servlet-name>Servlet</servlet-name>
         <url-pattern>/modify</url-pattern>
     </servlet-mapping>
+    <!---->
+    <servlet-mapping>
+        <servlet-name>ServletStart</servlet-name>
+        <url-pattern>/ind</url-pattern><!--/index.html-->
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletSignUp</servlet-name>
+        <url-pattern>/signup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletSignIn</servlet-name>
+        <url-pattern>/signin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletFindBook</servlet-name>
+        <url-pattern>/find_book</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletAddBook</servlet-name>
+        <url-pattern>/add_book</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletRedactBook</servlet-name>
+        <url-pattern>/redact_book</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletDeleteBook</servlet-name>
+        <url-pattern>/delete_book</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletUser</servlet-name>
+        <url-pattern>/user.html</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>

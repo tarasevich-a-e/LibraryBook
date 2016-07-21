@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="library" default="start.tomcat">
+<project name="library" default="9.1. start.tomcat">
 
     <property name="dest.dir" value="web/WEB-INF/classes"/>
     <property name="dir.lib" value="./lib"/>
+    <property name="dir.resource" value="./src/resource"/>
     <property name="project.name" value="library"/>
     <property name="build.dir" value="./web"/>
     <property name="tomcat.service.name" value="tomcat8"/>
     <property name="tomcat.webapps" value="C:/Program Files/Apache Software Foundation/apache-tomcat-8.5.4/webapps"/>
     <property name="tomcat.bin" value="C:/Program Files/Apache Software Foundation/apache-tomcat-8.5.4/bin"/>
+    <property name="mysql.dir" value="D:/WORK/App/MySQLSRV"/>
+
 
     <path id="common_library">
         <pathelement location="lib/javax.servlet.jar"/>
@@ -15,17 +18,18 @@
         <pathelement location="lib/mysql-connector-java-5.1.39-bin.jar"/>
     </path>
 
-    <target name="clear">
+    <target name="1. clear">
         <delete dir="${dest.dir}"/>
         <delete dir="${tomcat.webapps}/${project.name}"/>
         <delete file="${tomcat.webapps}/${project.name}.war"/>
+        <delete file="${tomcat.bin}/log_prog.txt"/>
     </target>
 
-    <target name="make_dest_dir">
+    <target name="2. make_dest_dir">
         <mkdir dir="${dest.dir}"/>
     </target>
 
-    <target name="compile" depends="clear, make_dest_dir">
+    <target name="3. compile" depends="1. clear, 2. make_dest_dir">
         <javac srcdir="src" destdir="${dest.dir}" failonerror="true" fork="true" encoding="UTF-8" debug="on">
         <!--failonerror=true - если при компиляции какого-либо из файлов произойдет ошибка, ни одного файла classes не появится-->
         <!--fork=true - используется отдельная виртуальная машина-->
@@ -33,15 +37,20 @@
         </javac>
     </target>
 
-    <target name="copy" depends="compile">
+    <target name="4. copy" depends="3. compile">
         <copy todir="web/WEB-INF/lib">
             <fileset dir="${dir.lib}/">
                 <include name="*.*"/>
             </fileset>
         </copy>
+        <copy todir="web/WEB-INF/resource">
+            <fileset dir="${dir.resource}/">
+                <include name="*.*"/>
+            </fileset>
+        </copy>
     </target>
 
-    <target name="war" depends="copy">
+    <target name="5. war" depends="4. copy">
         <delete file="./${project.name}.war"/>
         <war
                 compress = "true"
@@ -52,7 +61,7 @@
         </war>
     </target>
 
-    <target name="copy2" depends="war">
+    <target name="6. copy2" depends="5. war">
         <copy todir="${tomcat.webapps}">
             <fileset dir="./">
                 <include name="*.war"/>
@@ -60,22 +69,48 @@
         </copy>
     </target>
 
-    <target name="start.tomcat" depends="copy2">
-        <exec executable="startup.bat" dir="${tomcat.bin}">
-
+    <!--Для работы с MySQL-->
+    <target name="7.1. MySQL.start">
+        <exec executable="cmd" dir="${mysql.dir}" spawn="true">
+            <arg value="/c"/>
+            <arg value="_start MYSQL.cmd"/>
         </exec>
+        <!--spawn=”true” (выполнение задачи в отдельном потоке)-->
     </target>
 
-    <target name="debug.tomcat" depends="copy2">
+    <target name="7.2. MySQL.stop">
+        <exec executable="cmd" dir="${mysql.dir}" spawn="true">
+            <arg value="/c"/>
+            <arg value="_shutdown MYSQL.cmd"/>
+        </exec>
+        <!--spawn=”true” (выполнение задачи в отдельном потоке)-->
+    </target>
+    <!---->
+
+    <target name="8. mylog.open">
+        <exec executable="notepad" spawn="true">
+            <arg value="${tomcat.bin}/log_prog.txt"/>
+        </exec>
+        <!--spawn=”true” (выполнение задачи в отдельном потоке)-->
+    </target>
+
+    <target name="9. debug.tomcat" depends="6. copy2, 7.1. MySQL.start">
         <exec executable="cmd" dir="${tomcat.bin}">
             <arg value="/c"/>
             <arg value="catalina.bat jpda start"/>
         </exec>
     </target>
 
-    <target name="stop.tomcat">
-        <exec executable="shutdown.bat" dir="${tomcat.bin}">
-
+    <target name="9.1. start.tomcat" depends="6. copy2, 7.1. MySQL.start">
+        <exec executable="startup.bat" dir="${tomcat.bin}">
         </exec>
     </target>
+
+    <target name="9.2. stop.tomcat" depends="7.2. MySQL.stop">
+        <exec executable="cmd" dir="${tomcat.bin}">
+            <arg value="/c"/>
+            <arg value="shutdown.bat"/>
+        </exec>
+    </target>
+
 </project>

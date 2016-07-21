@@ -1,6 +1,6 @@
 package ru.library.UserInterface;
 
-import ru.library.LogF;
+import ru.library.ToolsUserInterface.LogF;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

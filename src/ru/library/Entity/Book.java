@@ -7,6 +7,7 @@ public class Book {
     private int release_b;
     private int type_b;
 
+    /////////////// Constructor ///////////////////
     public Book(int id_b, String name_b, String author_b, int release_b, int type_b) {
         this.id_b = id_b;
         this.name_b = name_b;
@@ -15,6 +16,16 @@ public class Book {
         this.type_b = type_b;
     }
 
+    /////////////////// SET ///////////////////////
+    public void setName_b(String name_b) { this.name_b = name_b; }
+
+    public void setAuthor_b(String author_b) { this.author_b = author_b; }
+
+    public void setRelease_b(int release_b) { this.release_b = release_b; }
+
+    public void setType_b(int type_b) { this.type_b = type_b; }
+
+    /////////////////// GET ///////////////////////
     public int getId_b() {
         return this.id_b;
     }
