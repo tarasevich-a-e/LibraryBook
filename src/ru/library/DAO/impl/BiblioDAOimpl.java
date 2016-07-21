@@ -15,13 +15,13 @@ import java.util.Properties;
 public class BiblioDAOimpl implements BiblioDAO {
     Connection connection;
     Statement statement;
-    LogF logF = new LogF();
+    LogF logF;
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////Соединение с БД//////////////////////////////////////////////////////
     @Override
     public void connectionToBD() {
-        logF.createLog();
+
         ////////////////////////////Получение параметров для подключения к БД///////////////////////////////////////////
         //FileInputStream fileInputStream;
         Properties properties = new Properties();
@@ -38,7 +38,6 @@ public class BiblioDAOimpl implements BiblioDAO {
             String USERNAME = properties.getProperty("db.USERNAME");
             String PASS = properties.getProperty("db.PASS");
             String driver = properties.getProperty("driver.name");
-
             logF.writeLog("Данные из файла property считаны: URL = " + URL + "; USERNAME = " + USERNAME + "; PASS = " + PASS + ";");
 
         /*} catch (IOException e) {
@@ -67,7 +66,6 @@ public class BiblioDAOimpl implements BiblioDAO {
                 connection.close();
             } catch (SQLException var3) { var3.printStackTrace(); }
             this.logF.writeLog("Disconnect OK!");
-            this.logF.close();
         }
     }
 

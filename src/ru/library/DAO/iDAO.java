@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**
  * Created by atarasevich on 20.07.16.
  */
-public interface BiblioDAO {
+public interface iDAO {
 
     public void connectionToBD();
     public void disconnectWithBD();
