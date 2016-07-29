@@ -1,6 +1,7 @@
 package ru.library.DAO;
 
 import ru.library.Entity.Biblio;
+import ru.library.Entity.User;
 
 import java.util.ArrayList;
 
@@ -11,5 +12,7 @@ public interface iDAO {
 
     public void connectionToBD();
     public void disconnectWithBD();
-    public String queryInfoAboutBiblio();
+    public String queryAllRecord();
+    public boolean getValue(String name);
+    public boolean addUser(User user);
 }

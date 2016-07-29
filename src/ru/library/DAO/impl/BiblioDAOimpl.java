@@ -1,8 +1,9 @@
 package ru.library.DAO.impl;
 
 import com.google.gson.Gson;
-import ru.library.DAO.BiblioDAO;
+import ru.library.DAO.iDAO;
 import ru.library.Entity.Biblio;
+import ru.library.Entity.User;
 import ru.library.ToolsUserInterface.LogF;
 
 import java.sql.*;
@@ -12,7 +13,7 @@ import java.util.Properties;
 /**
  * Created by atarasevich on 20.07.16.
  */
-public class BiblioDAOimpl implements BiblioDAO {
+public class BiblioDAOimpl implements iDAO {
     Connection connection;
     Statement statement;
     LogF logF;
@@ -23,38 +24,16 @@ public class BiblioDAOimpl implements BiblioDAO {
     public void connectionToBD() {
 
         ////////////////////////////Получение параметров для подключения к БД///////////////////////////////////////////
-        //FileInputStream fileInputStream;
-        Properties properties = new Properties();
+        Properties properties = CommonMetodForDAO.getPropertyOfTheFile("Заглушка");
 
-        //try {
-            //fileInputStream = new FileInputStream("src/recource/app.properties");
-            //properties.load(fileInputStream);
-            properties.setProperty("db.URL","jdbc:mysql://localhost:3306/db_library"); //удалить после подключения файла проперти
-            properties.setProperty("db.USERNAME","root");                              //удалить после подключения файла проперти
-            properties.setProperty("db.PASS","");                                      //удалить после подключения файла проперти
-            properties.setProperty("driver.name","com.mysql.jdbc.Driver");             //удалить после подключения файла проперти
-
-            String URL = properties.getProperty("db.URL");
-            String USERNAME = properties.getProperty("db.USERNAME");
-            String PASS = properties.getProperty("db.PASS");
-            String driver = properties.getProperty("driver.name");
-            logF.writeLog("Данные из файла property считаны: URL = " + URL + "; USERNAME = " + USERNAME + "; PASS = " + PASS + ";");
-
-        /*} catch (IOException e) {
-            logF.writeLog("Файл property не найден IOException;");
-            e.printStackTrace();
-        }*/
         ////////////////////////////Получение connection с БД///////////////////////////////////////////////////////////
-        try {
-            Class.forName(driver).newInstance();
-            connection = DriverManager.getConnection(URL, USERNAME, PASS);
-            //statement = connection.createStatement();
-        } catch (InstantiationException | IllegalAccessException | SQLException | ClassNotFoundException var3) {
-            var3.printStackTrace();
-        }
-        logF.writeLog("Connect OK!");
-        //logF.writeLog(System.getProperty("user.dir"));
-        //logF.writeLog(getClass().getClassLoader().getResourceAsStream("app.properties").toString());
+        connection = CommonMetodForDAO.getConnection(
+                properties.getProperty("driver.name"),
+                properties.getProperty("db.URL"),
+                properties.getProperty("db.USERNAME"),
+                properties.getProperty("db.PASS")
+        );
+
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -64,7 +43,7 @@ public class BiblioDAOimpl implements BiblioDAO {
         if(connection != null) {
             try {
                 connection.close();
-            } catch (SQLException var3) { var3.printStackTrace(); }
+            } catch (SQLException var3) { this.logF.writeLog("Connect is not close!"); var3.printStackTrace(); }
             this.logF.writeLog("Disconnect OK!");
         }
     }
@@ -72,7 +51,7 @@ public class BiblioDAOimpl implements BiblioDAO {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////Получение информации о библиотеке из БД//////////////////////////////////////////
     @Override
-    public String queryInfoAboutBiblio() {
+    public String queryAllRecord() {
         ArrayList<Biblio> biblio = new ArrayList<Biblio>();
 
         try {
@@ -81,7 +60,12 @@ public class BiblioDAOimpl implements BiblioDAO {
             ResultSet resultSet = statement.executeQuery(zapros);
 
             while(resultSet.next()) {
-                biblio.add(new Biblio(resultSet.getString("history_b"), resultSet.getString("adress_b"), resultSet.getString("director_b"), resultSet.getString("worktime_b")));
+                biblio.add(new Biblio(
+                        resultSet.getString("history_b"),
+                        resultSet.getString("adress_b"),
+                        resultSet.getString("director_b"),
+                        resultSet.getString("worktime_b")
+                ));
             }
 
             resultSet.close();
@@ -92,5 +76,15 @@ public class BiblioDAOimpl implements BiblioDAO {
 
         Gson gson1 = new Gson();
         return gson1.toJson(biblio);
+    }
+
+    @Override
+    public boolean getValue(String name) {
+        return false;
+    }
+
+    @Override
+    public boolean addUser(User user) {
+        return false;
     }
 }

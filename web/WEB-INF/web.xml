@@ -4,12 +4,6 @@
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
-    <!--Убрать, начальные настройки-->
-    <servlet>
-        <servlet-name>Servlet</servlet-name>
-        <servlet-class>ru.library.Servlet</servlet-class>
-    </servlet>
-    <!---->
     <servlet>
         <servlet-name>ServletStart</servlet-name>
         <servlet-class>ru.library.UserInterface.ServletStart</servlet-class>
@@ -43,12 +37,6 @@
         <servlet-class>ru.library.UserInterface.ServletUser</servlet-class>
     </servlet>
 
-    <!--Убрать, начальные настройки-->
-    <servlet-mapping>
-        <servlet-name>Servlet</servlet-name>
-        <url-pattern>/modify</url-pattern>
-    </servlet-mapping>
-    <!---->
     <servlet-mapping>
         <servlet-name>ServletStart</servlet-name>
         <url-pattern>/ind</url-pattern><!--/index.html-->
@@ -81,6 +69,5 @@
         <servlet-name>ServletUser</servlet-name>
         <url-pattern>/user.html</url-pattern>
     </servlet-mapping>
-
 
 </web-app>

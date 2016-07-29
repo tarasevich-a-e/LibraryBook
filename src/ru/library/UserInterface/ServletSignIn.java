@@ -16,7 +16,7 @@ import java.io.IOException;
  * Created by atarasevich on 19.07.16.
  */
 public class ServletSignIn extends HttpServlet {
-    LogF logF = new LogF();
+    LogF logF;
 
     public ServletSignIn() {
     }
@@ -25,7 +25,6 @@ public class ServletSignIn extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ///////////////////////////////////////////////////////////////////////
         ///////////////////////////////ТЕСТИРУЮ////////////////////////////////
-        logF.createLog();
         logF.writeLog("Сервлет ServletSignIn работает!");
         //Читаем тело POST
         StringBuffer sb = new StringBuffer();
@@ -53,7 +52,6 @@ public class ServletSignIn extends HttpServlet {
         }else {
             logF.writeLog("Парамметр priiivet отсутствует!");
         }
-        logF.close();
         ///////////////////////////////ТЕСТИРУЮ////////////////////////////////
         ///////////////////////////////////////////////////////////////////////
     }

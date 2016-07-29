@@ -3,26 +3,28 @@ package ru.library.ToolsUserInterface;
 import java.io.*;
 
 public class LogF {
-    private String filename = "log_prog.txt";
-    private PrintWriter printWriter;
+    private static String filename = "log_prog.txt";
+    private static PrintWriter printWriter;
 
     public LogF() {
     }
 
-    public void createLog() {
+    private static void createLog() {
         try {
-            this.printWriter = new PrintWriter(new OutputStreamWriter(new FileOutputStream(System.getProperty("user.dir") + "\\" + this.filename, true)));
+            printWriter = new PrintWriter(new OutputStreamWriter(new FileOutputStream(System.getProperty("user.dir") + "\\" + filename, true)));
         } catch (FileNotFoundException var2) {
             var2.printStackTrace();
         }
     }
 
-    public void writeLog(String str) {
-        this.printWriter.println(str);
-        this.printWriter.flush();
+    public static void writeLog(String str) {
+        createLog();
+        printWriter.println(str);
+        printWriter.flush();
+        close();
     }
 
-    public void close() {
-        this.printWriter.close();
+    private static void close() {
+        printWriter.close();
     }
 }

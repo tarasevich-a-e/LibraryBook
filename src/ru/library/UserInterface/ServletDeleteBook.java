@@ -12,15 +12,13 @@ import java.io.IOException;
  * Created by atarasevich on 19.07.16.
  */
 public class ServletDeleteBook extends HttpServlet {
-    LogF logF = new LogF();
+    LogF logF;
 
     public ServletDeleteBook() {
     }
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logF.createLog();
         logF.writeLog("Сервлет ServletDeleteBook работает!");
-        logF.close();
     }
 }

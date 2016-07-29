@@ -7,14 +7,15 @@ import java.util.Date;
  */
 public class News {
     private int id_n;
+    private String date_n;
     private String text_n;
-    private Date date_n;   //Протестировать
+
 
     /////////////// Constructor ///////////////////
-    public News(int id_n, String text_n, Date date_n) {
+    public News(int id_n, String date_n, String text_n) {
         this.id_n = id_n;
-        this.text_n = text_n;
         this.date_n = date_n;
+        this.text_n = text_n;
     }
 
     /////////////////// GET ///////////////////////
@@ -22,5 +23,5 @@ public class News {
 
     public String getText_n() { return text_n; }
 
-    public Date getDate_n() { return date_n; }
+    public String getDate_n() { return date_n; }
 }

@@ -10,7 +10,7 @@ app.controller('ctrlHead', function($scope, $rootScope) {
 app.controller('ctrlMid', function($scope, $rootScope, $http){
 
     $scope.sendDate = function () {
-    $http.get('http://localhost:8080/library/modify')
+    $http.get('http://localhost:8080/library/find_book')
         .success(function(result){
             console.log('Запрос успешно отправлен');
             console.log('result = ',result);
@@ -26,19 +26,27 @@ app.controller('ctrlMid', function($scope, $rootScope, $http){
 
 app.controller('ctrlFoot', function($scope,$http){
     $scope.s1 = function(){
-    $http.post('/library/ind','1')//----/index.html
-        .success(function(data, status, headers, config){
+    //----/index.html
+    $http.post('/library/ind','{"login":"petia"}')
+        .success(function(data){
                 console.log('data = ',data);
-                console.log('status = ',status);
-                console.log('headers = ',headers);
-                console.log('config = ',config);
+                $scope.records = data;
             })
             .error(function(result){
+                console.log('result = ', result);
                 console.log('Запрос не прошел!');
             });
     };
     $scope.s2 = function(){
-    $http.post('/library/signup','2');
+    $http.post('/library/signup','{"login":"masha","pass":"777","user_f":"Дудикова","user_n":"Маша","user_o":"Ивановна","user_dr":"2016.02.23 00:00:00"}')
+        .success(function(data){
+                    console.log('data = ',data);
+                })
+                .error(function(result){
+                    console.log('result = ', result);
+                    console.log('Запрос не прошел!');
+                });
+
     };
     $scope.s3 = function(){
     $http.post('/library/signin','{"log":"3","privet":"get","bay":"456"}');
