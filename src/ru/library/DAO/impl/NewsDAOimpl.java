@@ -86,7 +86,17 @@ public class NewsDAOimpl implements iDAO {
     }
 
     @Override
-    public boolean addUser(User user) {
+    public boolean addElement(Object o) {
         return false;
+    }
+
+    @Override
+    public boolean updateUser(String login, String pass, String status) {
+        return false;
+    }
+
+    @Override
+    public String queryRecord(Object o) {
+        return null;
     }
 }

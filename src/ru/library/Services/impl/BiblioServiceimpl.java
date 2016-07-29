@@ -14,7 +14,7 @@ import java.util.Date;
 public class BiblioServiceimpl implements Services {
 
     @Override
-    public String getElement(String zapros) {
+    public String getElements(Object o) {
 
         return null;
     }
@@ -30,7 +30,7 @@ public class BiblioServiceimpl implements Services {
     }
 
     @Override
-    public Boolean addElement(User user) {
+    public Boolean addElement(Object o) {
         return null;
     }
 
@@ -47,5 +47,10 @@ public class BiblioServiceimpl implements Services {
     @Override
     public Boolean deleteElement(String corrElement) {
         return null;
+    }
+
+    @Override
+    public boolean autorizationElement(String login, String pass, String status) {
+        return false;
     }
 }

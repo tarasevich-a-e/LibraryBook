@@ -2,29 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5eec2d7-fbd8-4ac1-a497-01f52dbd4174" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/BiblioDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/BookDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/NewsDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/UserDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/BiblioService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Servlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/ZaprosBD.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library.war" afterPath="$PROJECT_DIR$/library.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/iDAO.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/iDAO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/BiblioDAOimpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/BiblioDAOimpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Entity/Book.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Entity/Book.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Entity/News.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Entity/News.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/BookDAOimpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/BookDAOimpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/CommonMetodForDAO.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/CommonMetodForDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/NewsDAOimpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/NewsDAOimpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/UserDAOimpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/UserDAOimpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Entity/User.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Entity/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/Services.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/Services.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/impl/BiblioServiceimpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/impl/BiblioServiceimpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/ToolsUserInterface/LogF.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/ToolsUserInterface/LogF.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/impl/BookServiceimpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/impl/BookServiceimpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/impl/NewsServiceimpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/impl/NewsServiceimpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/impl/UserServiceimpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/impl/UserServiceimpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/CommonMetodForUI.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/CommonMetodForUI.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletAddBook.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletAddBook.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletDeleteBook.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletDeleteBook.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletFindBook.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletFindBook.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletRedactBook.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletRedactBook.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletSignIn.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletSignIn.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletSingUp.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletSingUp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletStart.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletUser.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletUser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/DAO/iDAO.java" afterPath="$PROJECT_DIR$/src/ru/library/DAO/iDAO.java" />
@@ -33,27 +30,17 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/DAO/impl/CommonMetodForDAO.java" afterPath="$PROJECT_DIR$/src/ru/library/DAO/impl/CommonMetodForDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/DAO/impl/NewsDAOimpl.java" afterPath="$PROJECT_DIR$/src/ru/library/DAO/impl/NewsDAOimpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/DAO/impl/UserDAOimpl.java" afterPath="$PROJECT_DIR$/src/ru/library/DAO/impl/UserDAOimpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/Entity/Book.java" afterPath="$PROJECT_DIR$/src/ru/library/Entity/Book.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/Entity/News.java" afterPath="$PROJECT_DIR$/src/ru/library/Entity/News.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/Entity/User.java" afterPath="$PROJECT_DIR$/src/ru/library/Entity/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/Factory/FactoryDAO.java" afterPath="$PROJECT_DIR$/src/ru/library/Factory/FactoryDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/Factory/FactoryService.java" afterPath="$PROJECT_DIR$/src/ru/library/Factory/FactoryService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/Services/Services.java" afterPath="$PROJECT_DIR$/src/ru/library/Services/Services.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/Services/impl/BiblioServiceimpl.java" afterPath="$PROJECT_DIR$/src/ru/library/Services/impl/BiblioServiceimpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/Services/impl/BookServiceimpl.java" afterPath="$PROJECT_DIR$/src/ru/library/Services/impl/BookServiceimpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/Services/impl/NewsServiceimpl.java" afterPath="$PROJECT_DIR$/src/ru/library/Services/impl/NewsServiceimpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/Services/impl/UserServiceimpl.java" afterPath="$PROJECT_DIR$/src/ru/library/Services/impl/UserServiceimpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/ToolsUserInterface/LogF.java" afterPath="$PROJECT_DIR$/src/ru/library/ToolsUserInterface/LogF.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/UserInterface/CommonMetodForUI.java" afterPath="$PROJECT_DIR$/src/ru/library/UserInterface/CommonMetodForUI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletAddBook.java" afterPath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletAddBook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletDeleteBook.java" afterPath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletDeleteBook.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletFindBook.java" afterPath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletFindBook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletRedactBook.java" afterPath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletRedactBook.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletSignIn.java" afterPath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletSignIn.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletSingUp.java" afterPath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletSingUp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletStart.java" afterPath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletStart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletUser.java" afterPath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/main.js" afterPath="$PROJECT_DIR$/web/js/main.js" />
     </list>
@@ -77,77 +64,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserDAOimpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/UserDAOimpl.java">
+      <file leaf-file-name="ServletAddBook.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletAddBook.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2838#2844#0" expanded="true" />
-                <marker date="1469193737125" expanded="true" signature="2946:2971" ph=" SELECT statement" />
-                <marker date="1469193737125" expanded="true" signature="4311:4338" ph=" INSERT statement" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServletSingUp.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletSingUp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="51" column="58" selection-start-line="51" selection-start-column="58" selection-end-line="51" selection-end-column="58" />
+            <state relative-caret-position="425">
+              <caret line="70" column="14" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserServiceimpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/library/Services/impl/UserServiceimpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/library/Entity/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="817">
-              <caret line="63" column="17" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommonMetodForUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/CommonMetodForUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewsDAOimpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/NewsDAOimpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="88" column="27" selection-start-line="88" selection-start-column="27" selection-end-line="88" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2350#2356#0" expanded="true" />
-                <element signature="e#3184#3185#0" expanded="true" />
-                <element signature="e#3212#3213#0" expanded="true" />
-                <marker date="1469192289781" expanded="true" signature="2458:2487" ph=" SELECT statement (NEWS)" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -194,38 +116,48 @@
         <option value="$PROJECT_DIR$/src/ru/library/ZaprosBD.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletUser.java" />
-        <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletSignIn.java" />
         <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletRedactBook.java" />
-        <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletFindBook.java" />
         <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletDeleteBook.java" />
-        <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletAddBook.java" />
-        <option value="$PROJECT_DIR$/build.xml" />
         <option value="$PROJECT_DIR$/src/ru/library/ToolsUserInterface/LogF.java" />
         <option value="$PROJECT_DIR$/src/ru/library/DAO/BiblioDAO.java" />
         <option value="$PROJECT_DIR$/src/ru/library/Services/impl/BiblioInfoServiceimpl.java" />
         <option value="$PROJECT_DIR$/src/ru/library/Factory/FactoryService.java" />
         <option value="$PROJECT_DIR$/src/ru/library/Factory/FactoryDAO.java" />
-        <option value="$PROJECT_DIR$/web/index.html" />
-        <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/CommonMetodForDAO.java" />
         <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletStart.java" />
-        <option value="$PROJECT_DIR$/src/ru/library/UserInterface/CommonMetodForUI.java" />
         <option value="$PROJECT_DIR$/src/ru/library/Entity/Book.java" />
         <option value="$PROJECT_DIR$/src/ru/library/Entity/News.java" />
         <option value="$PROJECT_DIR$/src/ru/library/Entity/User.java" />
+        <option value="$PROJECT_DIR$/web/index.html" />
+        <option value="$PROJECT_DIR$/build.xml" />
+        <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/CommonMetodForDAO.java" />
+        <option value="$PROJECT_DIR$/src/ru/library/UserInterface/CommonMetodForUI.java" />
+        <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletFindBook.java" />
         <option value="$PROJECT_DIR$/src/ru/library/Services/Services.java" />
-        <option value="$PROJECT_DIR$/src/ru/library/DAO/iDAO.java" />
-        <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/NewsDAOimpl.java" />
-        <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/BookDAOimpl.java" />
-        <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/BiblioDAOimpl.java" />
-        <option value="$PROJECT_DIR$/src/ru/library/Services/impl/NewsServiceimpl.java" />
-        <option value="$PROJECT_DIR$/src/ru/library/Services/impl/BookServiceimpl.java" />
         <option value="$PROJECT_DIR$/src/ru/library/Services/impl/BiblioServiceimpl.java" />
-        <option value="$PROJECT_DIR$/web/js/main.js" />
-        <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/UserDAOimpl.java" />
-        <option value="$PROJECT_DIR$/src/ru/library/Services/impl/UserServiceimpl.java" />
+        <option value="$PROJECT_DIR$/src/ru/library/Services/impl/NewsServiceimpl.java" />
+        <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletSignIn.java" />
         <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletSingUp.java" />
+        <option value="$PROJECT_DIR$/src/ru/library/DAO/iDAO.java" />
+        <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/UserDAOimpl.java" />
+        <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/NewsDAOimpl.java" />
+        <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/BiblioDAOimpl.java" />
+        <option value="$PROJECT_DIR$/src/ru/library/Services/impl/UserServiceimpl.java" />
+        <option value="$PROJECT_DIR$/src/ru/library/Services/impl/BookServiceimpl.java" />
+        <option value="$PROJECT_DIR$/web/js/main.js" />
+        <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/BookDAOimpl.java" />
+        <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletAddBook.java" />
       </list>
     </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-4" />
@@ -258,17 +190,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="LibraryBook" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -419,28 +346,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Factory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LibraryBook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LibraryBook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Entity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -509,13 +414,14 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -805,29 +711,29 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14589989" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32648402" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3242009" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14270501" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10330138" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28995433" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32762557" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -864,23 +770,101 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletSingUp.java</url>
-          <line>35</line>
+          <line>36</line>
           <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ru/library/DAO/impl/UserDAOimpl.java</url>
-          <line>108</line>
+          <url>file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletSingUp.java</url>
+          <line>45</line>
           <properties />
-          <option name="timeStamp" value="17" />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletSignIn.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/library/Services/impl/UserServiceimpl.java</url>
+          <line>53</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/library/DAO/impl/UserDAOimpl.java</url>
+          <line>149</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/library/Services/impl/UserServiceimpl.java</url>
+          <line>25</line>
+          <properties />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/library/DAO/impl/UserDAOimpl.java</url>
+          <line>67</line>
+          <properties />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/library/DAO/impl/UserDAOimpl.java</url>
+          <line>136</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/library/DAO/impl/UserDAOimpl.java</url>
+          <line>107</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletFindBook.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/library/DAO/impl/BookDAOimpl.java</url>
+          <line>124</line>
+          <properties />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/library/Services/impl/BookServiceimpl.java</url>
+          <line>32</line>
+          <properties />
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/library/DAO/impl/BookDAOimpl.java</url>
+          <line>92</line>
+          <properties />
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletAddBook.java</url>
+          <line>48</line>
+          <properties />
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="18" />
+      <option name="time" value="38" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Remote">
         <watch expression="jsonParser" />
         <watch expression="obj" />
+        <watch expression="status.equals(&quot;false&quot;)" />
+        <watch expression="users.get(0).isStatus_u()" />
+        <watch expression="String.valueOf(entry.getValue())" />
+        <watch expression="stringHashMap.toString()" />
+        <watch expression="sb.toString()" />
+        <watch expression="sb.toString() = &quot;{login:masha,pass:777,status:true}&quot;" />
       </configuration>
     </watches-manager>
   </component>
@@ -903,8 +887,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/InitListener.java" />
-    <entry file="file://$PROJECT_DIR$/src/Book.java" />
     <entry file="file://$PROJECT_DIR$/src/ru/library/InitListener.java" />
     <entry file="file://$PROJECT_DIR$/web/web.xml" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/src.zip!/java/util/Date.java">
@@ -928,14 +910,6 @@
     <entry file="db://[Connection] TABLE - db_library.biblio" />
     <entry file="file://$PROJECT_DIR$/src/ru/library/Servlet.java" />
     <entry file="file://$PROJECT_DIR$/src/ru/library/ZaprosBD.java" />
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="74" column="8" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/library/ToolsUserInterface/LogF.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -947,14 +921,6 @@
     <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/BookDAO.java" />
     <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/NewsDAO.java" />
     <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/UserDAO.java" />
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="35" column="33" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/gson-2.2.2.jar!/com/google/gson/Gson.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
@@ -963,46 +929,12 @@
       </provider>
     </entry>
     <entry file="db://[Connection] TABLE - db_library.news" />
-    <entry file="file://$PROJECT_DIR$/web/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="76" column="11" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/gson-2.2.2.jar!/com/google/gson/JsonObject.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/gson-2.2.2.jar!/com/google/gson/JsonElement.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/library/Factory/FactoryService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/Factory/FactoryDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1011,23 +943,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="545">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/Entity/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="60" column="17" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/Entity/News.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1039,23 +954,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletSignIn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="46" column="44" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletRedactBook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletFindBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
@@ -1071,185 +970,263 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletAddBook.java">
+    <entry file="db://[Connection] TABLE - db_library.user" />
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.2.2.jar!/com/google/gson/JsonElement.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="394">
+          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/Entity/News.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/Factory/FactoryDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.2.2.jar!/com/google/gson/JsonObject.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="33" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletStart.java">
+    <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="792">
+          <caret line="68" column="25" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/Services/Services.java">
+    <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="39" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/iDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="82">
+          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/CommonMetodForDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="201">
+          <caret line="41" column="53" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/BookDAOimpl.java">
+    <entry file="file://$PROJECT_DIR$/web/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="91" column="36" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletFindBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/Services/Services.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/NewsDAOimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="88" column="29" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2352#2358#0" expanded="true" />
-            <element signature="e#3417#3418#0" expanded="true" />
-            <element signature="e#3445#3446#0" expanded="true" />
-            <marker date="1469192289968" expanded="true" signature="2460:2489" ph=" SELECT statement (BOOK)" />
+            <element signature="e#3186#3187#0" expanded="true" />
+            <element signature="e#3214#3215#0" expanded="true" />
+            <marker date="1469794442718" expanded="true" signature="2458:2487" ph=" SELECT statement (NEWS)" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/BiblioDAOimpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="86" column="36" selection-start-line="86" selection-start-column="36" selection-end-line="86" selection-end-column="36" />
+        <state relative-caret-position="578">
+          <caret line="86" column="29" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2235#2243#0" expanded="true" />
-            <element signature="e#3152#3153#0" expanded="true" />
-            <element signature="e#3180#3181#0" expanded="true" />
-            <marker date="1469192290171" expanded="true" signature="2345:2376" ph=" SELECT statement (BIBLIO)" />
+            <element signature="e#3154#3155#0" expanded="true" />
+            <element signature="e#3182#3183#0" expanded="true" />
+            <marker date="1469794442687" expanded="true" signature="2345:2376" ph=" SELECT statement (BIBLIO)" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/iDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/Entity/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="60" column="60" selection-start-line="38" selection-start-column="4" selection-end-line="60" selection-end-column="60" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/library/Services/impl/NewsServiceimpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+        <state relative-caret-position="391">
+          <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#708#709#0" expanded="true" />
-            <element signature="e#735#736#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/Services/impl/BookServiceimpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#792#793#0" expanded="true" />
-            <element signature="e#819#820#0" expanded="true" />
+            <element signature="e#703#704#0" expanded="true" />
+            <element signature="e#730#731#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/library/Services/impl/BiblioServiceimpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
+        <state relative-caret-position="442">
+          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#761#762#0" expanded="true" />
-            <element signature="e#788#789#0" expanded="true" />
+            <element signature="e#756#757#0" expanded="true" />
+            <element signature="e#783#784#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/NewsDAOimpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="88" column="27" selection-start-line="88" selection-start-column="27" selection-end-line="88" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2350#2356#0" expanded="true" />
-            <element signature="e#3184#3185#0" expanded="true" />
-            <element signature="e#3212#3213#0" expanded="true" />
-            <marker date="1469192289781" expanded="true" signature="2458:2487" ph=" SELECT statement (NEWS)" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/library/Entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="63" column="17" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+        <state relative-caret-position="663">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/CommonMetodForUI.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletSingUp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="612">
+          <caret line="64" column="120" selection-start-line="64" selection-start-column="120" selection-end-line="64" selection-end-column="120" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/UserDAOimpl.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletSignIn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+        <state relative-caret-position="527">
+          <caret line="51" column="120" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="120" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletStart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="57" column="9" selection-start-line="52" selection-start-column="8" selection-end-line="57" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2838#2844#0" expanded="true" />
-            <marker date="1469193737125" expanded="true" signature="2946:2971" ph=" SELECT statement" />
-            <marker date="1469193737125" expanded="true" signature="4311:4338" ph=" INSERT statement" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/library/Services/impl/UserServiceimpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="493">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/UserDAOimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2838#2844#0" expanded="true" />
+            <marker date="1469794443000" expanded="true" signature="2946:2971" ph=" SELECT statement" />
+            <marker date="1469794443000" expanded="true" signature="4453:4480" ph=" INSERT statement" />
+            <marker date="1469794443000" expanded="true" signature="5628:5664" ph=" UPDATE statement" />
+            <marker date="1469794443000" expanded="true" signature="5628:5665" ph=" UPDATE statement" />
+            <marker date="1469794443000" expanded="true" signature="5628:5667" ph=" UPDATE statement" />
+            <marker date="1469794443000" expanded="true" signature="5628:5708" ph=" UPDATE statement" />
+            <marker date="1469794443000" expanded="true" signature="5628:5714" ph=" UPDATE statement" />
+            <marker date="1469794443000" expanded="true" signature="5628:5741" ph=" UPDATE statement" />
+            <marker date="1469794443000" expanded="true" signature="5628:5746" ph=" UPDATE statement" />
+            <marker date="1469794443000" expanded="true" signature="5628:5749" ph=" UPDATE statement" />
+            <marker date="1469794443000" expanded="true" signature="5628:5783" ph=" UPDATE statement" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/BookDAOimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+          <folding>
+            <element signature="e#4645#4651#0" expanded="true" />
+            <marker date="1469795448156" expanded="true" signature="2460:2489" ph=" SELECT statement (BOOK)" />
+            <marker date="1469795448156" expanded="true" signature="3573:3600" ph=" INSERT statement" />
+            <marker date="1469795448156" expanded="true" signature="3573:3707" ph=" INSERT statement (BOOK)" />
+            <marker date="1469795448156" expanded="true" signature="4839:4864" ph=" INSERT statement" />
+            <marker date="1469795448156" expanded="true" signature="4839:4868" ph=" SELECT statement (BOOK)" />
+            <marker date="1469795448156" expanded="true" signature="4839:4874" ph=" SELECT statement (BOOK)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="81" column="119" selection-start-line="81" selection-start-column="119" selection-end-line="81" selection-end-column="119" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/CommonMetodForUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletSingUp.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/library/Services/impl/BookServiceimpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="51" column="58" selection-start-line="51" selection-start-column="58" selection-end-line="51" selection-end-column="58" />
+        <state relative-caret-position="206">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletAddBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="70" column="14" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1311,7 +1288,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

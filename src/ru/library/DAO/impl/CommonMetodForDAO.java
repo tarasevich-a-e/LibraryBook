@@ -37,8 +37,11 @@ public class CommonMetodForDAO {
         Connection connection = null;
         try {
             Class.forName(driver).newInstance();
-            connection = DriverManager.getConnection(URL, USERNAME, PASS);
-            //statement = connection.createStatement();
+            Properties properties = new Properties();
+            properties.setProperty("user", USERNAME);
+            properties.setProperty("password", PASS);
+            properties.setProperty("characterEncoding","UTF-8");
+            connection = DriverManager.getConnection(URL, properties);
         } catch (InstantiationException | IllegalAccessException | SQLException | ClassNotFoundException var3) {
             logF.writeLog("Connect ERROR!");
             var3.printStackTrace();

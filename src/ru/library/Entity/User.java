@@ -14,13 +14,13 @@ public class User {
     private String otch_u;
     private String pass_u;
     private int rol_u;
-    private boolean status_u;
+    private String status_u;
     private byte usercol;
 
     /////////////// Constructor ///////////////////
 
 
-    public User(int id_u, String dr_u, String famil_u, String login_u, String name_u, String otch_u, String pass_u, int rol_u, boolean status_u, byte usercol) {
+    public User(int id_u, String dr_u, String famil_u, String login_u, String name_u, String otch_u, String pass_u, int rol_u, String status_u, byte usercol) {
         this.id_u = id_u;
         this.dr_u = dr_u;
         this.famil_u = famil_u;
@@ -46,7 +46,7 @@ public class User {
 
     public void setPass_u(String pass_u) { this.pass_u = pass_u; }
 
-    public void setStatus_u(boolean status_u) { this.status_u = status_u; }
+    public void setStatus_u(String status_u) { this.status_u = status_u; }
 
     public void setRol_u(int rol_u) { this.rol_u = rol_u; }
 
@@ -67,7 +67,7 @@ public class User {
 
     public String getPass_u() { return pass_u; }
 
-    public boolean isStatus_u() { return status_u; }
+    public String isStatus_u() { return status_u; }
 
     public int getRol_u() { return rol_u; }
 

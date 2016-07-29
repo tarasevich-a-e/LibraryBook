@@ -48,6 +48,11 @@
         <condition column="worktime_b" operator="=" value="" active="true" />
       </filter>
     </filter-list>
+    <filter-list connection-id="5d341c33-1777-4210-a05c-868eb8d05ad6" dataset="db_library.user" active-filter-id="EMPTY_FILTER">
+      <filter id="6fdff74d-13ac-4165-9b66-efd8fe2a3b9f" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id_u" operator="=" value="" active="true" />
+      </filter>
+    </filter-list>
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />

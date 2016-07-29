@@ -1,5 +1,6 @@
 package ru.library.UserInterface;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import ru.library.Entity.User;
 import ru.library.Factory.FactoryService;
@@ -53,7 +54,7 @@ public class ServletSingUp extends HttpServlet {
                 parametriRequest.get("user_o").toString(),
                 parametriRequest.get("pass").toString(),
                 0,
-                false,
+                "true",
                 (byte) 0
         );
 
@@ -61,9 +62,14 @@ public class ServletSingUp extends HttpServlet {
         if(flagAddUser) {
             logF.writeLog(">ServletSingUp: Запись добавлена");
         }
+        ///////////////////////////////Формируем JSON для отправки клиенту//////////////////////////////////////////////
+        String strJSON = "[{\"user\","+ "{\"online\":\"" + flagAddUser  + "\",\"status\":\"" + flagAddUser  +"\"}" +
+                "}]";
+        Gson gson = new Gson();
+        strJSON = gson.toJson(strJSON);
         ///////////////////////////////////////Ложим данные в ответ/////////////////////////////////////////////////////
         PrintWriter printWriter = resp.getWriter();
-        printWriter.print(flagAddUser);
+        printWriter.print(strJSON);
         printWriter.flush();
         /////////////////////////////////////////Пишем лог в файл///////////////////////////////////////////////////////
         logF.writeLog(">ServletStart: Сервлет ServletStart работает!");

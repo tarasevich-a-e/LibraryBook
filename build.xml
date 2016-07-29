@@ -10,6 +10,10 @@
     <property name="tomcat.webapps" value="C:/Program Files/Apache Software Foundation/apache-tomcat-8.5.4/webapps"/>
     <property name="tomcat.bin" value="C:/Program Files/Apache Software Foundation/apache-tomcat-8.5.4/bin"/>
     <property name="mysql.dir" value="D:/WORK/App/MySQLSRV"/>
+    <property name="brawser" value="C:/Program Files/Google/Chrome/Application/chrome.exe"/>
+    <property name="host" value="http://localhost"/>
+    <property name="port" value="8080"/>
+
 
 
     <path id="common_library">
@@ -113,5 +117,15 @@
             <arg value="shutdown.bat"/>
         </exec>
     </target>
+
+    <!--Видимо парамметр dir="${tomcat.bin} является лишним, позднее разобраться-->
+    <target name="9.3. start.browser" depends="9.1. start.tomcat">
+        <exec executable="cmd" dir="${tomcat.bin}">
+            <arg value="/c"/>
+            <arg value="${brawser}"/>
+            <arg value="${host}:${port}/${project.name}/"/>
+        </exec>
+    </target>
+
 
 </project>

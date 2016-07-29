@@ -12,7 +12,7 @@ import ru.library.Services.Services;
 public class UserServiceimpl implements Services {
 
     @Override
-    public String getElement(String zapros) {
+    public String getElements(Object o) {
         return null;
     }
 
@@ -22,10 +22,10 @@ public class UserServiceimpl implements Services {
     }
 
     @Override
-    public Boolean addElement(User user) {
+    public Boolean addElement(Object o) {
         iDAO userDAO = FactoryDAO.getDAO("User");
         userDAO.connectionToBD();
-        boolean flagAdd = userDAO.addUser(user);
+        boolean flagAdd = userDAO.addElement(o);
         userDAO.disconnectWithBD();
         return flagAdd;
     }
@@ -47,5 +47,14 @@ public class UserServiceimpl implements Services {
     @Override
     public Boolean deleteElement(String corrElement) {
         return null;
+    }
+
+    @Override
+    public boolean autorizationElement(String login, String pass, String status) {
+        iDAO userDAO = FactoryDAO.getDAO("User");
+        userDAO.connectionToBD();
+        boolean status_op = userDAO.updateUser(login, pass, status);
+        userDAO.disconnectWithBD();
+        return status_op;
     }
 }

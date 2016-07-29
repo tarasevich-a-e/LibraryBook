@@ -82,7 +82,7 @@ public class UserDAOimpl implements iDAO {
                         resultSet.getString("otch_u"),
                         resultSet.getString("pass_u"),
                         resultSet.getInt("rol_u"),
-                        resultSet.getBoolean("status_u"),
+                        resultSet.getString("status_u"),
                         resultSet.getByte("usercol")
                 ));
             }
@@ -95,7 +95,7 @@ public class UserDAOimpl implements iDAO {
         if(users.size() != 0) {
 
             logF.writeLog(">UserDAOimpl: Данные из БД статус - " + users.get(0).isStatus_u());
-            return users.get(0).isStatus_u();
+            if(users.get(0).isStatus_u().equals("true")){return true;}
         }
         logF.writeLog(">UserDAOimpl: БД не прочитана");
         return false;
@@ -103,7 +103,8 @@ public class UserDAOimpl implements iDAO {
     }
 
     @Override
-    public boolean addUser(User user) {
+    public boolean addElement(Object o) {
+        User user = (User) o; // Ранее строка отсутствовала и в метод приходил user(после проверки удалить коммент)
         int result = 0;
         try {
             statement = connection.createStatement();
@@ -116,7 +117,7 @@ public class UserDAOimpl implements iDAO {
                     "," + user.getOtch_u() +
                     "," + user.getPass_u() +
                     "," + user.getRol_u() +
-                    "," +  user.isStatus_u() +
+                    ",\"" +  user.isStatus_u() + "\""+
                     "," + user.getUsercol() +
                     ")";
             result = statement.executeUpdate(zapros);
@@ -129,5 +130,33 @@ public class UserDAOimpl implements iDAO {
         }
         logF.writeLog(">UserDAOimpl: Запись не добавлена");
         return false;
+    }
+
+    @Override
+    public boolean updateUser(String login, String pass, String status) {
+        int result = 0;
+
+        try {
+            statement = connection.createStatement();
+            String zapros = "UPDATE db_library.user SET status_u= \"" + status + "\"" +
+                    " WHERE (" +
+                    "login_u=" + login +
+                    ")";
+            result = statement.executeUpdate(zapros);
+            statement.close();
+        } catch (SQLException var5) { var5.printStackTrace(); }
+        if(result != 0) {
+
+            logF.writeLog(">UserDAOimpl: Авторизация прошла успешно!");
+            if (status.equals("false")) {return false;}
+            else {return true;}
+        }
+        logF.writeLog(">UserDAOimpl: Авторизация не прошла!");
+        return false;
+    }
+
+    @Override
+    public String queryRecord(Object o) {
+        return null;
     }
 }

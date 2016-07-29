@@ -9,10 +9,11 @@ import java.util.Date;
  */
 public interface Services {
 
-    public String getElement(String zapros);
+    public String getElements(Object o);
     public String getAllElements();
-    public Boolean addElement(User user);
+    public Boolean addElement(Object o);
     public boolean inspectionElement(String inspElement);
+    public boolean autorizationElement(String login, String pass, String status);
     public Boolean editElement(String corrElement);
     public Boolean deleteElement(String corrElement);
 }
