@@ -89,7 +89,14 @@ app.controller('ctrlFoot', function($scope,$http){
                         });
     };
     $scope.s6 = function(){
-    $http.post('/library/redact_book','6');
+    $http.post('/library/redact_book','{login:masha,pass:777,rasdel:1,book_name:"Отредактированное название",book_author:"Автор 777",book_release:1960,book_id:23}')
+                .success(function(data){
+                        console.log('data = ',data);
+                })
+                .error(function(data){
+                        console.log('data = ', data);
+                        console.log('Запрос не прошел!');
+                });
     };
     $scope.s7 = function(){
     $http.delete('/library/delete_book','7');

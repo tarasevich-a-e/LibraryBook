@@ -16,5 +16,6 @@ public interface iDAO {
     public String queryRecord(Object o);
     public boolean getValue(String name);
     public boolean addElement(Object o);
+    public boolean updateElement(Object o);
     public boolean updateUser(String login, String pass, String status);
 }

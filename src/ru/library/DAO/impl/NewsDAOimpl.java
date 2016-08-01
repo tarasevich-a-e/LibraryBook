@@ -99,4 +99,7 @@ public class NewsDAOimpl implements iDAO {
     public String queryRecord(Object o) {
         return null;
     }
+
+    @Override
+    public boolean updateElement(Object o) { return false; }
 }

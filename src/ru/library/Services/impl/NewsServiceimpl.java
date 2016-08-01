@@ -38,7 +38,7 @@ public class NewsServiceimpl implements Services {
     }
 
     @Override
-    public Boolean editElement(String corrElement) {
+    public Boolean editElement(Object o) {
         return null;
     }
 

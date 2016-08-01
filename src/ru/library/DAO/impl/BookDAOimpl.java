@@ -159,4 +159,32 @@ public class BookDAOimpl implements iDAO {
             return gson1.toJson(books);
         } else { return null; }
     }
+
+    @Override
+    public boolean updateElement(Object o) {
+        Book book = (Book) o;
+        int result = 0;
+        try {
+            statement = connection.createStatement();
+
+            String zapros = "UPDATE db_library.book SET ";
+                    if(book.getAuthor_b().equals("-1") == false){zapros = zapros + "author_b=" + book.getAuthor_b() + ",";}
+                    zapros = zapros + "datecorr_b=\"" + book.getDatecorr_b() + "\",";
+                    if(book.getName_b().equals("-1") == false){zapros = zapros + "name_b=" + book.getName_b() + ",";}
+                    if(book.getRelease_b() != -1){zapros = zapros +"release_b=\"" + book.getRelease_b() + "\",";}
+                    if(book.getType_b() != -1){zapros = zapros + "type_b=\"" + book.getType_b() + "\",";}
+                    zapros = zapros.substring(0,zapros.length()-1);
+                    zapros = zapros + " WHERE id_b=" + book.getId_b();
+
+            result = statement.executeUpdate(zapros);
+            statement.close();
+        } catch (SQLException var5) { var5.printStackTrace(); }
+        if(result != 0) {
+
+            logF.writeLog(">BookDAOimpl: Изменено записей - " + result);
+            return true;
+        }
+        logF.writeLog(">BookDAOimpl: Запись не изменена");
+        return false;
+    }
 }

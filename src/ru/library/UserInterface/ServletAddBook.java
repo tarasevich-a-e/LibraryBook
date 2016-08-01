@@ -69,7 +69,7 @@ public class ServletAddBook extends HttpServlet {
                     parametriRequest.get("book_release").getAsInt(),
                     parametriRequest.get("rasdel").getAsInt()
             );
-            flagAddUser = book.addElement(el_book); //возможен null, если нет книг удовлетворяющих запросу
+            flagAddUser = book.addElement(el_book);
             if (flagAddUser) {
                 logF.writeLog(">ServletAddBook: Запись добавлена");
             }
