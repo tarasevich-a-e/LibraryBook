@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5eec2d7-fbd8-4ac1-a497-01f52dbd4174" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/script_js.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library.war" afterPath="$PROJECT_DIR$/library.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/iDAO.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/iDAO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/BiblioDAOimpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/BiblioDAOimpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/BookDAOimpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/BookDAOimpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/NewsDAOimpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/NewsDAOimpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/UserDAOimpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/UserDAOimpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/Services.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/Services.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/impl/BiblioServiceimpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/impl/BiblioServiceimpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/impl/BookServiceimpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/impl/BookServiceimpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/impl/NewsServiceimpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/impl/NewsServiceimpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/impl/UserServiceimpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Services/impl/UserServiceimpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletRedactBook.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletRedactBook.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletDeleteBook.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletDeleteBook.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/DAO/iDAO.java" afterPath="$PROJECT_DIR$/src/ru/library/DAO/iDAO.java" />
@@ -26,8 +26,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/Services/impl/BookServiceimpl.java" afterPath="$PROJECT_DIR$/src/ru/library/Services/impl/BookServiceimpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/Services/impl/NewsServiceimpl.java" afterPath="$PROJECT_DIR$/src/ru/library/Services/impl/NewsServiceimpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/Services/impl/UserServiceimpl.java" afterPath="$PROJECT_DIR$/src/ru/library/Services/impl/UserServiceimpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletAddBook.java" afterPath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletAddBook.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletDeleteBook.java" afterPath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletDeleteBook.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletRedactBook.java" afterPath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletRedactBook.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/style.css" afterPath="$PROJECT_DIR$/web/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/main.js" afterPath="$PROJECT_DIR$/web/js/main.js" />
     </list>
     <ignored path="LibraryBook.iws" />
@@ -50,21 +52,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ServletRedactBook.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ServletRedactBook.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletRedactBook.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="70" column="55" selection-start-line="70" selection-start-column="55" selection-end-line="70" selection-end-column="55" />
+            <state relative-caret-position="425">
+              <caret line="40" column="37" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookServiceimpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/library/Services/impl/BookServiceimpl.java">
+      <file leaf-file-name="ServletDeleteBook.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletDeleteBook.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+            <state relative-caret-position="612">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommonMetodForUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/CommonMetodForUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="782">
+              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServletFindBook.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletFindBook.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="36" column="107" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="107" />
               <folding />
             </state>
           </provider>
@@ -73,53 +97,70 @@
       <file leaf-file-name="BookDAOimpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/BookDAOimpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+            <state relative-caret-position="3213">
+              <caret line="203" column="0" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
               <folding>
                 <element signature="e#4645#4651#0" expanded="true" />
-                <marker date="1470024735089" expanded="true" signature="2460:2489" ph=" SELECT statement (BOOK)" />
-                <marker date="1470024735089" expanded="true" signature="3573:3600" ph=" INSERT statement" />
-                <marker date="1470024735089" expanded="true" signature="3573:3707" ph=" INSERT statement (BOOK)" />
-                <marker date="1470024735089" expanded="true" signature="4839:4864" ph=" INSERT statement" />
-                <marker date="1470024735089" expanded="true" signature="4839:4868" ph=" SELECT statement (BOOK)" />
-                <marker date="1470024735089" expanded="true" signature="4839:4874" ph=" SELECT statement (BOOK)" />
-                <marker date="1470024735089" expanded="true" signature="6769:7484" ph=" UPDATE statement (BOOK)" />
-                <marker date="1470024735089" expanded="true" signature="6775:7454" ph=" INSERT statement (BOOK)" />
+                <marker date="1470029562511" expanded="true" signature="2460:2489" ph=" SELECT statement (BOOK)" />
+                <marker date="1470029562511" expanded="true" signature="3573:3600" ph=" INSERT statement" />
+                <marker date="1470029562511" expanded="true" signature="3573:3707" ph=" INSERT statement (BOOK)" />
+                <marker date="1470029562511" expanded="true" signature="4839:4864" ph=" INSERT statement" />
+                <marker date="1470029562511" expanded="true" signature="4839:4868" ph=" SELECT statement (BOOK)" />
+                <marker date="1470029562511" expanded="true" signature="4839:4874" ph=" SELECT statement (BOOK)" />
+                <marker date="1470029562511" expanded="true" signature="6769:7484" ph=" UPDATE statement (BOOK)" />
+                <marker date="1470029562511" expanded="true" signature="6775:7454" ph=" INSERT statement (BOOK)" />
+                <marker date="1470029562511" expanded="true" signature="8047:8086" ph=" DELETE statement (BOOK)" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserServiceimpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/library/Services/impl/UserServiceimpl.java">
+      <file leaf-file-name="BookServiceimpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/library/Services/impl/BookServiceimpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="1020">
+              <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserDAOimpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/UserDAOimpl.java">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1022">
-              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2838#2844#0" expanded="true" />
-                <marker date="1470022970980" expanded="true" signature="2946:2971" ph=" SELECT statement" />
-                <marker date="1470022970980" expanded="true" signature="4453:4480" ph=" INSERT statement" />
-                <marker date="1470022970980" expanded="true" signature="5628:5664" ph=" UPDATE statement" />
-                <marker date="1470022970980" expanded="true" signature="5628:5665" ph=" UPDATE statement" />
-                <marker date="1470022970980" expanded="true" signature="5628:5667" ph=" UPDATE statement" />
-                <marker date="1470022970980" expanded="true" signature="5628:5708" ph=" UPDATE statement" />
-                <marker date="1470022970980" expanded="true" signature="5628:5714" ph=" UPDATE statement" />
-                <marker date="1470022970980" expanded="true" signature="5628:5741" ph=" UPDATE statement" />
-                <marker date="1470022970980" expanded="true" signature="5628:5746" ph=" UPDATE statement" />
-                <marker date="1470022970980" expanded="true" signature="5628:5749" ph=" UPDATE statement" />
-                <marker date="1470022970980" expanded="true" signature="5628:5783" ph=" UPDATE statement" />
-              </folding>
+            <state relative-caret-position="129">
+              <caret line="54" column="50" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="365">
+              <caret line="85" column="71" selection-start-line="85" selection-start-column="71" selection-end-line="85" selection-end-column="71" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="script_js.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/js/script_js.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="58" column="72" selection-start-line="58" selection-start-column="72" selection-end-line="58" selection-end-column="83" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -145,9 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ru/library/Book.java" />
-        <option value="$PROJECT_DIR$/src/ru/library/ServletSingUp.java" />
-        <option value="$PROJECT_DIR$/src/ru/library/ServletAddBook.java" />
         <option value="$PROJECT_DIR$/src/ru/library/ServletDeleteBook.java" />
         <option value="$PROJECT_DIR$/src/ru/library/ServletFindBook.java" />
         <option value="$PROJECT_DIR$/src/ru/library/ServletRedactBook.java" />
@@ -166,7 +204,6 @@
         <option value="$PROJECT_DIR$/src/ru/library/ZaprosBD.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletUser.java" />
-        <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletDeleteBook.java" />
         <option value="$PROJECT_DIR$/src/ru/library/ToolsUserInterface/LogF.java" />
         <option value="$PROJECT_DIR$/src/ru/library/DAO/BiblioDAO.java" />
         <option value="$PROJECT_DIR$/src/ru/library/Services/impl/BiblioInfoServiceimpl.java" />
@@ -176,26 +213,30 @@
         <option value="$PROJECT_DIR$/src/ru/library/Entity/Book.java" />
         <option value="$PROJECT_DIR$/src/ru/library/Entity/News.java" />
         <option value="$PROJECT_DIR$/src/ru/library/Entity/User.java" />
-        <option value="$PROJECT_DIR$/web/index.html" />
         <option value="$PROJECT_DIR$/build.xml" />
         <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/CommonMetodForDAO.java" />
         <option value="$PROJECT_DIR$/src/ru/library/UserInterface/CommonMetodForUI.java" />
         <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletFindBook.java" />
         <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletSignIn.java" />
         <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletSingUp.java" />
-        <option value="$PROJECT_DIR$/web/js/main.js" />
+        <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletAddBook.java" />
+        <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletRedactBook.java" />
         <option value="$PROJECT_DIR$/src/ru/library/Services/Services.java" />
         <option value="$PROJECT_DIR$/src/ru/library/Services/impl/UserServiceimpl.java" />
         <option value="$PROJECT_DIR$/src/ru/library/Services/impl/NewsServiceimpl.java" />
         <option value="$PROJECT_DIR$/src/ru/library/Services/impl/BiblioServiceimpl.java" />
-        <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletAddBook.java" />
         <option value="$PROJECT_DIR$/src/ru/library/DAO/iDAO.java" />
         <option value="$PROJECT_DIR$/src/ru/library/Services/impl/BookServiceimpl.java" />
         <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/BiblioDAOimpl.java" />
         <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/NewsDAOimpl.java" />
         <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/UserDAOimpl.java" />
+        <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletDeleteBook.java" />
         <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/BookDAOimpl.java" />
-        <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletRedactBook.java" />
+        <option value="$PROJECT_DIR$/web/js/main.js" />
+        <option value="$PROJECT_DIR$/web/css/style.css" />
+        <option value="$PROJECT_DIR$/web/index.html" />
+        <option value="$PROJECT_DIR$/web/js/script_js" />
+        <option value="$PROJECT_DIR$/web/js/script_js.js" />
       </list>
     </option>
   </component>
@@ -240,7 +281,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -287,186 +327,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LibraryBook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LibraryBook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LibraryBook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LibraryBook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserInterface" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LibraryBook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LibraryBook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LibraryBook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LibraryBook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LibraryBook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LibraryBook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LibraryBook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LibraryBook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LibraryBook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LibraryBook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DAO" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LibraryBook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LibraryBook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DAO" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LibraryBook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LibraryBook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -761,28 +648,28 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14589989" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3242009" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3242009" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32762557" sideWeight="0.5021299" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14270501" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14164004" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10330138" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32762557" sideWeight="0.4978701" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32762557" sideWeight="0.4978701" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -908,19 +795,30 @@
           <properties />
           <option name="timeStamp" value="38" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/library/DAO/impl/BookDAOimpl.java</url>
+          <line>192</line>
+          <properties />
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletDeleteBook.java</url>
+          <line>31</line>
+          <properties />
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="39" />
+      <option name="time" value="41" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Remote">
-        <watch expression="jsonParser" />
-        <watch expression="obj" />
-        <watch expression="status.equals(&quot;false&quot;)" />
-        <watch expression="users.get(0).isStatus_u()" />
-        <watch expression="String.valueOf(entry.getValue())" />
-        <watch expression="stringHashMap.toString()" />
-        <watch expression="sb.toString()" />
-        <watch expression="sb.toString() = &quot;{login:masha,pass:777,status:true}&quot;" />
+        <watch expression="req.getParameter(&quot;book_id&quot;)" language="JAVA" custom="" />
+        <watch expression="req.getQueryString()" language="JAVA" custom="" />
+        <watch expression="req.getPathInfo()" language="JAVA" custom="" />
+        <watch expression="req.getRequestURI()" language="JAVA" custom="" />
+        <watch expression="req.getQueryString()" language="JAVA" custom="" />
+        <watch expression="req.getRequestURL()" language="JAVA" custom="" />
+        <watch expression="req.getReader()" language="JAVA" custom="" />
       </configuration>
     </watches-manager>
   </component>
@@ -943,13 +841,10 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ru/library/Servlet.java" />
-    <entry file="file://$PROJECT_DIR$/src/ru/library/ZaprosBD.java" />
     <entry file="file://$PROJECT_DIR$/src/ru/library/ToolsUserInterface/LogF.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -968,9 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -985,15 +877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletDeleteBook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1026,22 +909,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="33" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="68" column="25" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
@@ -1054,22 +921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
           <caret line="41" column="53" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletFindBook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1077,7 +928,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1102,241 +952,24 @@
         <state relative-caret-position="152">
           <caret line="57" column="9" selection-start-line="52" selection-start-column="8" selection-end-line="57" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/CommonMetodForUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="db://[Connection] TABLE - db_library.user">
-      <provider selected="true" editor-type-id="1.DATA">
-        <state row-count="0" readonly="false">
-          <columns>
-            <column name="id_u" position="0" visible="true" />
-            <column name="famil_u" position="1" visible="true" />
-            <column name="name_u" position="2" visible="true" />
-            <column name="otch_u" position="3" visible="true" />
-            <column name="dr_u" position="4" visible="true" />
-            <column name="login_u" position="5" visible="true" />
-            <column name="pass_u" position="6" visible="true" />
-            <column name="status_u" position="7" visible="true" />
-            <column name="usercol" position="8" visible="true" />
-            <column name="rol_u" position="9" visible="true" />
-          </columns>
-          <sorting />
-          <content-types />
-        </state>
-      </provider>
-    </entry>
-    <entry file="db://[Connection] TABLE - db_library.user">
-      <provider selected="true" editor-type-id="1.DATA">
-        <state row-count="0" readonly="false">
-          <columns>
-            <column name="id_u" position="0" visible="true" />
-            <column name="famil_u" position="1" visible="true" />
-            <column name="name_u" position="2" visible="true" />
-            <column name="otch_u" position="3" visible="true" />
-            <column name="dr_u" position="4" visible="true" />
-            <column name="login_u" position="5" visible="true" />
-            <column name="pass_u" position="6" visible="true" />
-            <column name="status_u" position="7" visible="true" />
-            <column name="usercol" position="8" visible="true" />
-            <column name="rol_u" position="9" visible="true" />
-          </columns>
-          <sorting />
-          <content-types />
-        </state>
-      </provider>
-    </entry>
-    <entry file="db://[Connection] TABLE - db_library.user">
-      <provider selected="true" editor-type-id="1.DATA">
-        <state row-count="2" readonly="false">
-          <columns>
-            <column name="id_u" position="0" visible="true" />
-            <column name="famil_u" position="1" visible="true" />
-            <column name="name_u" position="2" visible="true" />
-            <column name="otch_u" position="3" visible="true" />
-            <column name="dr_u" position="4" visible="true" />
-            <column name="login_u" position="5" visible="true" />
-            <column name="pass_u" position="6" visible="true" />
-            <column name="status_u" position="7" visible="true" />
-            <column name="usercol" position="8" visible="true" />
-            <column name="rol_u" position="9" visible="true" />
-          </columns>
-          <sorting />
-          <content-types />
-        </state>
-      </provider>
-    </entry>
-    <entry file="db://[Connection] TABLE - db_library.user">
-      <provider selected="true" editor-type-id="1.DATA">
-        <state row-count="2" readonly="false">
-          <columns>
-            <column name="id_u" position="0" visible="true" />
-            <column name="famil_u" position="1" visible="true" />
-            <column name="name_u" position="2" visible="true" />
-            <column name="otch_u" position="3" visible="true" />
-            <column name="dr_u" position="4" visible="true" />
-            <column name="login_u" position="5" visible="true" />
-            <column name="pass_u" position="6" visible="true" />
-            <column name="status_u" position="7" visible="true" />
-            <column name="usercol" position="8" visible="true" />
-            <column name="rol_u" position="9" visible="true" />
-          </columns>
-          <sorting />
-          <content-types />
-        </state>
-      </provider>
-    </entry>
-    <entry file="db://[Connection] TABLE - db_library.user">
-      <provider selected="true" editor-type-id="1.DATA">
-        <state row-count="2" readonly="false">
-          <columns>
-            <column name="id_u" position="0" visible="true" />
-            <column name="famil_u" position="1" visible="true" />
-            <column name="name_u" position="2" visible="true" />
-            <column name="otch_u" position="3" visible="true" />
-            <column name="dr_u" position="4" visible="true" />
-            <column name="login_u" position="5" visible="true" />
-            <column name="pass_u" position="6" visible="true" />
-            <column name="status_u" position="7" visible="true" />
-            <column name="usercol" position="8" visible="true" />
-            <column name="rol_u" position="9" visible="true" />
-          </columns>
-          <sorting />
-          <content-types />
-        </state>
-      </provider>
-    </entry>
-    <entry file="db://[Connection] TABLE - db_library.book">
-      <provider selected="true" editor-type-id="1.DATA">
-        <state row-count="0" readonly="false">
-          <columns>
-            <column name="id_b" position="0" visible="true" />
-            <column name="name_b" position="1" visible="true" />
-            <column name="author_b" position="2" visible="true" />
-            <column name="release_b" position="3" visible="true" />
-            <column name="type_b" position="4" visible="true" />
-            <column name="dateloadbd_b" position="5" visible="true" />
-            <column name="datecorr_b" position="6" visible="true" />
-          </columns>
-          <sorting />
-          <content-types />
-        </state>
-      </provider>
-    </entry>
-    <entry file="db://[Connection] TABLE - db_library.user">
-      <provider selected="true" editor-type-id="1.DATA">
-        <state row-count="2" readonly="false">
-          <columns>
-            <column name="id_u" position="0" visible="true" />
-            <column name="famil_u" position="1" visible="true" />
-            <column name="name_u" position="2" visible="true" />
-            <column name="otch_u" position="3" visible="true" />
-            <column name="dr_u" position="4" visible="true" />
-            <column name="login_u" position="5" visible="true" />
-            <column name="pass_u" position="6" visible="true" />
-            <column name="status_u" position="7" visible="true" />
-            <column name="usercol" position="8" visible="true" />
-            <column name="rol_u" position="9" visible="true" />
-          </columns>
-          <sorting />
-          <content-types />
-        </state>
-      </provider>
-    </entry>
-    <entry file="db://[Connection] TABLE - db_library.user">
-      <provider selected="true" editor-type-id="1.DATA">
-        <state row-count="2" readonly="false">
-          <columns>
-            <column name="id_u" position="0" visible="true" />
-            <column name="famil_u" position="1" visible="true" />
-            <column name="name_u" position="2" visible="true" />
-            <column name="otch_u" position="3" visible="true" />
-            <column name="dr_u" position="4" visible="true" />
-            <column name="login_u" position="5" visible="true" />
-            <column name="pass_u" position="6" visible="true" />
-            <column name="status_u" position="7" visible="true" />
-            <column name="usercol" position="8" visible="true" />
-            <column name="rol_u" position="9" visible="true" />
-          </columns>
-          <sorting />
-          <content-types />
-        </state>
-      </provider>
-    </entry>
-    <entry file="db://[Connection] TABLE - db_library.user">
-      <provider selected="true" editor-type-id="1.DATA">
-        <state row-count="2" readonly="false">
-          <columns>
-            <column name="id_u" position="0" visible="true" />
-            <column name="famil_u" position="1" visible="true" />
-            <column name="name_u" position="2" visible="true" />
-            <column name="otch_u" position="3" visible="true" />
-            <column name="dr_u" position="4" visible="true" />
-            <column name="login_u" position="5" visible="true" />
-            <column name="pass_u" position="6" visible="true" />
-            <column name="status_u" position="7" visible="true" />
-            <column name="usercol" position="8" visible="true" />
-            <column name="rol_u" position="9" visible="true" />
-          </columns>
-          <sorting />
-          <content-types />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="91" column="161" selection-start-line="91" selection-start-column="161" selection-end-line="91" selection-end-column="161" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="db://[Connection] TABLE - db_library.user" />
+    <entry file="db://[Connection] TABLE - db_library.user" />
+    <entry file="db://[Connection] TABLE - db_library.user" />
+    <entry file="db://[Connection] TABLE - db_library.user" />
+    <entry file="db://[Connection] TABLE - db_library.user" />
+    <entry file="db://[Connection] TABLE - db_library.book" />
+    <entry file="db://[Connection] TABLE - db_library.user" />
+    <entry file="db://[Connection] TABLE - db_library.user" />
+    <entry file="db://[Connection] TABLE - db_library.user" />
     <entry file="file://$PROJECT_DIR$/src/ru/library/Entity/Book.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="60" column="60" selection-start-line="38" selection-start-column="4" selection-end-line="60" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/Services/Services.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/Services/impl/NewsServiceimpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
-          <folding>
-            <element signature="e#703#704#0" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/Services/impl/BiblioServiceimpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
-          <folding>
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1348,98 +981,185 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/BiblioDAOimpl.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/library/Services/Services.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="99" column="59" selection-start-line="99" selection-start-column="59" selection-end-line="99" selection-end-column="59" />
-          <folding>
-            <element signature="e#3154#3155#0" expanded="true" />
-            <element signature="e#3182#3183#0" expanded="true" />
-            <marker date="1470022939073" expanded="true" signature="2345:2376" ph=" SELECT statement (BIBLIO)" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="17" column="49" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/NewsDAOimpl.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/library/Services/impl/UserServiceimpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="103" column="59" selection-start-line="103" selection-start-column="59" selection-end-line="103" selection-end-column="59" />
-          <folding>
-            <element signature="e#3186#3187#0" expanded="true" />
-            <element signature="e#3214#3215#0" expanded="true" />
-            <marker date="1470022951917" expanded="true" signature="2458:2487" ph=" SELECT statement (NEWS)" />
-          </folding>
+        <state relative-caret-position="646">
+          <caret line="47" column="49" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/Services/impl/NewsServiceimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/Services/impl/BiblioServiceimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="47" column="49" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/iDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        <state relative-caret-position="289">
+          <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/BiblioDAOimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="103" column="8" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/NewsDAOimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="107" column="8" selection-start-line="107" selection-start-column="8" selection-end-line="107" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/UserDAOimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="167" column="8" selection-start-line="167" selection-start-column="8" selection-end-line="167" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2838#2844#0" expanded="true" />
+            <element signature="e#6449#6450#0" expanded="true" />
+            <element signature="e#6477#6478#0" expanded="true" />
+            <marker date="1470027036386" expanded="true" signature="2946:2971" ph=" SELECT statement" />
+            <marker date="1470027036386" expanded="true" signature="4453:4480" ph=" INSERT statement" />
+            <marker date="1470027036386" expanded="true" signature="5628:5664" ph=" UPDATE statement" />
+            <marker date="1470027036386" expanded="true" signature="5628:5665" ph=" UPDATE statement" />
+            <marker date="1470027036386" expanded="true" signature="5628:5667" ph=" UPDATE statement" />
+            <marker date="1470027036386" expanded="true" signature="5628:5708" ph=" UPDATE statement" />
+            <marker date="1470027036386" expanded="true" signature="5628:5714" ph=" UPDATE statement" />
+            <marker date="1470027036386" expanded="true" signature="5628:5741" ph=" UPDATE statement" />
+            <marker date="1470027036386" expanded="true" signature="5628:5746" ph=" UPDATE statement" />
+            <marker date="1470027036386" expanded="true" signature="5628:5749" ph=" UPDATE statement" />
+            <marker date="1470027036386" expanded="true" signature="5628:5783" ph=" UPDATE statement" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="33" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletFindBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="36" column="107" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/CommonMetodForUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletRedactBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="40" column="37" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/BookDAOimpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+        <state relative-caret-position="3213">
+          <caret line="203" column="0" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
           <folding>
             <element signature="e#4645#4651#0" expanded="true" />
-            <marker date="1470024735089" expanded="true" signature="2460:2489" ph=" SELECT statement (BOOK)" />
-            <marker date="1470024735089" expanded="true" signature="3573:3600" ph=" INSERT statement" />
-            <marker date="1470024735089" expanded="true" signature="3573:3707" ph=" INSERT statement (BOOK)" />
-            <marker date="1470024735089" expanded="true" signature="4839:4864" ph=" INSERT statement" />
-            <marker date="1470024735089" expanded="true" signature="4839:4868" ph=" SELECT statement (BOOK)" />
-            <marker date="1470024735089" expanded="true" signature="4839:4874" ph=" SELECT statement (BOOK)" />
-            <marker date="1470024735089" expanded="true" signature="6769:7484" ph=" UPDATE statement (BOOK)" />
-            <marker date="1470024735089" expanded="true" signature="6775:7454" ph=" INSERT statement (BOOK)" />
+            <marker date="1470029562511" expanded="true" signature="2460:2489" ph=" SELECT statement (BOOK)" />
+            <marker date="1470029562511" expanded="true" signature="3573:3600" ph=" INSERT statement" />
+            <marker date="1470029562511" expanded="true" signature="3573:3707" ph=" INSERT statement (BOOK)" />
+            <marker date="1470029562511" expanded="true" signature="4839:4864" ph=" INSERT statement" />
+            <marker date="1470029562511" expanded="true" signature="4839:4868" ph=" SELECT statement (BOOK)" />
+            <marker date="1470029562511" expanded="true" signature="4839:4874" ph=" SELECT statement (BOOK)" />
+            <marker date="1470029562511" expanded="true" signature="6769:7484" ph=" UPDATE statement (BOOK)" />
+            <marker date="1470029562511" expanded="true" signature="6775:7454" ph=" INSERT statement (BOOK)" />
+            <marker date="1470029562511" expanded="true" signature="8047:8086" ph=" DELETE statement (BOOK)" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/UserDAOimpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1022">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2838#2844#0" expanded="true" />
-            <marker date="1470022970980" expanded="true" signature="2946:2971" ph=" SELECT statement" />
-            <marker date="1470022970980" expanded="true" signature="4453:4480" ph=" INSERT statement" />
-            <marker date="1470022970980" expanded="true" signature="5628:5664" ph=" UPDATE statement" />
-            <marker date="1470022970980" expanded="true" signature="5628:5665" ph=" UPDATE statement" />
-            <marker date="1470022970980" expanded="true" signature="5628:5667" ph=" UPDATE statement" />
-            <marker date="1470022970980" expanded="true" signature="5628:5708" ph=" UPDATE statement" />
-            <marker date="1470022970980" expanded="true" signature="5628:5714" ph=" UPDATE statement" />
-            <marker date="1470022970980" expanded="true" signature="5628:5741" ph=" UPDATE statement" />
-            <marker date="1470022970980" expanded="true" signature="5628:5746" ph=" UPDATE statement" />
-            <marker date="1470022970980" expanded="true" signature="5628:5749" ph=" UPDATE statement" />
-            <marker date="1470022970980" expanded="true" signature="5628:5783" ph=" UPDATE statement" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/Services/impl/UserServiceimpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/library/Services/impl/BookServiceimpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        <state relative-caret-position="1020">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletRedactBook.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletDeleteBook.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="70" column="55" selection-start-line="70" selection-start-column="55" selection-end-line="70" selection-end-column="55" />
+        <state relative-caret-position="612">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="85" column="71" selection-start-line="85" selection-start-column="71" selection-end-line="85" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="54" column="50" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/script_js.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="58" column="72" selection-start-line="58" selection-start-column="72" selection-end-line="58" selection-end-column="83" />
           <folding />
         </state>
       </provider>

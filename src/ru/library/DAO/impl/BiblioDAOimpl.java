@@ -98,4 +98,9 @@ public class BiblioDAOimpl implements iDAO {
 
     @Override
     public boolean updateElement(Object o) { return false; }
+
+    @Override
+    public boolean deleteElement(String idElement) {
+        return false;
+    }
 }

@@ -18,4 +18,5 @@ public interface iDAO {
     public boolean addElement(Object o);
     public boolean updateElement(Object o);
     public boolean updateUser(String login, String pass, String status);
+    public boolean deleteElement(String idElement);
 }

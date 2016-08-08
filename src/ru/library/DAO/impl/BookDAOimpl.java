@@ -187,4 +187,23 @@ public class BookDAOimpl implements iDAO {
         logF.writeLog(">BookDAOimpl: Запись не изменена");
         return false;
     }
+
+    @Override
+    public boolean deleteElement(String idElement) {
+        int result = 0;
+        try {
+            statement = connection.createStatement();
+            String zapros = "DELETE FROM db_library.book WHERE id_b=" + idElement;
+
+            result = statement.executeUpdate(zapros);
+            statement.close();
+        } catch (SQLException var5) { var5.printStackTrace(); }
+        if(result != 0) {
+
+            logF.writeLog(">BookDAOimpl: Удалено записей - " + result);
+            return true;
+        }
+        logF.writeLog(">BookDAOimpl: Запись не удалена");
+        return false;
+    }
 }

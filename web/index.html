@@ -8,25 +8,51 @@
     <script src="js/main.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
     <script src="js/script.js"></script>
+
 </head>
 <body>
 <!--Панель выбора действий-->
-<div id="head_p" ng-controller="ctrlHead">
+<div id="head_p">
     <div id="head_zagolovok">
         <h1>Библиотека</h1>
     </div>
     <div id="panel_button">
         <div class="panel_button_detal">
-            <button class="btn_m" id="find" ng-click="ButtonPush(1)">Поиск</button>
+            <button class="btn_m" id="find">Поиск</button>
         </div>
         <div class="panel_button_detal">
-            <button class="btn_m" id="add" ng-click="ButtonPush(2)">Добавить</button>
+            <button class="btn_m" id="add">Добавить</button>
         </div>
         <div class="panel_button_detal">
-            <button class="btn_m" id="redact" ng-click="ButtonPush(3)">Изменить</button>
+            <button class="btn_m" id="redact">Изменить</button>
         </div>
         <div class="panel_button_detal">
-            <button class="btn_m" id="del" ng-click="ButtonPush(4)">Удалить</button>
+            <button class="btn_m" id="del">Удалить</button>
+        </div>
+    </div>
+    <div id="head_authorization">
+        <div id="head_authorization_1">
+            <div id="head_authorization_1_tlogin" class="auth_block">
+                <span id="shead_authorization_1_tlogin">Логин</span>
+            </div>
+            <div id="head_authorization_1_login" class="auth_block auth_button_block">
+                <input type="text" id="ihead_authorization_1_login" placeholder="login">
+            </div>
+            <div id="head_authorization_1_tpass" class="auth_block">
+                <span id="shead_authorization_1_tpass">Пароль</span>
+            </div>
+            <div id="head_authorization_1_pass" class="auth_block auth_button_block">
+                <input type="password" id="ihead_authorization_1_pass" placeholder="password">
+            </div>
+            <div id="head_authorization_1_message" class="auth_block">
+                <span id="shead_authorization_1_message">Авторизуйтесь</span>
+            </div>
+            <div id="head_authorization_1_entrance" class="auth_block">
+                <input type="button" id="ihead_authorization_1_entrance" value="Войти" onclick="SignIn()">
+            </div>
+            <div id="head_authorization_1_registration" class="auth_block">
+                <input type="button" id="шhead_authorization_1_registration" value="Регистрация">
+            </div>
         </div>
     </div>
 </div>
@@ -77,5 +103,6 @@
     <div>{{record}}</div>
     </div-->
 </div>
+<script src="js/script_js.js"></script>
 </body>
 </html>

@@ -1,12 +1,5 @@
 var app = angular.module('app',[]);
 
-app.controller('ctrlHead', function($scope, $rootScope) {
-    $scope.ButtonPush = function (text) {
-        $rootScope.razdel = text;
-        console.log('$rootScope.razdel', $rootScope.razdel);
-    };
-});
-
 app.controller('ctrlMid', function($scope, $rootScope, $http){
 
     $scope.sendDate = function () {
@@ -89,7 +82,7 @@ app.controller('ctrlFoot', function($scope,$http){
                         });
     };
     $scope.s6 = function(){
-    $http.post('/library/redact_book','{login:masha,pass:777,rasdel:1,book_name:"Отредактированное название",book_author:"Автор 777",book_release:1960,book_id:23}')
+    $http.post('/library/redact_book','{login:masha,pass:777,rasdel:1,book_name:"Отредактированное название",book_author:"Автор 777",book_release:1960,book_id:24}')
                 .success(function(data){
                         console.log('data = ',data);
                 })
@@ -99,7 +92,14 @@ app.controller('ctrlFoot', function($scope,$http){
                 });
     };
     $scope.s7 = function(){
-    $http.delete('/library/delete_book','7');
+    $http.delete('/library/delete_book?book_id=24')
+                .success(function(data){
+                        console.log('data = ',data);
+                })
+                .error(function(data){
+                        console.log('data = ', data);
+                        console.log('Запрос не прошел!');
+                });
     };
     $scope.s8 = function(){
     $http.post('/library/user.html','8');

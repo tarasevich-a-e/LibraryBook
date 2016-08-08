@@ -29,7 +29,7 @@ public class ServletRedactBook extends HttpServlet {
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////POST (/redact_book)/////////////////////////////////////////////////////
+    ///////////////////////////////////////////////POST (/redact_book)//////////////////////////////////////////////////
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         /////////////////////////////////Задаем формат запроса и ответа/////////////////////////////////////////////////
@@ -50,7 +50,7 @@ public class ServletRedactBook extends HttpServlet {
             Services user = FactoryService.getService("User");
             statusUser = user.inspectionElement(parametriRequest.get("login").toString());
         }
-        //Ищем книгу
+        //Добавляем книгу
         boolean flagRedactBook = false;
         if(statusUser == true) {
             Services book = FactoryService.getService("Book");

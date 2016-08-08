@@ -62,8 +62,13 @@ public class BookServiceimpl implements Services {
     }
 
     @Override
-    public Boolean deleteElement(String corrElement) {
-        return null;
+    public Boolean deleteElement(String idElement) {
+        iDAO bookDAO = FactoryDAO.getDAO("Book");
+        bookDAO.connectionToBD();
+        boolean flagDelete = bookDAO.deleteElement(idElement);
+        bookDAO.disconnectWithBD();
+
+        return flagDelete;
     }
 
     @Override
