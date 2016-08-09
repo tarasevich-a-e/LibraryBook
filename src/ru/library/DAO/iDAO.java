@@ -1,6 +1,5 @@
 package ru.library.DAO;
 
-import ru.library.Entity.Biblio;
 import ru.library.Entity.User;
 
 import java.util.ArrayList;
@@ -14,7 +13,7 @@ public interface iDAO {
     public void disconnectWithBD();
     public String queryAllRecord();
     public String queryRecord(Object o);
-    public boolean getValue(String name);
+    public ArrayList<User> getValue(String name);
     public boolean addElement(Object o);
     public boolean updateElement(Object o);
     public boolean updateUser(String login, String pass, String status);

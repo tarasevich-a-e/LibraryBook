@@ -48,7 +48,7 @@ public class NewsServiceimpl implements Services {
     }
 
     @Override
-    public boolean autorizationElement(String login, String pass, String status) {
-        return false;
+    public User autorizationElement(String login, String pass, String status) {
+        return null;
     }
 }

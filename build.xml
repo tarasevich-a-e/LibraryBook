@@ -3,8 +3,9 @@
 
     <property name="dest.dir" value="web/WEB-INF/classes"/>
     <property name="dir.lib" value="./lib"/>
+    <!--property name="file.log" value="C:/Documents and Settings/atarasevich/IdeaProjects/Getman/log_file - LibraryBook.log"/-->
     <property name="dir.resource" value="./src/resource"/>
-    <property name="project.name" value="library"/>
+    <property name="project.name" value="Library"/>
     <property name="build.dir" value="./web"/>
     <property name="tomcat" value="C:/Program Files/Apache Software Foundation/apache-tomcat-8.5.4"/>
     <property name="tomcat.webapps" value="C:/Program Files/Apache Software Foundation/apache-tomcat-8.5.4/webapps"/>
@@ -20,18 +21,22 @@
         <pathelement location="lib/javax.servlet.jar"/>
         <pathelement location="lib/gson-2.2.2.jar"/>
         <pathelement location="lib/mysql-connector-java-5.1.39-bin.jar"/>
+        <!--pathelement location="src/main/resources/log4j.properties"/-->
     </path>
 
     <target name="1. clear">
         <delete dir="${tomcat}/logs"/>
         <delete dir="${dest.dir}"/>
         <delete dir="${tomcat.webapps}/${project.name}"/>
+        <delete dir="${tomcat.webapps}/ROOT"/>
         <delete file="${tomcat.webapps}/${project.name}.war"/>
-        <delete file="${tomcat.bin}/log_prog.txt"/>
+        <delete file="${tomcat.bin}/log_prog.txt"/><!--Собственный лог, после подключения log4j удалить-->
+        <!--delete file="${file.log}"/-->
     </target>
 
     <target name="2. make_dest_dir">
         <mkdir dir="${dest.dir}"/>
+        <mkdir dir="${tomcat.webapps}/ROOT"/>
     </target>
 
     <target name="3. compile" depends="1. clear, 2. make_dest_dir">
@@ -72,6 +77,11 @@
                 <include name="*.war"/>
             </fileset>
         </copy>
+        <!--Put in to ROOT-->
+        <copy todir="${tomcat.webapps}/ROOT">
+            <fileset dir="${build.dir}"/>
+        </copy>
+
     </target>
 
     <!--Для работы с MySQL-->
@@ -127,5 +137,12 @@
         </exec>
     </target>
 
+    <target name="9.4. start.browser(ROOT)" depends="9.1. start.tomcat">
+        <exec executable="cmd" dir="${tomcat.bin}">
+            <arg value="/c"/>
+            <arg value="${brawser}"/>
+            <arg value="${host}:${port}/"/>
+        </exec>
+    </target>
 
 </project>

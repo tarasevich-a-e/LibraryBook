@@ -3,11 +3,13 @@ package ru.library.UserInterface;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import ru.library.Entity.User;
 import ru.library.Factory.FactoryService;
 import ru.library.Services.Services;
 import ru.library.ToolsUserInterface.LogF;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -45,17 +47,55 @@ public class ServletSignIn extends HttpServlet {
         //////////////////////////////////Получем информацию из сервисов////////////////////////////////////////////////
         //Проверяем авторизовался ли пользователь
         boolean statusUser = false;
-        if(parametriRequest.has("login") != false && parametriRequest.has("pass") != false) {
-            Services user = FactoryService.getService("User");
-            statusUser = user.autorizationElement(parametriRequest.get("login").toString(),parametriRequest.get("pass").toString(), parametriRequest.get("status").toString());
+        if(parametriRequest.has("status") != false) {
+            //Если параметр статус существует
+            if (parametriRequest.get("status").toString().equals("true")) {
+                //Делаем аутентификацию и авторизацию пользователя
+                if (parametriRequest.has("login") != false && parametriRequest.has("pass") != false) {
+                    Services user = FactoryService.getService("User");
+                    User user_p = user.autorizationElement(parametriRequest.get("login").toString(), parametriRequest.get("pass").toString(), parametriRequest.get("status").toString());
+                    if (user_p == null) {
+                        //Если вернулся null - пользователя с такой парой логин и пароль нету
+                        statusUser = false;
+                    } else {
+                        //Такой логин и пароль есть
+                        int hc = user_p.getLogin_u().hashCode();
+                        req.getSession().setAttribute(String.valueOf(hc), user_p);
+                        Cookie cookie = new Cookie("brain",String.valueOf(hc));
+                        resp.addCookie(cookie);
+                        statusUser = true;
+                    }
+                }
+            }
+            if (parametriRequest.get("status").toString().equals("false")) {
+                //Делаем аутентификацию и авторизацию пользователя
+                if (parametriRequest.has("login") != false) {
+                    Services user = FactoryService.getService("User");
+                    User user_p = user.autorizationElement(parametriRequest.get("login").toString(), "", parametriRequest.get("status").toString());
+                    if (user_p == null) {
+                        //Если вернулся null - пользователя с таким логином не существует
+                        statusUser = false;
+                    } else {
+                        //Такой логин есть выходим
+                        int hc = user_p.getLogin_u().hashCode();
+                        //Пользователь вышел, затираем авторизацию
+                        req.getSession().removeAttribute(String.valueOf(hc));
+                        Cookie cookie = new Cookie("brain","");
+                        resp.addCookie(cookie);
+                        statusUser = false;
+                    }
+                }
+
+            }
         }
         ///////////////////////////////Формируем JSON для отправки клиенту//////////////////////////////////////////////
         logF.writeLog(">ServletSignIn: statusUser = " + statusUser);
 
-        String strJSON = "[{\"user\","+ "{\"online\",\"" + statusUser  +"\"}" +
-                "}]";
+        String strJSON = "{\"user\":"+ "{\"online\":" + statusUser  +"}" +
+                "}";
         Gson gson = new Gson();
         strJSON = gson.toJson(strJSON);
+
         ///////////////////////////////////////Ложим данные в ответ/////////////////////////////////////////////////////
         PrintWriter printWriter = resp.getWriter();
         printWriter.print(strJSON);

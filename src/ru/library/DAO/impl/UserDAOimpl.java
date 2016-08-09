@@ -1,13 +1,7 @@
 package ru.library.DAO.impl;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import ru.library.DAO.iDAO;
-import ru.library.Entity.Book;
 import ru.library.Entity.User;
-import ru.library.Factory.FactoryService;
-import ru.library.Services.Services;
 import ru.library.ToolsUserInterface.LogF;
 
 import java.sql.Connection;
@@ -15,7 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Properties;
 
 /**
@@ -64,7 +57,7 @@ public class UserDAOimpl implements iDAO {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////Получение статуса пользователя из БД///////////////////////////////////////////
     @Override
-    public boolean getValue(String name) {
+    public ArrayList<User> getValue(String name) {
         ArrayList<User> users = new ArrayList<User>();
 
         try {
@@ -92,13 +85,8 @@ public class UserDAOimpl implements iDAO {
         } catch (SQLException var5) {
             var5.printStackTrace();
         }
-        if(users.size() != 0) {
 
-            logF.writeLog(">UserDAOimpl: Данные из БД статус - " + users.get(0).isStatus_u());
-            if(users.get(0).isStatus_u().equals("true")){return true;}
-        }
-        logF.writeLog(">UserDAOimpl: БД не прочитана");
-        return false;
+        return users;
 
     }
 

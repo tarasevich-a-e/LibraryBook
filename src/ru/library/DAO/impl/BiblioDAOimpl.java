@@ -79,8 +79,8 @@ public class BiblioDAOimpl implements iDAO {
     }
 
     @Override
-    public boolean getValue(String name) {
-        return false;
+    public ArrayList<User> getValue(String name) {
+        return null;
     }
 
     @Override

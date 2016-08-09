@@ -7,6 +7,7 @@ import ru.library.Services.Services;
 import ru.library.ToolsUserInterface.LogF;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -52,10 +53,26 @@ public class ServletStart extends HttpServlet{
         String listNews = news.getAllElements();
         //Проверяем авторизовался ли пользователь
         boolean statusUser = false;
+        Cookie[] mas_cook = req.getCookies();
+        String find_cook = "";
+        for (int i = 0; i < mas_cook.length; i++) {
+            if(mas_cook[i].getName().equals("brain")){
+                find_cook = mas_cook[i].getValue();
+                break;
+            }
+        }
+        if (req.getSession().getAttribute(find_cook) != null) {
+            //Пользователь авторизован
+            statusUser = true;
+        }
+
+
+        /*
         if(parametriRequest.has("login")) {
             Services user = FactoryService.getService("User");
              statusUser = user.inspectionElement(parametriRequest.get("login").toString());
         }
+        */
         ///////////////////////////////Формируем JSON для отправки клиенту//////////////////////////////////////////////
         /*Ошибка в формате передачи, для разбора необходимо чтобы на клиенте строка распозновалась как объект JSON*/
         logF.writeLog(">ServletStart: *****************");
@@ -64,11 +81,11 @@ public class ServletStart extends HttpServlet{
         logF.writeLog(">ServletStart: " + listNews);
         logF.writeLog(">ServletStart: *****************");
 
-        String strJSON = "[{\"biblio\","+ infoAboutBiblio +"," +
+        String strJSON = "{\"biblio\","+ infoAboutBiblio +"," +
                 "\"book\","+ listBook + "," +
                 "\"news\","+ listNews + "," +
                 "\"user\","+ "{\"online\",\"" + statusUser  +"\"}" +
-                "}]";
+                "}";
         /*
         //ТЕСТ
         String strJSON = "[{\"biblio\","+ "{\"history_b\":\"Библиотека\",\"adress_b\":\"Москва\",\"director_b\":\"Иванова\",\"worktime_b\":\"Рабочие дни\"}]" +"," +

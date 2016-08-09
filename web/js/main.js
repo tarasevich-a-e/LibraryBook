@@ -20,7 +20,7 @@ app.controller('ctrlMid', function($scope, $rootScope, $http){
 app.controller('ctrlFoot', function($scope,$http){
     $scope.s1 = function(){
     //----/index.html
-    $http.post('/library/ind','{"login":"masha"}')
+    $http.post('/ind','{"login":"masha"}')
         .success(function(data){
                 console.log('data = ',data);
                 $scope.records = data;
@@ -41,26 +41,7 @@ app.controller('ctrlFoot', function($scope,$http){
                 });
 
     };
-    $scope.s3 = function(){
-    $http.post('/library/signin','{login:masha,pass:777,status:true}')
-         .success(function(data){
-                        console.log('data = ',data);
-                    })
-         .error(function(data){
-                        console.log('data = ', data);
-                        console.log('Запрос не прошел!');
-                    });
-    };
-    $scope.s3_1 = function(){
-        $http.post('/library/signin','{login:masha,pass:777,status:false}')
-             .success(function(data){
-                            console.log('data = ',data);
-                        })
-             .error(function(data){
-                            console.log('data = ', data);
-                            console.log('Запрос не прошел!');
-                        });
-        };
+
     $scope.s4 = function(){
     $http.get('/library/find_book?book_id=-1&rasdel=rasdel&book_name=Конек-горбунок&book_author=-1&book_release=1940&zapis_begin=1&zapis_end=10&version_bd=-1&book_datecorr=-1&book_dateloadbd=-1')
             .success(function(data){

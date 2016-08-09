@@ -2,7 +2,6 @@ package ru.library.DAO.impl;
 
 import com.google.gson.Gson;
 import ru.library.DAO.iDAO;
-import ru.library.Entity.Book;
 import ru.library.Entity.News;
 import ru.library.Entity.User;
 import ru.library.ToolsUserInterface.LogF;
@@ -81,8 +80,8 @@ public class NewsDAOimpl implements iDAO {
     }
 
     @Override
-    public boolean getValue(String name) {
-        return false;
+    public ArrayList<User> getValue(String name) {
+        return null;
     }
 
     @Override

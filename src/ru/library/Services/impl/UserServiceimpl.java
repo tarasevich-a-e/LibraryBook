@@ -5,6 +5,8 @@ import ru.library.Entity.User;
 import ru.library.Factory.FactoryDAO;
 import ru.library.Services.Services;
 
+import java.util.ArrayList;
+
 
 /**
  * Created by atarasevich on 22.07.16.
@@ -34,9 +36,15 @@ public class UserServiceimpl implements Services {
     public boolean inspectionElement(String inspElement) {
         iDAO userDAO = FactoryDAO.getDAO("User");
         userDAO.connectionToBD();
-        boolean status = userDAO.getValue(inspElement);
+        ArrayList<User> users = userDAO.getValue(inspElement);
+        if(users.size() != 0) {
+            if(users.get(0).isStatus_u().equals("true")){
+                userDAO.disconnectWithBD();
+                return true;
+            }
+        }
         userDAO.disconnectWithBD();
-        return status;
+        return false;
     }
 
     @Override
@@ -50,11 +58,28 @@ public class UserServiceimpl implements Services {
     }
 
     @Override
-    public boolean autorizationElement(String login, String pass, String status) {
+    public User autorizationElement(String login, String pass, String status) {
         iDAO userDAO = FactoryDAO.getDAO("User");
         userDAO.connectionToBD();
-        boolean status_op = userDAO.updateUser(login, pass, status);
+        ArrayList<User> users = userDAO.getValue(login);
+        boolean status_op = false;
+        if (users.size() > 1){
+            //Вывести в лог предупреждение о неуникальности логина
+        }
+        if(users.size() != 0) {
+            if (status.equals("false")) {
+                //Если пользователь выходит и он найден, возвращаем его в сервлет
+                return users.get(0);
+            } else {
+                //Если пользователь пытается авторизоваться(заходит), то проверяем его пароль
+                if (users.get(0).getPass_u().equals(pass)) {
+                    //Если пароль верен, возвращаем пользователя в сервлет
+                    return users.get(0);
+                }
+            }
+        }
+
         userDAO.disconnectWithBD();
-        return status_op;
+        return null;
     }
 }
