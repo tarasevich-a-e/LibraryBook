@@ -6,28 +6,25 @@
     <link type="text/css" rel="stylesheet" href="css/style.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
-    <script src="js/script.js"></script>
-
 </head>
 <body>
 <!--Панель выбора действий-->
 <div id="head_p">
     <div id="head_zagolovok">
-        <h1>Библиотека</h1>
+        <a href="/"><h1>Библиотека</h1></a>
     </div>
     <div id="panel_button">
         <div class="panel_button_detal">
-            <button class="btn_m" id="find">Поиск</button>
+            <button class="btn_m" id="find" onclick="ButtonClickFind()">Поиск</button>
         </div>
         <div class="panel_button_detal">
-            <button class="btn_m" id="add">Добавить</button>
+            <button class="btn_m" id="add" onclick="ButtonClickAdd()">Добавить</button>
         </div>
         <div class="panel_button_detal">
-            <button class="btn_m" id="redact">Изменить</button>
+            <button class="btn_m" id="redact" onclick="ButtonClickRedact()">Изменить</button>
         </div>
         <div class="panel_button_detal">
-            <button class="btn_m" id="del">Удалить</button>
+            <button class="btn_m" id="del" onclick="ButtonClickDel()">Удалить</button>
         </div>
     </div>
     <div id="head_authorization">
@@ -61,7 +58,7 @@
 <div id="midl_p" ng-controller="ctrlMid">
         <div class="block_detal">
             <h3>Раздел</h3>
-            <select class="edt" ng-model="type_b">
+            <select id="sblock_detal" class="edt" ng-model="type_b">
                 <option>Все</option>
                 <option>Экономика</option>
                 <option>Программирование</option>
@@ -72,34 +69,78 @@
         </div>
         <div class="block_detal">
             <h3>Название книги</h3>
-            <input type="text" class="edt" ng-model="name_b">
+            <input id="isblock_detal_name" type="text" class="edt" ng-model="name_b">
         </div>
         <div class="block_detal">
             <h3>Автор</h3>
-            <input type="text" class="edt" ng-model="author_b">
+            <input id="isblock_detal_author" type="text" class="edt" ng-model="author_b">
         </div>
         <div class="block_detal">
             <h3>Дата выпуска</h3>
-            <input type="text" class="edt" ng-model="release_b">
+            <input id="isblock_detal_release" type="text" class="edt" ng-model="release_b">
         </div>
         <div class="block_detal">
-                <button class="btn_e" ng-click="sendDate()">ОК</button>
-                <button class="btn_e">Отмена</button>
+                <button id="block_detal_b_ok" class="btn_e" onclick="ButtonClickOK()">ОК</button>
+                <button class="btn_e" onclick="ButtonClickOtmena()">Отмена</button>
         </div>
 </div>
 <!--Вывод БД-->
-<div id="foot_p" ng-controller="ctrlFoot">
-    <button ng-click="s1()">/index.html</button>
+<div  ng-controller="ctrlFoot">
     <button ng-click="s2()">/signup</button>
     <button ng-click="s4()">/find_book</button>
     <button ng-click="s5()">/add_book</button>
     <button ng-click="s6()">/redact_book</button>
     <button ng-click="s7()">/delete_book</button>
     <button ng-click="s8()">/user.html</button>
-    <!--p>Books</p>
-    <div ng-repeat="record in records">
-    <div>{{record}}</div>
-    </div-->
+
+</div>
+<div id="biblio">
+    <div id="biblio_head">
+        <h1>Описание библиотеки</h1>
+    </div>
+    <div id="biblio_block_e1" class="cbiblio_block">
+
+    </div>
+    <div id="biblio_block_e2" class="cbiblio_block">
+
+    </div>
+    <div id="biblio_block_e3" class="cbiblio_block">
+
+    </div>
+    <div id="biblio_block_e4" class="cbiblio_block">
+
+    </div>
+</div>
+<div id="news">
+    <div id="news_head">
+        <h1>Новости</h1>
+    </div>
+    <div id="news_block">
+        <!--Dinamic block-->
+        <div id="news_block_n1" class="cnews_block">
+            Я новость
+        </div>
+        <div id="news_block_n2" class="cnews_block">
+            Я новость2
+        </div>
+    </div>
+</div>
+<div id="books">
+    <div id="books_head">
+        <h1>Книги</h1>
+    </div>
+    <div id="books_block">
+        <!--Dinamic block-->
+        <table id="books_table">
+            <tr>
+                <th>    </th>
+                <th>Название</th>
+                <th>Автор</th>
+                <th>Год издания</th>
+                <th>Раздел</th>
+            </tr>
+        </table>
+    </div>
 </div>
 <script src="js/script_js.js"></script>
 </body>

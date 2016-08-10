@@ -18,18 +18,7 @@ app.controller('ctrlMid', function($scope, $rootScope, $http){
 });
 
 app.controller('ctrlFoot', function($scope,$http){
-    $scope.s1 = function(){
-    //----/index.html
-    $http.post('/ind','{"login":"masha"}')
-        .success(function(data){
-                console.log('data = ',data);
-                $scope.records = data;
-            })
-            .error(function(data){
-                console.log('data = ', data);
-                console.log('Запрос не прошел!');
-            });
-    };
+
     $scope.s2 = function(){
     $http.post('/library/signup','{"login":"masha","pass":"777","user_f":"Дудикова","user_n":"Маша","user_o":"Ивановна","user_dr":"2016.02.23 00:00:00"}')
         .success(function(data){

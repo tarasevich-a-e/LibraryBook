@@ -1,0 +1,247 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 41656 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:390), pid=3208, tid=4676
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_25-b32) (build 1.8.0_25-b32)
+# Java VM: Java HotSpot(TM) Client VM (25.25-b02 mixed mode, sharing windows-x86 )
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x003cb000):  JavaThread "main" [_thread_in_native, id=4676, stack(0x00900000,0x00b00000)]
+
+Stack: [0x00900000,0x00b00000],  sp=0x00afeac8,  free space=2042k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x19796b]
+V  [jvm.dll+0x190928]
+V  [jvm.dll+0x81b15]
+V  [jvm.dll+0x81e8a]
+V  [jvm.dll+0x98664]
+V  [jvm.dll+0x34324]
+V  [jvm.dll+0x3558f]
+V  [jvm.dll+0x35271]
+V  [jvm.dll+0x48263]
+V  [jvm.dll+0x4893a]
+V  [jvm.dll+0x49b60]
+V  [jvm.dll+0x49baa]
+V  [jvm.dll+0xa0c48]
+V  [jvm.dll+0x75fe2]
+V  [jvm.dll+0x761c7]
+j  com.sun.org.apache.xerces.internal.parsers.XML11Configuration.<init>(Lcom/sun/org/apache/xerces/internal/util/SymbolTable;Lcom/sun/org/apache/xerces/internal/xni/grammars/XMLGrammarPool;Lcom/sun/org/apache/xerces/internal/xni/parser/XMLComponentManager;)V+697
+j  com.sun.org.apache.xerces.internal.parsers.XIncludeAwareParserConfiguration.<init>(Lcom/sun/org/apache/xerces/internal/util/SymbolTable;Lcom/sun/org/apache/xerces/internal/xni/grammars/XMLGrammarPool;Lcom/sun/org/apache/xerces/internal/xni/parser/XMLComponentManager;)V+4
+j  com.sun.org.apache.xerces.internal.parsers.XIncludeAwareParserConfiguration.<init>()V+4
+j  com.sun.org.apache.xerces.internal.parsers.SAXParser.<init>(Lcom/sun/org/apache/xerces/internal/util/SymbolTable;Lcom/sun/org/apache/xerces/internal/xni/grammars/XMLGrammarPool;)V+5
+j  com.sun.org.apache.xerces.internal.parsers.SAXParser.<init>()V+3
+j  com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.<init>(Lcom/sun/org/apache/xerces/internal/jaxp/SAXParserImpl;Lcom/sun/org/apache/xerces/internal/utils/XMLSecurityPropertyManager;Lcom/sun/org/apache/xerces/internal/utils/XMLSecurityManager;)V+1
+j  com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.<init>(Lcom/sun/org/apache/xerces/internal/jaxp/SAXParserFactoryImpl;Ljava/util/Hashtable;Z)V+46
+j  com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl.newSAXParser()Ljavax/xml/parsers/SAXParser;+13
+j  org.apache.tools.ant.util.JAXPUtils.newSAXParser(Ljavax/xml/parsers/SAXParserFactory;)Ljavax/xml/parsers/SAXParser;+1
+j  org.apache.tools.ant.util.JAXPUtils.getNamespaceXMLReader()Lorg/xml/sax/XMLReader;+3
+j  org.apache.tools.ant.helper.ProjectHelper2.parse(Lorg/apache/tools/ant/Project;Ljava/lang/Object;Lorg/apache/tools/ant/helper/ProjectHelper2$RootHandler;)V+243
+j  org.apache.tools.ant.helper.ProjectHelper2.parse(Lorg/apache/tools/ant/Project;Ljava/lang/Object;)V+223
+j  org.apache.tools.ant.ProjectHelper.configureProject(Lorg/apache/tools/ant/Project;Ljava/io/File;)V+27
+j  org.apache.tools.ant.Main.runBuild(Ljava/lang/ClassLoader;)V+373
+j  org.apache.tools.ant.Main.startAnt([Ljava/lang/String;Ljava/util/Properties;Ljava/lang/ClassLoader;)V+84
+j  org.apache.tools.ant.Main.start([Ljava/lang/String;Ljava/util/Properties;Ljava/lang/ClassLoader;)V+12
+j  org.apache.tools.ant.Main.main([Ljava/lang/String;)V+3
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x147285]
+V  [jvm.dll+0x20d19e]
+V  [jvm.dll+0x14731e]
+V  [jvm.dll+0x1537fa]
+V  [jvm.dll+0x153a53]
+V  [jvm.dll+0xf53b3]
+C  [java.dll+0x3a75]
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+56
+j  com.intellij.rt.ant.execution.AntMain2.main([Ljava/lang/String;)V+35
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x147285]
+V  [jvm.dll+0x20d19e]
+V  [jvm.dll+0x14731e]
+V  [jvm.dll+0xd0957]
+V  [jvm.dll+0xd8eff]
+C  [java.exe+0x20fd]
+C  [java.exe+0xab91]
+C  [java.exe+0xac1b]
+C  [kernel32.dll+0xb729]
+C  0x00000000
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.sun.org.apache.xerces.internal.parsers.XML11Configuration.<init>(Lcom/sun/org/apache/xerces/internal/util/SymbolTable;Lcom/sun/org/apache/xerces/internal/xni/grammars/XMLGrammarPool;Lcom/sun/org/apache/xerces/internal/xni/parser/XMLComponentManager;)V+697
+j  com.sun.org.apache.xerces.internal.parsers.XIncludeAwareParserConfiguration.<init>(Lcom/sun/org/apache/xerces/internal/util/SymbolTable;Lcom/sun/org/apache/xerces/internal/xni/grammars/XMLGrammarPool;Lcom/sun/org/apache/xerces/internal/xni/parser/XMLComponentManager;)V+4
+j  com.sun.org.apache.xerces.internal.parsers.XIncludeAwareParserConfiguration.<init>()V+4
+j  com.sun.org.apache.xerces.internal.parsers.SAXParser.<init>(Lcom/sun/org/apache/xerces/internal/util/SymbolTable;Lcom/sun/org/apache/xerces/internal/xni/grammars/XMLGrammarPool;)V+5
+j  com.sun.org.apache.xerces.internal.parsers.SAXParser.<init>()V+3
+j  com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.<init>(Lcom/sun/org/apache/xerces/internal/jaxp/SAXParserImpl;Lcom/sun/org/apache/xerces/internal/utils/XMLSecurityPropertyManager;Lcom/sun/org/apache/xerces/internal/utils/XMLSecurityManager;)V+1
+j  com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.<init>(Lcom/sun/org/apache/xerces/internal/jaxp/SAXParserFactoryImpl;Ljava/util/Hashtable;Z)V+46
+j  com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl.newSAXParser()Ljavax/xml/parsers/SAXParser;+13
+j  org.apache.tools.ant.util.JAXPUtils.newSAXParser(Ljavax/xml/parsers/SAXParserFactory;)Ljavax/xml/parsers/SAXParser;+1
+j  org.apache.tools.ant.util.JAXPUtils.getNamespaceXMLReader()Lorg/xml/sax/XMLReader;+3
+j  org.apache.tools.ant.helper.ProjectHelper2.parse(Lorg/apache/tools/ant/Project;Ljava/lang/Object;Lorg/apache/tools/ant/helper/ProjectHelper2$RootHandler;)V+243
+j  org.apache.tools.ant.helper.ProjectHelper2.parse(Lorg/apache/tools/ant/Project;Ljava/lang/Object;)V+223
+j  org.apache.tools.ant.ProjectHelper.configureProject(Lorg/apache/tools/ant/Project;Ljava/io/File;)V+27
+j  org.apache.tools.ant.Main.runBuild(Ljava/lang/ClassLoader;)V+373
+j  org.apache.tools.ant.Main.startAnt([Ljava/lang/String;Ljava/util/Properties;Ljava/lang/ClassLoader;)V+84
+j  org.apache.tools.ant.Main.start([Ljava/lang/String;Ljava/util/Properties;Ljava/lang/ClassLoader;)V+12
+j  org.apache.tools.ant.Main.main([Ljava/lang/String;)V+3
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+56
+j  com.intellij.rt.ant.execution.AntMain2.main([Ljava/lang/String;)V+35
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x02c51800 JavaThread "Service Thread" daemon [_thread_blocked, id=2628, stack(0x0ba60000,0x0bc60000)]
+  0x02c3a400 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=3980, stack(0x02d90000,0x02de0000)]
+  0x02c38800 JavaThread "Attach Listener" daemon [_thread_blocked, id=2424, stack(0x0b860000,0x0ba60000)]
+  0x02c37800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=1456, stack(0x0b660000,0x0b860000)]
+  0x02bd6800 JavaThread "Finalizer" daemon [_thread_blocked, id=3824, stack(0x0b460000,0x0b660000)]
+  0x02bd1800 JavaThread "Reference Handler" daemon [_thread_blocked, id=3328, stack(0x0b260000,0x0b460000)]
+=>0x003cb000 JavaThread "main" [_thread_in_native, id=4676, stack(0x00900000,0x00b00000)]
+
+Other Threads:
+  0x02bcf400 VMThread [stack: 0x02d30000,0x02d80000] [id=660]
+  0x02c6b800 WatcherThread [stack: 0x0bc60000,0x0bcb0000] [id=1548]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 4928K, used 4401K [0x02e00000, 0x03350000, 0x058a0000)
+  eden space 4416K,  99% used [0x02e00000, 0x0324c530, 0x03250000)
+  from space 512K,   0% used [0x03250000, 0x03250000, 0x032d0000)
+  to   space 512K,   0% used [0x032d0000, 0x032d0000, 0x03350000)
+ tenured generation   total 10944K, used 0K [0x058a0000, 0x06350000, 0x0ae00000)
+   the space 10944K,   0% used [0x058a0000, 0x058a0000, 0x058a0200, 0x06350000)
+ Metaspace       used 620K, capacity 2664K, committed 2752K, reserved 5504K
+
+Card table byte_map: [0x02cb0000,0x02d00000] byte_map_base: 0x02c99000
+
+Polling page: 0x00b00000
+
+CodeCache: size=32768Kb used=820Kb max_used=820Kb free=31947Kb
+ bounds [0x00b30000, 0x00c00000, 0x02b30000]
+ total_blobs=219 nmethods=73 adapters=78
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.164 Thread 0x02c3a400   69             java.util.Hashtable$Enumerator::hasMoreElements (53 bytes)
+Event: 0.165 Thread 0x02c3a400 nmethod 69 0x00bfae88 code [0x00bfaf80, 0x00bfb060]
+Event: 0.165 Thread 0x02c3a400   70             java.util.Properties::load0 (250 bytes)
+Event: 0.165 Thread 0x02c3a400 nmethod 70 0x00bfb108 code [0x00bfb250, 0x00bfb560]
+Event: 0.166 Thread 0x02c3a400   71  s          java.util.Hashtable::put (104 bytes)
+Event: 0.166 Thread 0x02c3a400 nmethod 71 0x00bfb8c8 code [0x00bfba10, 0x00bfbda0]
+Event: 0.175 Thread 0x02c3a400   72   !         sun.misc.URLClassPath$JarLoader::getResource (85 bytes)
+Event: 0.176 Thread 0x02c3a400 nmethod 72 0x00bfc288 code [0x00bfc400, 0x00bfc7a8]
+Event: 0.176 Thread 0x02c3a400   73             java.util.jar.JarFile::getEntry (22 bytes)
+Event: 0.176 Thread 0x02c3a400 nmethod 73 0x00bfcb88 code [0x00bfcca0, 0x00bfcdc8]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.175 Thread 0x003cb000 Exception <a 'java/security/PrivilegedActionException'> (0x031f0b90) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u25\2099\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.178 Thread 0x003cb000 Exception <a 'java/security/PrivilegedActionException'> (0x031fb6c0) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u25\2099\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.178 Thread 0x003cb000 Exception <a 'java/security/PrivilegedActionException'> (0x03200970) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u25\2099\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.179 Thread 0x003cb000 Exception <a 'java/security/PrivilegedActionException'> (0x03208bf8) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u25\2099\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.180 Thread 0x003cb000 Exception <a 'java/security/PrivilegedActionException'> (0x0320ecb8) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u25\2099\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.180 Thread 0x003cb000 Exception <a 'java/security/PrivilegedActionException'> (0x032191c0) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u25\2099\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.180 Thread 0x003cb000 Exception <a 'java/security/PrivilegedActionException'> (0x0321c998) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u25\2099\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.182 Thread 0x003cb000 Exception <a 'java/security/PrivilegedActionException'> (0x03221790) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u25\2099\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.184 Thread 0x003cb000 Exception <a 'java/security/PrivilegedActionException'> (0x0322bb60) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u25\2099\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.185 Thread 0x003cb000 Exception <a 'java/security/PrivilegedActionException'> (0x032356d8) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u25\2099\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+
+Events (10 events):
+Event: 0.190 loading class com/sun/org/apache/xerces/internal/parsers/XML11Configurable done
+Event: 0.191 loading class com/sun/org/apache/xerces/internal/util/ParserConfigurationSettings
+Event: 0.191 loading class com/sun/org/apache/xerces/internal/util/ParserConfigurationSettings done
+Event: 0.191 loading class com/sun/org/apache/xerces/internal/parsers/XML11Configuration done
+Event: 0.191 loading class com/sun/org/apache/xerces/internal/parsers/XIncludeAwareParserConfiguration done
+Event: 0.191 loading class com/sun/org/apache/xerces/internal/util/SymbolTable
+Event: 0.191 loading class com/sun/org/apache/xerces/internal/util/SymbolTable done
+Event: 0.191 loading class com/sun/org/apache/xerces/internal/util/SymbolTable$Entry
+Event: 0.191 loading class com/sun/org/apache/xerces/internal/util/SymbolTable$Entry done
+Event: 0.191 loading class com/sun/org/apache/xerces/internal/impl/XMLEntityManager
+
+
+Dynamic libraries:
+0x00400000 - 0x00430000 	C:\Program Files\Java\jdk1.8.0_25\bin\java.exe
+0x7c900000 - 0x7c9b3000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c8f8000 	C:\WINDOWS\system32\kernel32.dll
+0x77dc0000 - 0x77e6c000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77e70000 - 0x77f03000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77fe0000 - 0x77ff1000 	C:\WINDOWS\system32\Secur32.dll
+0x7e360000 - 0x7e3f1000 	C:\WINDOWS\system32\USER32.dll
+0x77f10000 - 0x77f59000 	C:\WINDOWS\system32\GDI32.dll
+0x773c0000 - 0x774c3000 	C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.6028_x-ww_61e65202\COMCTL32.dll
+0x77c00000 - 0x77c58000 	C:\WINDOWS\system32\msvcrt.dll
+0x77f60000 - 0x77fd6000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x76360000 - 0x7637d000 	C:\WINDOWS\system32\IMM32.DLL
+0x78aa0000 - 0x78b5f000 	C:\Program Files\Java\jdk1.8.0_25\jre\bin\msvcr100.dll
+0x6d250000 - 0x6d5f4000 	C:\Program Files\Java\jdk1.8.0_25\jre\bin\client\jvm.dll
+0x71ab0000 - 0x71aba000 	C:\WINDOWS\system32\WSOCK32.dll
+0x71a90000 - 0x71aa7000 	C:\WINDOWS\system32\WS2_32.dll
+0x71a80000 - 0x71a88000 	C:\WINDOWS\system32\WS2HELP.dll
+0x76b20000 - 0x76b4e000 	C:\WINDOWS\system32\WINMM.dll
+0x76be0000 - 0x76beb000 	C:\WINDOWS\system32\PSAPI.DLL
+0x6f6a0000 - 0x6f6ac000 	C:\Program Files\Java\jdk1.8.0_25\jre\bin\verify.dll
+0x6dad0000 - 0x6daf1000 	C:\Program Files\Java\jdk1.8.0_25\jre\bin\java.dll
+0x6f730000 - 0x6f743000 	C:\Program Files\Java\jdk1.8.0_25\jre\bin\zip.dll
+0x7c9c0000 - 0x7d1db000 	C:\WINDOWS\system32\SHELL32.dll
+0x769a0000 - 0x76a55000 	C:\WINDOWS\system32\USERENV.dll
+
+VM Arguments:
+jvm_args: -Xmx128m -Xss2m -Dant.home=C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant -Dant.library.dir=C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib -Dfile.encoding=UTF-8 
+java_command: com.intellij.rt.ant.execution.AntMain2 -logger com.intellij.rt.ant.execution.IdeaAntLogger2 -inputhandler com.intellij.rt.ant.execution.IdeaInputHandler -buildfile C:\Documents and Settings\atarasevich\IdeaProjects\LibraryBook\build.xml 9.4. start.browser(ROOT)
+java_class_path (initial): C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib\ant-antlr.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib\ant-apache-bcel.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib\ant-apache-bsf.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib\ant-apache-log4j.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib\ant-apache-oro.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib\ant-apache-regexp.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib\ant-apache-resolver.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib\ant-apache-xalan2.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib\ant-commons-logging.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib\ant-commons-net.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib\ant-jai.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib\ant-javamail.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib\ant-jdepend.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib\ant-jmf.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib\ant-jsch.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib\ant-junit.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib\ant-junit4.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib\ant-launcher.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib\ant-netrexx.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2016.1.3\lib\ant\lib\ant-swing.jar;C:\Program Files\Jet
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_25
+JRE_HOME=C:\Program Files\Java\jre1.8.0_101
+PATH=C:\Documents and Settings\All Users\Application Data\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\system32\WindowsPowerShell\v1.0;C:\Program Files\Git\cmd;C:\Program Files\Skype\Phone\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\Java\jdk1.8.0_25;C:\Program Files\Apache Software Foundation\apache-tomcat-8.5.4;C:\Program Files\Apache Software Foundation\apache-tomcat-8.5.4\bin;C:\WINDOWS\system32
+USERNAME=atarasevich
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 23 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 3
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 23 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, tsc
+
+Memory: 4k page, physical 3406892k(706368k free), swap 7430944k(5196k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.25-b02) for windows-x86 JRE (1.8.0_25-b32), built on Nov 18 2014 16:11:14 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Wed Aug 10 16:00:16 2016
+elapsed time: 0 seconds (0d 0h 0m 0s)
+

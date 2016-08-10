@@ -51,6 +51,8 @@ public class ServletStart extends HttpServlet{
         //Получаем информацию о новостях
         Services news = FactoryService.getService("News");
         String listNews = news.getAllElements();
+        /////////////////////////////////////////////////Проверяем сессию///////////////////////////////////////////////
+        System.err.println("Timout session = " + req.getSession().getMaxInactiveInterval());
         //Проверяем авторизовался ли пользователь
         boolean statusUser = false;
         Cookie[] mas_cook = req.getCookies();
@@ -81,19 +83,21 @@ public class ServletStart extends HttpServlet{
         logF.writeLog(">ServletStart: " + listNews);
         logF.writeLog(">ServletStart: *****************");
 
-        String strJSON = "{\"biblio\","+ infoAboutBiblio +"," +
-                "\"book\","+ listBook + "," +
-                "\"news\","+ listNews + "," +
-                "\"user\","+ "{\"online\",\"" + statusUser  +"\"}" +
-                "}";
         /*
-        //ТЕСТ
-        String strJSON = "[{\"biblio\","+ "{\"history_b\":\"Библиотека\",\"adress_b\":\"Москва\",\"director_b\":\"Иванова\",\"worktime_b\":\"Рабочие дни\"}]" +"," +
-                "\"book\","+ "[{\"id_b\":1,\"author_b\":\"А.С. Пушкин\",\"datecorr_b\":\"июл 19, 2016\",\"dateloadbd_b\":\"июл 19, 2016\",\"name_b\":\"Сказка о мертвой царевне\",\"release_b\":1920,\"type_b\":1},{\"id_b\":2,\"author_b\":\"Г.Х. Андерсен\",\"datecorr_b\":\"июл 19, 2016\",\"dateloadbd_b\":\"июл 19, 2016\",\"name_b\":\"Принцесса на горошине.\",\"release_b\":1960,\"type_b\":1}]" + "," +
-                "\"news\","+ "[{\"id_n\":1,\"date_n\":\"июл 20, 2016\",\"text_n\":\"По итогам Конкурса\"},{\"id_n\":2,\"date_n\":\"июл 20, 2016\",\"text_n\":\"С 20 июля по 31 августа\"}]" + "," +
-                "\"user\","+ "{\"online\",\"" + "true"  +"\"}" +
-                "}]";
+        //Good test
+        String strJSON = "{\"biblio\":"+ "5" +"," +
+                "\"book\":"+ "5" + "," +
+                "\"news\":"+ "5" + "," +
+                "\"user\":"+ "{\"online\":" + statusUser  +"}" +
+                "}";
         */
+        String strJSON = "{\"biblio\":"+ infoAboutBiblio +"," +
+                "\"book\":"+ listBook + "," +
+                "\"news\":"+ listNews + "," +
+                "\"user\":"+ "{\"online\":" + statusUser  +"}" +
+                "}";
+
+
         Gson gson = new Gson();
         strJSON = gson.toJson(strJSON);
         ///////////////////////////////////////Ложим данные в ответ/////////////////////////////////////////////////////

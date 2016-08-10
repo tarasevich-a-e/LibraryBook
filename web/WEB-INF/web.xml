@@ -4,6 +4,12 @@
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
+    <!--session-config>
+        <distributable>true</distributable>
+        <session-timeout>1</session-timeout>
+
+    </session-config-->
+
     <servlet>
         <servlet-name>ServletStart</servlet-name>
         <servlet-class>ru.library.UserInterface.ServletStart</servlet-class>

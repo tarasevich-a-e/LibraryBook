@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="library" default="9.1. start.tomcat">
 
-    <property name="dest.dir" value="web/WEB-INF/classes"/>
-    <property name="dir.lib" value="./lib"/>
-    <!--property name="file.log" value="C:/Documents and Settings/atarasevich/IdeaProjects/Getman/log_file - LibraryBook.log"/-->
-    <property name="dir.resource" value="./src/resource"/>
-    <property name="project.name" value="Library"/>
-    <property name="build.dir" value="./web"/>
     <property name="tomcat" value="C:/Program Files/Apache Software Foundation/apache-tomcat-8.5.4"/>
-    <property name="tomcat.webapps" value="C:/Program Files/Apache Software Foundation/apache-tomcat-8.5.4/webapps"/>
-    <property name="tomcat.bin" value="C:/Program Files/Apache Software Foundation/apache-tomcat-8.5.4/bin"/>
     <property name="mysql.dir" value="D:/WORK/App/MySQLSRV"/>
     <property name="brawser" value="C:/Program Files/Google/Chrome/Application/chrome.exe"/>
+
+    <property name="project.name" value="Library"/>
+
+    <property name="dest.dir" value="web/WEB-INF/classes"/>
+    <property name="dir.lib" value="./lib"/>
+    <property name="dir.resource" value="./src/resource"/>
+    <property name="build.dir" value="./web"/>
+    <!--property name="file.log" value="C:/Documents and Settings/atarasevich/IdeaProjects/Getman/log_file - LibraryBook.log"/-->
+
+    <property name="tomcat.webapps" value="${tomcat}/webapps"/>
+    <property name="tomcat.bin" value="${tomcat}/bin"/>
+
     <property name="host" value="http://localhost"/>
     <property name="port" value="8080"/>
 

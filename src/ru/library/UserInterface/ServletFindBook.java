@@ -8,6 +8,7 @@ import ru.library.Services.Services;
 import ru.library.ToolsUserInterface.LogF;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -36,6 +37,22 @@ public class ServletFindBook extends HttpServlet {
         ///////////////////////////////////Получем информацию от клиента////////////////////////////////////////////////
         JsonObject parametriRequest = CommonMetodForUI.getParametersOfTheReguestGET(req.getParameterMap());
         //////////////////////////////////Получем информацию из сервисов////////////////////////////////////////////////
+        ///////////////////////////////////////////
+        //Проверяем авторизовался ли пользователь
+        boolean statusUser = false;
+        Cookie[] mas_cook = req.getCookies();
+        String find_cook = "";
+        for (int i = 0; i < mas_cook.length; i++) {
+            if(mas_cook[i].getName().equals("brain")){
+                find_cook = mas_cook[i].getValue();
+                break;
+            }
+        }
+        if (req.getSession().getAttribute(find_cook) != null) {
+            //Пользователь авторизован
+            statusUser = true;
+        }
+        ///////////////////////////////////////////
         //Ищем книгу
         Services book = FactoryService.getService("Book");
 
@@ -49,12 +66,14 @@ public class ServletFindBook extends HttpServlet {
                 parametriRequest.get("rasdel").getAsInt()
         );
         String listBook = book.getElements(el_book); //возможен null, если нет книг удовлетворяющих запросу
-        listBook = listBook.substring(1, listBook.length()-1);
+        //listBook = listBook.substring(1, listBook.length()-1);
         ///////////////////////////////Формируем JSON для отправки клиенту//////////////////////////////////////////////
         logF.writeLog(">ServletFindBook: *****************");
         logF.writeLog(">ServletFindBook: listBook = " + listBook);
         logF.writeLog(">ServletFindBook: *****************");
-        String strJSON = "[{\"book\","+ listBook + "}]";
+        String strJSON = "{\"book\":"+ listBook +  "," +
+                "\"user\":"+ "{\"online\":" + statusUser  +"}" +
+                "}";
         Gson gson = new Gson();
         strJSON = gson.toJson(strJSON);
         ///////////////////////////////////////Ложим данные в ответ/////////////////////////////////////////////////////

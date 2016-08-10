@@ -1,5 +1,7 @@
 var mas_request = "";
 var win_api_signin = "/signin";
+var win_api_ind = "/ind";
+var win_api_find_book = "/find_book";
 //////////////////////////////////////////////////////АВТОРИЗАЦИЯ///////////////////////////////////////////////////////
 function SignIn(k_action) {
     //k_action - ключ действия автавторизации (true - авторизация, false - выход)
@@ -25,6 +27,41 @@ function SignIn(k_action) {
 
     //Отправляем данные
     SendForServer('POST', win_api_signin, mas_request);
+
+}
+//////////////////////////////////////////////////////ПОИСК КНИГИ///////////////////////////////////////////////////////
+function FindBook() {
+
+    //Считываем данные с полей запроса
+    var t_rasdel = document.getElementById("sblock_detal").options[document.getElementById("sblock_detal").selectedIndex].text;
+    var t_name = document.getElementById("isblock_detal_name").value;
+    var t_author = document.getElementById("isblock_detal_author").value;
+    var t_release = document.getElementById("isblock_detal_release").value;
+
+    //Проверяем введенные данные
+    if (t_rasdel == "") {t_rasdel = -1;}
+    if (t_name == "") {t_name = -1;}
+    if (t_author == "") {t_author = -1;}
+    if (t_release == "") {t_release = -1;}
+
+    //Формируем данные для отправки
+    //$http.get('/library/find_book?book_id=-1&rasdel=rasdel&book_name=Конек-горбунок&book_author=-1&book_release=1940
+    //&zapis_begin=1&zapis_end=10&version_bd=-1&book_datecorr=-1&book_dateloadbd=-1')
+    DelDataForSend();
+    PushDataForSend(1, "book_id", -1);
+    PushDataForSend(1, "rasdel", t_rasdel);
+    PushDataForSend(1, "book_name", "'" + t_name + "'");
+    PushDataForSend(1, "book_author", t_author);
+    PushDataForSend(1, "book_release", t_release);
+    PushDataForSend(1, "zapis_begin", 1);
+    PushDataForSend(1, "zapis_end", 10);
+    PushDataForSend(1, "version_bd", -1);
+    PushDataForSend(1, "book_datecorr", -1);
+    PushDataForSend(1, "book_dateloadbd", -1);
+    FPushForSend(1);
+
+    //Отправляем данные
+    SendForServer('GET', win_api_find_book + mas_request, null);
 
 }
 ////////////////////////////////////////Формируем данные для отправки на сервер/////////////////////////////////////////
@@ -62,8 +99,13 @@ function SendForServer(method, action, formData) {
     //Продумать завтра реализацию
     var zapros = new XMLHttpRequest();
 
+    //if (method != "GET"){
     zapros.open(method, action, true);
     zapros.send(formData);
+    //} else {
+        //zapros.open(method, action, true);
+        //zapros.send(formData);
+    //}
 
     console.group("Request");
         console.info("Method: " + method);
@@ -80,13 +122,15 @@ function SendForServer(method, action, formData) {
             //Ошибка при выполнении запроса
             console.error("Status: " + zapros.status);
             console.error("Text: " + zapros.statusText);
+            console.groupEnd();
         } else {
             //Запрос прошел обрабатываем данные
             console.info("Status: " + zapros.status);
             console.log("Text: " + zapros.responseText);
+            console.groupEnd();
             WorkWithResponse(action, JSON.parse(zapros.responseText));
         }
-        console.groupEnd();
+
     }
 
     return false;
@@ -98,6 +142,15 @@ function WorkWithResponse(url, response) {
         console.info("Work with response. URL: " + url);
         ResponseSignIn(response);
     }
+    if (url == win_api_ind) {
+        console.info("Work with response. URL: " + url);
+        ResponseInd(response);
+    }
+    if (url.substring(0,win_api_find_book.length) == win_api_find_book) {
+        console.info("Work with response. URL: " + url);
+        ResponseFindBook(response);
+    }
+
 }
 /////////////////////////////////////////////Обработка респонсе для SignIn//////////////////////////////////////////////
 function ResponseSignIn(response) {
@@ -149,13 +202,254 @@ function ResponseSignIn(response) {
 //Временно логируем cookie
 console.group("Cookie");
 console.info(document.cookie);
-console.groupEnd;
+console.groupEnd();
 }
+/////////////////////////////////////////////Обработка респонсе для SignIn//////////////////////////////////////////////
+function ResponseInd(response) {
 
-/*
-//Испытания
-function ready () {
+    var json_resp = JSON.parse(response);
+
+    console.group("Data for view");
+    console.log("User =" + json_resp.user);
+    console.log("Book =" + json_resp.book);
+    console.log("Biblio =" + json_resp.biblio);
+    console.log("News =" + json_resp.news);
+    console.groupEnd();
+
+    if (json_resp.user != null) {
+        //Если данные о присутствуют в ответе передаем их на авторизацию
+        ResponseSignIn(response);
+
+    }
+
+    if (json_resp.biblio != null) {
+        //Если данные о присутствуют в ответе передаем их на отображение
+        BiblioWriter(json_resp.biblio);
+    }
+
+    if (json_resp.news != null) {
+        //Если данные о присутствуют в ответе передаем их на отображение
+        NewsWriter(json_resp.news);
+    }
+
+    BookWriter(json_resp.book);
+
+    //Временно логируем cookie
+    console.group("Cookie");
+    console.info(document.cookie);
+    console.groupEnd;
+}
+/////////////////////////////////////////////Обработка респонсе для FindBook//////////////////////////////////////////////
+function ResponseFindBook(response) {
+    var json_resp = JSON.parse(response);
+
+    console.group("Data for view");
+    console.log("User =" + json_resp.user);
+    console.log("Book =" + json_resp.book);
+    console.groupEnd();
+
+    if (json_resp.user != null) {
+        //Если данные о присутствуют в ответе передаем их на авторизацию
+        ResponseSignIn(response);
+
+    }
+
+    BookWriter(json_resp.book);
+}
+//////////////////////////////////////////////Выводим данные о библиотеке///////////////////////////////////////////////
+function BiblioWriter(biblio) {
+    //Выводим данные о библиотеке
+    //Вставка в div с id = "biblio_block"
+    //var json_biblio = JSON.parse(biblio);  При передаче одного объекта парсер не потребовался
+
+    document.getElementById("biblio").style.opacity = 1;
+
+    document.getElementById("biblio_block_e1").innerHTML = "<p>" + biblio[0].history_b + "</p>";
+    document.getElementById("biblio_block_e2").innerHTML = "<p>" + biblio[0].adress_b + "</p>";
+    document.getElementById("biblio_block_e3").innerHTML = "<p>" + biblio[0].director_b + "</p>";
+    document.getElementById("biblio_block_e4").innerHTML = "<p>" + biblio[0].worktime_b + "</p>";
 
 }
-document.addEventListener("DOMContentLoaded", ready);
-*/
+/////////////////////////////////////////////////////Выводим новости////////////////////////////////////////////////////
+function NewsWriter(news) {
+    //Выводим данные о библиотеке
+    //Вставка в div с id = "news_block"
+
+    document.getElementById("news").style.opacity = 1;
+
+    //Динамически генерируем блок с новостями
+    //Очищаем от предыдущих значений
+    var del_el = document.getElementById("news_block");
+        del_el.parentNode.removeChild(del_el);
+    var new_el = document.createElement('div');
+        new_el.id = "news_block";
+        document.getElementById("news").appendChild(new_el);
+    //Создаем новый на основание данных с сервера
+    for (var i = 0; i <news.length; i++) {
+        var div_v = document.createElement('div');
+            div_v.className = "cnews_block";
+            div_v.id = "news_block_n" + i;
+            div_v.innerHTML = "<p>" + news[i].date_n + "  :  " + news[i].text_n + "</p>";
+            new_el.appendChild(div_v);
+    }
+
+}
+/////////////////////////////////////////////////Выводим данные о книгах////////////////////////////////////////////////
+function BookWriter(book) {
+    //Выводим данные о библиотеке
+    //Вставка в table с id = "books_table"
+
+    //Очищаем от предыдущих значений
+    var tab_id = document.getElementById("books_table");
+    var sl = tab_id.rows.length;
+    for (var i = 1; i <sl; i++) {
+        tab_id.removeChild(tab_id.rows[1]);
+    }
+    if (book != null){
+        //Создаем новые строчки в таблице и заполняем их книгами
+        for (var i = 0; i <book.length; i++) {
+            var tr_v = document.createElement('tr');
+            var td_v0 = document.createElement('td');
+            var in_v0 = document.createElement('input');
+                in_v0.id = "input_n" + i;
+                in_v0.name = "radio_group1";
+                in_v0.className = "inp_check";
+                in_v0.type = "radio";
+                in_v0.value = book[i].id_b;
+                td_v0.appendChild(in_v0);
+                tr_v.appendChild(td_v0);
+            var td_v1 = document.createElement('td');
+                td_v1.innerHTML = book[i].name_b;
+                td_v1.className = "td_name";
+                tr_v.appendChild(td_v1);
+            var td_v2 = document.createElement('td');
+                td_v2.innerHTML = book[i].author_b;
+                tr_v.appendChild(td_v2);
+            var td_v3 = document.createElement('td');
+                td_v3.innerHTML = book[i].release_b;
+                tr_v.appendChild(td_v3);
+            var td_v4 = document.createElement('td');
+                td_v4.innerHTML = book[i].type_b;     //Позже сделать замену, когда из базы будет возвращаться String
+                tr_v.appendChild(td_v4);
+                tab_id.appendChild(tr_v);
+        }
+    }
+
+document.getElementById("books").style.opacity = 1;
+
+}
+////////////////////////////////////////////Заполняем данными index.html////////////////////////////////////////////////
+function Ind () {
+    //debugger;
+    //Формируем данные для отправки
+    DelDataForSend();
+    FPushForSend(0);
+
+    //Отправляем данные (Запрос для проверки авторизации)
+    SendForServer('POST', win_api_ind, mas_request);
+
+}
+/////////////////////////////////При инициализации страницы запускаем функцию Ind///////////////////////////////////////
+document.addEventListener("DOMContentLoaded", Ind);
+///////////////////////////////////////////////Нажали на кнопку "ПОИСК"/////////////////////////////////////////////////
+function ButtonClickFind() {
+
+    ButCheck("find");
+
+}
+/////////////////////////////////////////////Нажали на кнопку "ДОБАВИТЬ"////////////////////////////////////////////////
+function ButtonClickAdd() {
+
+    ButCheck("add");
+
+}
+/////////////////////////////////////////////Нажали на кнопку "ИЗМЕНИТЬ"////////////////////////////////////////////////
+function ButtonClickRedact() {
+
+    ButCheck("redact");
+
+}
+//////////////////////////////////////////////Нажали на кнопку "УДАЛИТЬ"////////////////////////////////////////////////
+function ButtonClickDel() {
+
+    ButCheck("del");
+
+}
+/////////////////////////////////////////////Нажали на кнопку "ОТМЕНИТЬ"////////////////////////////////////////////////
+function ButtonClickOtmena() {
+
+    ButCheck("clear");
+
+}
+////////////////////////////////////////////////Нажали на кнопку "ОК"///////////////////////////////////////////////////
+function ButtonClickOK(id_action) {
+
+    //Если не выбран раздел
+    if (id_action == "") {
+        alert('Выберете действие, которое необходимо совершить над книжками!');
+        return;
+    }
+
+    //Раздел "Поиск"
+    if (id_action == "1") {
+        FindBook();
+    }
+
+    //Раздел "Добавление"
+    if (id_action == "2") {
+        alert('Будем добавлять!');
+    }
+
+    //Раздел "Изменение"
+    if (id_action == "3") {
+        alert('Будем изменять!');
+    }
+
+    //Раздел "Удаление"
+    if (id_action == "4") {
+        alert('Будем удалять!');
+    }
+
+}
+////////////////////////////////////////////////Изменить стиль нажатой кнопки///////////////////////////////////////////
+function ButCheck(select_but) {
+
+    //Настраиваем отображение блоков
+    if (select_but == "clear") {
+        //Делаем невидимым вспомагательный блок
+        document.getElementById("midl_p").style.display = 'none';
+    } else {
+        //Делаем видимым вспомагательный блок
+        document.getElementById("midl_p").style.display = 'block';
+        //Делаем невидимыми блоки "Новостей" и "Информации о библиотеке"
+        document.getElementById("biblio").style.display = 'none';
+        document.getElementById("news").style.display = 'none';
+    }
+
+    //Настраиваем выделение кнопок
+    if(select_but == "find") {
+        document.getElementById("find").style.backgroundColor = '#FDC402';
+        document.getElementById("block_detal_b_ok").setAttribute('onclick',"ButtonClickOK(1)");
+        block_detal_b_ok
+    } else {
+        document.getElementById("find").style.backgroundColor = 'gainsboro';
+    }
+    if(select_but == "add") {
+        document.getElementById("add").style.backgroundColor = '#FDC402';
+        document.getElementById("block_detal_b_ok").setAttribute('onclick',"ButtonClickOK(2)");
+    } else {
+        document.getElementById("add").style.backgroundColor = 'gainsboro';
+    }
+    if(select_but == "redact") {
+        document.getElementById("redact").style.backgroundColor = '#FDC402';
+        document.getElementById("block_detal_b_ok").setAttribute('onclick',"ButtonClickOK(3)");
+    } else {
+        document.getElementById("redact").style.backgroundColor = 'gainsboro';
+    }
+    if(select_but == "del") {
+        document.getElementById("del").style.backgroundColor = '#FDC402';
+        document.getElementById("block_detal_b_ok").setAttribute('onclick',"ButtonClickOK(4)");
+    } else {
+        document.getElementById("del").style.backgroundColor = 'gainsboro';
+    }
+}
