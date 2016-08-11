@@ -127,9 +127,37 @@ a {
     border: 1px solid;
     border-collapse: collapse;
 }
-td, th {
+.td_table_book {
     border: 1px solid;
 }
 .td_name {
     text-align: left;
 }
+/*/////////////////////user.html/////////////////////*/
+#head_zagolovok_2 {
+    width: 20%;
+    text-align: center;
+    margin: auto;
+}
+#dtable_user {
+    width: 100%;
+    text-align: center;
+}
+#table_user {
+    width: 50%;
+    border: 1px solid;
+}
+.btn_table_user {
+    width: 200px;
+}
+#dbtn_panel_user {
+    width: 50%;
+    text-align: center;
+}
+.btn_table_user_2 {
+    width: 49.7%;
+}
+.td_table_user {
+    text-align: left;
+}
+/*/////////////////////admin_home.html/////////////////////*/

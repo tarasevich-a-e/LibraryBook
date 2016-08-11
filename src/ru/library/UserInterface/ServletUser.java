@@ -18,7 +18,7 @@ public class ServletUser extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logF.writeLog("Сервлет ServletUser работает!");
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //req.getRequestDispatcher("/user.html").forward(req,resp);
     }
 }

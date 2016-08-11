@@ -5,6 +5,7 @@ var win_api_find_book = "/find_book";
 var win_api_add_book = "/add_book";
 var win_api_redact_book = "/redact_book";
 var win_api_delete_book = "/delete_book";
+var win_api_signup = "/signup";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////При инициализации страницы запускаем функцию Ind///////////////////////////////////////
 document.addEventListener("DOMContentLoaded", Ind);
@@ -177,7 +178,7 @@ function RedactBook() {
         //Отправляем данные
         SendForServer('POST', win_api_redact_book, mas_request);
     }
-
+return false;
 }
 ///////////////////////////////////////////////////УДАЛЕНИЕ КНИГИ/////////////////////////////////////////////////////
 function DeleteBook() {
@@ -302,7 +303,10 @@ function WorkWithResponse(url, response) {
         console.info("Work with response. URL: " + url);
         ResponseDeleteBook(response);
     }
-
+    if (url == win_api_signup) {
+        console.info("Work with response. URL: " + url);
+        ResponseSignUp(response);
+    }
 
 }
 /////////////////////////////////////////////Обработка респонсе для SignIn//////////////////////////////////////////////
@@ -534,19 +538,23 @@ function BookWriter(book) {
                 in_v0.type = "radio";
                 in_v0.value = book[i].id_b;
                 td_v0.appendChild(in_v0);
+                td_v0.className = "td_table_book";
                 tr_v.appendChild(td_v0);
             var td_v1 = document.createElement('td');
                 td_v1.innerHTML = book[i].name_b;
-                td_v1.className = "td_name";
+                td_v1.className = "td_name td_table_book";
                 tr_v.appendChild(td_v1);
             var td_v2 = document.createElement('td');
                 td_v2.innerHTML = book[i].author_b;
+                td_v2.className = "td_table_book";
                 tr_v.appendChild(td_v2);
             var td_v3 = document.createElement('td');
                 td_v3.innerHTML = book[i].release_b;
+                td_v3.className = "td_table_book";
                 tr_v.appendChild(td_v3);
             var td_v4 = document.createElement('td');
                 td_v4.innerHTML = book[i].type_b;     //Позже сделать замену, когда из базы будет возвращаться String
+                td_v4.className = "td_table_book";
                 tr_v.appendChild(td_v4);
                 tab_id.appendChild(tr_v);
         }
@@ -664,3 +672,71 @@ function ButCheck(select_but) {
         document.getElementById("del").style.backgroundColor = 'gainsboro';
     }
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////Регистрация пользователя/////////////////////////////////////////////
+/////////////////////////////////////////////////////////Очистка полей//////////////////////////////////////////////////
+function CleanField() {
+    document.getElementById("table_user_login").value = "";
+    document.getElementById("table_user_pass").value = "";
+    document.getElementById("table_user_fam").value = "";
+    document.getElementById("table_user_name").value = "";
+    document.getElementById("table_user_otch").value = "";
+    document.getElementById("table_user_dr").value = "";
+}
+///////////////////////////////////////////////////Отправка полей на сервер/////////////////////////////////////////////
+function SendFieldToServer() {
+    var flag_error = false;
+    var t_error = 'Пожалуйста, введите:\n';
+    //Считываем данные полей
+    var t_login = document.getElementById("table_user_login").value;
+    var t_pass = document.getElementById("table_user_pass").value;
+    var t_fam = document.getElementById("table_user_fam").value;
+    var t_name = document.getElementById("table_user_name").value;
+    var t_otch = document.getElementById("table_user_otch").value;
+    var t_dr = document.getElementById("table_user_dr").value;
+
+    //Проверяем данные полей
+
+    if (t_login == "") {flag_error = true; t_error +='- Логин;\n';}
+    if (t_pass == "") {flag_error = true; t_error +='- Пароль;\n';}
+    if (t_fam == "") {flag_error = true; t_error +='- Фамилию;\n';}
+    if (t_name == "") {flag_error = true; t_error +='- Имя;\n';}
+    if (t_otch == "") {flag_error = true; t_error +='- Отчество;\n';}
+    if (t_dr == "") {flag_error = true; t_error +='- День рождение;\n';}
+    t_error += 'Пользователь не зарегистрирован!';
+
+    if (flag_error == false) {
+        //Добавляем книгу
+        //Формируем данные для отправки
+        //{"user_f":"Дудикова","user_n":"Маша","user_o":"Ивановна","user_dr":"2016.02.23 00:00:00"}
+        DelDataForSend();
+        PushDataForSend(0, "login", "\"" + t_login + "\"");
+        PushDataForSend(0, "pass", "\"" + t_pass + "\"");
+        PushDataForSend(0, "user_f", "\"" + t_fam + "\"");
+        PushDataForSend(0, "user_n", "\"" + t_name + "\"");
+        PushDataForSend(0, "user_o", "\"" + t_otch + "\"");
+        PushDataForSend(0, "user_dr", "\"" + t_dr + "\"");
+        FPushForSend(0);
+
+        //Отправляем данные
+        SendForServer('POST', win_api_signup, mas_request);
+    } else {
+        //Ничего не отправляем на сервер, выдаем предупреждение пользователю
+        alert(t_error);
+    }
+}
+////////////////////////////////////////////Обработка респонсе для FindBook/////////////////////////////////////////////
+function ResponseSignUp(response) {
+    var json_resp = JSON.parse(response);
+
+    /*console.group("Data for view");
+    console.log("User =" + json_resp.user);
+    console.log("Book =" + json_resp.book);
+    console.groupEnd();*/
+
+    if (json_resp.user.status == true) {
+        //Если пользователь зарегистрирован
+        document.getElementById("user_info").innerHTML = "<p>Пользователь зарегистрирован</p>"
+    }
+}
+

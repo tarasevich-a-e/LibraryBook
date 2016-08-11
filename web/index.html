@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" ng-app='app'>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Library</title>
     <link type="text/css" rel="stylesheet" href="css/style.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <script src="js/main.js"></script>
 </head>
 <body>
 <!--Панель выбора действий-->
@@ -49,7 +47,9 @@
                 <input type="submit" id="ihead_authorization_1_entrance" value="Войти" onclick="SignIn(true)" form="form1">
             </div>
             <div id="head_authorization_1_registration" class="auth_block">
-                <input type="button" id="ihead_authorization_1_registration" value="Регистрация">
+                <a href="user.html">
+                    <input type="button" id="ihead_authorization_1_registration" value="Регистрация">
+                </a>
             </div>
         </div>
     </div>
@@ -85,12 +85,7 @@
         </div>
 </div>
 <!--Вывод БД-->
-<div  ng-controller="ctrlFoot">
-    <button ng-click="s2()">/signup</button>
-    <button ng-click="s7()">/delete_book</button>
-    <button ng-click="s8()">/user.html</button>
 
-</div>
 <div id="biblio">
     <div id="biblio_head">
         <h1>Описание библиотеки</h1>
@@ -124,11 +119,11 @@
         <!--Dinamic block-->
         <table id="books_table">
             <tr>
-                <th>    </th>
-                <th>Название</th>
-                <th>Автор</th>
-                <th>Год издания</th>
-                <th>Раздел</th>
+                <th class="td_table_book">    </th>
+                <th class="td_table_book">Название</th>
+                <th class="td_table_book">Автор</th>
+                <th class="td_table_book">Год издания</th>
+                <th class="td_table_book">Раздел</th>
             </tr>
         </table>
     </div>

@@ -71,9 +71,9 @@
         <servlet-name>ServletDeleteBook</servlet-name>
         <url-pattern>/delete_book</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
+    <!--servlet-mapping>
         <servlet-name>ServletUser</servlet-name>
         <url-pattern>/user.html</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping-->
 
 </web-app>

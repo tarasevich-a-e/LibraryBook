@@ -8,6 +8,7 @@ import ru.library.Services.Services;
 import ru.library.ToolsUserInterface.LogF;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -42,7 +43,8 @@ public class ServletSingUp extends HttpServlet {
         }
         JsonObject parametriRequest = CommonMetodForUI.getParametersOfTheReguest(breader);
         //////////////////////////////////Получем информацию из сервисов////////////////////////////////////////////////
-        //Получаем информацию о библиотеке
+        ///////////////////////////////////////////
+        //Получаем информацию о пользователе
         Services user = FactoryService.getService("User");
 
         User user1 = new User(
@@ -63,8 +65,8 @@ public class ServletSingUp extends HttpServlet {
             logF.writeLog(">ServletSingUp: Запись добавлена");
         }
         ///////////////////////////////Формируем JSON для отправки клиенту//////////////////////////////////////////////
-        String strJSON = "[{\"user\","+ "{\"online\":\"" + flagAddUser  + "\",\"status\":\"" + flagAddUser  +"\"}" +
-                "}]";
+        String strJSON = "{\"user\":"+ "{\"status\":" + flagAddUser  +"}" +
+                "}";
         Gson gson = new Gson();
         strJSON = gson.toJson(strJSON);
         ///////////////////////////////////////Ложим данные в ответ/////////////////////////////////////////////////////

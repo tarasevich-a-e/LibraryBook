@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="head_p">
+    <div id="head_zagolovok_2">
+        <a href="/"><h1>Библиотека</h1></a>
+    </div>
+</div>
+<h3>Регистрация пользователя</h3>
+<div id="dtable_user">
+    <table id="table_user">
+        <tr>
+            <td class="td_table_user">
+                Логин
+            </td>
+            <td>
+                <input id="table_user_login" type="text" value="fedia" class="btn_table_user">
+            </td>
+        </tr>
+        <tr>
+            <td class="td_table_user">
+                Пароль
+            </td>
+            <td>
+                <input id="table_user_pass" type="password" class="btn_table_user">
+            </td>
+        </tr>
+        <tr>
+            <td class="td_table_user">
+                Фамилия
+            </td>
+            <td>
+                <input id="table_user_fam" type="text" value="Попов" class="btn_table_user">
+            </td>
+        </tr>
+        <tr>
+            <td class="td_table_user">
+                Имя
+            </td>
+            <td>
+                <input id="table_user_name" type="text" value="Иван" class="btn_table_user">
+            </td>
+        </tr>
+        <tr>
+            <td class="td_table_user">
+                Отчество
+            </td>
+            <td>
+                <input id="table_user_otch" type="text" value="Иванович" class="btn_table_user">
+            </td>
+        </tr>
+        <tr>
+            <td class="td_table_user">
+                День рождения
+            </td>
+            <td>
+                <input id="table_user_dr" type="date" class="btn_table_user">
+            </td>
+        </tr>
+    </table>
+</div>
+<br>
+<div id="dbtn_panel_user">
+        <input type="button" value="Очистить поля" class="btn_table_user_2" onclick="CleanField()">
+        <input type="button" value="Зарегистрироваться" class="btn_table_user_2" onclick="SendFieldToServer()">
+</div>
+<div id="user_info">
+
+</div>
+<script src="js/script_js.js"></script>
+</body>
+</html>
