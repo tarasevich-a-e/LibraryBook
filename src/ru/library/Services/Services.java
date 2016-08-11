@@ -11,9 +11,9 @@ public interface Services {
 
     public String getElements(Object o);
     public String getAllElements();
-    public Boolean addElement(Object o);
+    public String addElement(Object o);
     public boolean inspectionElement(String inspElement);
     public User autorizationElement(String login, String pass, String status);
-    public Boolean editElement(Object o);
-    public Boolean deleteElement(String idElement);
+    public String editElement(Object o);
+    public String deleteElement(String idElement);
 }

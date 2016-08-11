@@ -58,8 +58,8 @@ public class ServletSingUp extends HttpServlet {
                 (byte) 0
         );
 
-        boolean flagAddUser = user.addElement(user1);
-        if(flagAddUser) {
+        String flagAddUser = user.addElement(user1);
+        if(flagAddUser.equals("true")) {
             logF.writeLog(">ServletSingUp: Запись добавлена");
         }
         ///////////////////////////////Формируем JSON для отправки клиенту//////////////////////////////////////////////

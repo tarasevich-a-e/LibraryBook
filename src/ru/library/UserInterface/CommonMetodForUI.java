@@ -43,13 +43,17 @@ public class CommonMetodForUI {
     public static JsonObject getParametersOfTheReguestGET(Map<String, String[]> Params) {
         //Читаем GET запрос
         HashMap<String,String> stringHashMap = new HashMap<String, String>();
+        String str = "";
         for (Map.Entry<String, String []> entry:
             Params.entrySet()) {
             stringHashMap.put(entry.getKey(), entry.getValue()[0]);
+            str +=  "\"" + entry.getKey() + "\":" + entry.getValue()[0] + ",";
         }
-        String str = stringHashMap.toString();
-        str = str.replace('=',':');
-        str = str.replaceAll(" ","");
+        str = str.substring(0, str.length() - 1);
+        str = "{" + str + "}";
+        //String str = stringHashMap.toString();
+        //str = str.replace('=',':');
+        //str = str.replaceAll(" ","");
         JsonParser jsonParser = new JsonParser();
         Object obj = jsonParser.parse(str);
         JsonObject jsonObject = (JsonObject) obj;

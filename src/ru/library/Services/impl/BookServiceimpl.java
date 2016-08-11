@@ -37,13 +37,19 @@ public class BookServiceimpl implements Services {
     }
 
     @Override
-    public Boolean addElement(Object o) {
+    public String addElement(Object o) {
         iDAO bookDAO = FactoryDAO.getDAO("Book");
         bookDAO.connectionToBD();
         boolean flagAdd = bookDAO.addElement(o);
+        //После добавления найдем этот элемент (слабое место, так ак ищем посовокупности полей а не по id)
+        //Существуют SQL запросы по результатам которых возвращается id, учесть на будущее
+        String infoAboutAllBooks = null;
+        if (flagAdd == true) {
+            infoAboutAllBooks = bookDAO.queryRecord(o);
+        }
         bookDAO.disconnectWithBD();
 
-        return flagAdd;
+        return infoAboutAllBooks;
     }
 
     @Override
@@ -52,23 +58,35 @@ public class BookServiceimpl implements Services {
     }
 
     @Override
-    public Boolean editElement(Object o) {
+    public String editElement(Object o) {
         iDAO bookDAO = FactoryDAO.getDAO("Book");
         bookDAO.connectionToBD();
         boolean flagAdd = bookDAO.updateElement(o);
+        //После добавления найдем этот элемент (слабое место, так ак ищем посовокупности полей а не по id)
+        //Существуют SQL запросы по результатам которых возвращается id, учесть на будущее
+        String infoAboutAllBooks = null;
+        if (flagAdd == true) {
+            infoAboutAllBooks = bookDAO.queryRecord(o);
+        }
         bookDAO.disconnectWithBD();
 
-        return flagAdd;
+        return infoAboutAllBooks;
     }
 
     @Override
-    public Boolean deleteElement(String idElement) {
+    public String deleteElement(String idElement) {
         iDAO bookDAO = FactoryDAO.getDAO("Book");
         bookDAO.connectionToBD();
         boolean flagDelete = bookDAO.deleteElement(idElement);
+        //После добавления найдем этот элемент (слабое место, так ак ищем посовокупности полей а не по id)
+        //Существуют SQL запросы по результатам которых возвращается id, учесть на будущее
+        String infoAboutAllBooks = null;
+        if (flagDelete == true) {
+            infoAboutAllBooks = bookDAO.queryAllRecord();
+        }
         bookDAO.disconnectWithBD();
 
-        return flagDelete;
+        return infoAboutAllBooks;
     }
 
     @Override

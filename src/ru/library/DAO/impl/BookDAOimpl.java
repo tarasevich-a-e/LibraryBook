@@ -125,15 +125,31 @@ public class BookDAOimpl implements iDAO {
         ArrayList<Book> books = new ArrayList<Book>();
         try {
             statement = connection.createStatement();
+
+            //Конвертируем строковые поля с кавычками
+            if(book.getName_b().charAt(0) == '"'){book.setName_b(book.getName_b().substring(1, book.getName_b().length() - 1));}
+            if(book.getAuthor_b().charAt(0) == '"'){book.setAuthor_b(book.getAuthor_b().substring(1, book.getAuthor_b().length() - 1));}
+            if(book.getDatecorr_b().charAt(0) == '"'){book.setDatecorr_b(book.getDatecorr_b().substring(1, book.getDatecorr_b().length() - 1));}
+            if(book.getDateloadbd_b().charAt(0) == '"'){book.setDateloadbd_b(book.getDateloadbd_b().substring(1, book.getDateloadbd_b().length() - 1));}
+
             //String zapros = "SELECT * FROM db_library.user WHERE login_u = " + name;
             String zapros = "SELECT * FROM db_library.book WHERE ";
-            if (book.getId_b() != -1){ zapros = zapros + "id_b=" + book.getId_b() + " AND ";}
+
+            if (book.getId_b() != -1){ zapros = zapros + "id_b =" + book.getId_b() + " AND ";}
+            if (book.getName_b().equals("-1") == false){ zapros = zapros + " name_b LIKE '%" + book.getName_b() + "%' AND ";}
+            if (book.getAuthor_b().equals("-1") == false){ zapros = zapros + " author_b LIKE '%" + book.getAuthor_b() + "%' AND ";}
+            if (book.getRelease_b() != -1){ zapros = zapros + " release_b LIKE '%" + book.getRelease_b() + "%' AND ";}
+            if (book.getType_b() != -1){ zapros = zapros + " type_b LIKE '%" + book.getType_b() + "%' AND ";}
+            if (book.getDatecorr_b().equals("-1") == false){ zapros = zapros + " datecorr_b LIKE '%" + book.getDatecorr_b() + "%' AND ";}
+            if (book.getDateloadbd_b().equals("-1") == false){ zapros = zapros + " dateloadbd_b LIKE '%" + book.getDateloadbd_b() + "%' AND ";}
+
+            /*if (book.getId_b() != -1){ zapros = zapros + "id_b=" + book.getId_b() + " AND ";}
             if (book.getName_b().equals("-1") == false){ zapros = zapros + " name_b=" + book.getName_b() + " AND ";}
             if (book.getAuthor_b().equals("-1") == false){ zapros = zapros + " author_b=" + book.getAuthor_b() + " AND ";}
             if (book.getRelease_b() != -1){ zapros = zapros + " release_b=" + book.getRelease_b() + " AND ";}
             if (book.getType_b() != -1){ zapros = zapros + " type_b=" + book.getType_b() + " AND ";}
             if (book.getDatecorr_b().equals("-1") == false){ zapros = zapros + " datecorr_b=" + book.getDatecorr_b() + " AND ";}
-            if (book.getDateloadbd_b().equals("-1") == false){ zapros = zapros + " dateloadbd_b=" + book.getDateloadbd_b() + " AND ";}
+            if (book.getDateloadbd_b().equals("-1") == false){ zapros = zapros + " dateloadbd_b=" + book.getDateloadbd_b() + " AND ";}*/
             zapros = zapros.substring(0, zapros.length()-5);
 
             ResultSet resultSet = statement.executeQuery(zapros);
@@ -166,10 +182,16 @@ public class BookDAOimpl implements iDAO {
         try {
             statement = connection.createStatement();
 
+            //Конвертируем строковые поля с кавычками
+            if(book.getName_b().charAt(0) == '"'){book.setName_b(book.getName_b().substring(1, book.getName_b().length() - 1));}
+            if(book.getAuthor_b().charAt(0) == '"'){book.setAuthor_b(book.getAuthor_b().substring(1, book.getAuthor_b().length() - 1));}
+            if(book.getDatecorr_b().charAt(0) == '"'){book.setDatecorr_b(book.getDatecorr_b().substring(1, book.getDatecorr_b().length() - 1));}
+            if(book.getDateloadbd_b().charAt(0) == '"'){book.setDateloadbd_b(book.getDateloadbd_b().substring(1, book.getDateloadbd_b().length() - 1));}
+
             String zapros = "UPDATE db_library.book SET ";
-                    if(book.getAuthor_b().equals("-1") == false){zapros = zapros + "author_b=" + book.getAuthor_b() + ",";}
+                    if(book.getAuthor_b().equals("-1") == false){zapros = zapros + "author_b=\"" + book.getAuthor_b() + "\",";}
                     zapros = zapros + "datecorr_b=\"" + book.getDatecorr_b() + "\",";
-                    if(book.getName_b().equals("-1") == false){zapros = zapros + "name_b=" + book.getName_b() + ",";}
+                    if(book.getName_b().equals("-1") == false){zapros = zapros + "name_b=\"" + book.getName_b() + "\",";}
                     if(book.getRelease_b() != -1){zapros = zapros +"release_b=\"" + book.getRelease_b() + "\",";}
                     if(book.getType_b() != -1){zapros = zapros + "type_b=\"" + book.getType_b() + "\",";}
                     zapros = zapros.substring(0,zapros.length()-1);

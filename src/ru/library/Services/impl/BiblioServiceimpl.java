@@ -30,7 +30,7 @@ public class BiblioServiceimpl implements Services {
     }
 
     @Override
-    public Boolean addElement(Object o) {
+    public String addElement(Object o) {
         return null;
     }
 
@@ -40,12 +40,12 @@ public class BiblioServiceimpl implements Services {
     }
 
     @Override
-    public Boolean editElement(Object o) {
+    public String editElement(Object o) {
         return null;
     }
 
     @Override
-    public Boolean deleteElement(String idElement) {
+    public String deleteElement(String idElement) {
         return null;
     }
 

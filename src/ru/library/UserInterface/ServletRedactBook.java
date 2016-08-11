@@ -8,6 +8,7 @@ import ru.library.Services.Services;
 import ru.library.ToolsUserInterface.LogF;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -44,14 +45,24 @@ public class ServletRedactBook extends HttpServlet {
         }
         JsonObject parametriRequest = CommonMetodForUI.getParametersOfTheReguest(breader);
         //////////////////////////////////Получем информацию из сервисов////////////////////////////////////////////////
+        ///////////////////////////////////////////
         //Проверяем авторизовался ли пользователь
         boolean statusUser = false;
-        if(parametriRequest.has("login")) {
-            Services user = FactoryService.getService("User");
-            statusUser = user.inspectionElement(parametriRequest.get("login").toString());
+        Cookie[] mas_cook = req.getCookies();
+        String find_cook = "";
+        for (int i = 0; i < mas_cook.length; i++) {
+            if(mas_cook[i].getName().equals("brain")){
+                find_cook = mas_cook[i].getValue();
+                break;
+            }
         }
-        //Добавляем книгу
-        boolean flagRedactBook = false;
+        if (req.getSession().getAttribute(find_cook) != null) {
+            //Пользователь авторизован
+            statusUser = true;
+        }
+        ///////////////////////////////////////////
+        //Изменяем книгу
+        String listBook = null;
         if(statusUser == true) {
             Services book = FactoryService.getService("Book");
 
@@ -68,15 +79,13 @@ public class ServletRedactBook extends HttpServlet {
                     parametriRequest.get("book_release").getAsInt(),
                     parametriRequest.get("rasdel").getAsInt()
             );
-            flagRedactBook = book.editElement(el_book);
-            if (flagRedactBook) {
-                logF.writeLog(">ServletRedactBook: Запись изменена");
-            }
+            listBook = book.editElement(el_book);
+
         }
         ///////////////////////////////Формируем JSON для отправки клиенту//////////////////////////////////////////////
-        String strJSON = "[{\"user\",{\"online\",\"" + statusUser  +"\"}," +
-                "{\"book\",{\"status\",\"" + flagRedactBook  +"\"}"+
-                "}]";
+        String strJSON = "{\"book\":"+ listBook +  "," +
+                "\"user\":"+ "{\"online\":" + statusUser  +"}" +
+                "}";
         Gson gson = new Gson();
         strJSON = gson.toJson(strJSON);
         ///////////////////////////////////////Ложим данные в ответ/////////////////////////////////////////////////////
