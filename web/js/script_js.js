@@ -11,14 +11,13 @@ var win_api_signup = "/signup";
 document.addEventListener("DOMContentLoaded", Ind);
 ////////////////////////////////////////////Заполняем данными index.html////////////////////////////////////////////////
 function Ind () {
-    //debugger;
     //Формируем данные для отправки
     DelDataForSend();
     FPushForSend(0);
 
     //Отправляем данные (Запрос для проверки авторизации)
     SendForServer('POST', win_api_ind, mas_request);
-
+//return false;
 }
 //////////////////////////////////////////////////////АВТОРИЗАЦИЯ///////////////////////////////////////////////////////
 function SignIn(k_action) {
@@ -45,7 +44,7 @@ function SignIn(k_action) {
 
     //Отправляем данные
     SendForServer('POST', win_api_signin, mas_request);
-return false;
+
 }
 //////////////////////////////////////////////////////ПОИСК КНИГИ///////////////////////////////////////////////////////
 function FindBook() {
@@ -328,13 +327,15 @@ function ResponseSignIn(response) {
     var t_login = document.getElementById("shead_authorization_1_tlogin");
     var e_pass = document.getElementById("ihead_authorization_1_pass");
     var t_pass = document.getElementById("shead_authorization_1_tpass");
+    var t_form = document.getElementById("form1");
 
     if (json_resp.user.online == true) {
         //Авторизация прошла успешно
         b_reg.style.display = "none";
         b_entr.style.width = (50 + 115) + 'px';
         b_entr.value = "Выйти";
-        b_entr.setAttribute('onclick',"SignIn(false)");
+        b_entr.setAttribute('stat',"false");
+        t_form.setAttribute('onsubmit',"SignIn(false); return false;");
         b_mess.style.opacity = 0;
         e_login.setAttribute('disabled',"disabled");
         t_pass.style.opacity = 0;
@@ -344,11 +345,12 @@ function ResponseSignIn(response) {
     } else {
         //Авторизация не прошла или пользователь выходит
         //Проявляем предшествующее состояние пользователя
-        if (b_entr.getAttribute('onclick') == "SignIn(false)") {
+        if (b_entr.getAttribute('stat') == "false") {
             //Если пользователь ранее был зарегистрирован
             b_reg.style.display = "";
             b_entr.style.width = '50px';
-            b_entr.setAttribute('onclick',"SignIn(true)");
+            //b_entr.setAttribute('onclick',"SignIn(true)");
+            t_form.setAttribute('onsubmit',"SignIn(true); return false;");
             b_entr.value = "Войти";
             b_mess.style.opacity = 1;
             e_login.removeAttribute('disabled');
@@ -648,26 +650,30 @@ function ButCheck(select_but) {
     //Настраиваем выделение кнопок
     if(select_but == "find") {
         document.getElementById("find").style.backgroundColor = '#FDC402';
-        document.getElementById("block_detal_b_ok").setAttribute('onclick',"ButtonClickOK(1)");
+        //document.getElementById("block_detal_b_ok").setAttribute('onclick',"ButtonClickOK(1)");
+        document.getElementById("form2").setAttribute('onsubmit',"ButtonClickOK(1); return false;");
         block_detal_b_ok
     } else {
         document.getElementById("find").style.backgroundColor = 'gainsboro';
     }
     if(select_but == "add") {
         document.getElementById("add").style.backgroundColor = '#FDC402';
-        document.getElementById("block_detal_b_ok").setAttribute('onclick',"ButtonClickOK(2)");
+        //document.getElementById("block_detal_b_ok").setAttribute('onclick',"ButtonClickOK(2)");
+        document.getElementById("form2").setAttribute('onsubmit',"ButtonClickOK(2); return false;");
     } else {
         document.getElementById("add").style.backgroundColor = 'gainsboro';
     }
     if(select_but == "redact") {
         document.getElementById("redact").style.backgroundColor = '#FDC402';
-        document.getElementById("block_detal_b_ok").setAttribute('onclick',"ButtonClickOK(3)");
+        //document.getElementById("block_detal_b_ok").setAttribute('onclick',"ButtonClickOK(3)");
+        document.getElementById("form2").setAttribute('onsubmit',"ButtonClickOK(3); return false;");
     } else {
         document.getElementById("redact").style.backgroundColor = 'gainsboro';
     }
     if(select_but == "del") {
         document.getElementById("del").style.backgroundColor = '#FDC402';
-        document.getElementById("block_detal_b_ok").setAttribute('onclick',"ButtonClickOK(4)");
+        //document.getElementById("block_detal_b_ok").setAttribute('onclick',"ButtonClickOK(4)");
+        document.getElementById("form2").setAttribute('onsubmit',"ButtonClickOK(4); return false;");
     } else {
         document.getElementById("del").style.backgroundColor = 'gainsboro';
     }

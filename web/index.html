@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Library</title>
     <link type="text/css" rel="stylesheet" href="css/style.css"/>
+
 </head>
 <body>
 <!--Панель выбора действий-->
@@ -25,7 +26,7 @@
             <button class="btn_m" id="del" onclick="ButtonClickDel()">Удалить</button>
         </div>
     </div>
-    <form id="form1"></form>
+    <form id="form1" onsubmit="SignIn(true); return false;"></form>
     <div id="head_authorization">
         <div id="head_authorization_1">
             <div id="head_authorization_1_tlogin" class="auth_block">
@@ -44,7 +45,7 @@
                 <span id="shead_authorization_1_message">Авторизуйтесь</span>
             </div>
             <div id="head_authorization_1_entrance" class="auth_block">
-                <input type="submit" id="ihead_authorization_1_entrance" value="Войти" onclick="SignIn(true)" form="form1">
+                <input type="submit" id="ihead_authorization_1_entrance" value="Войти" form="form1" stat="true">
             </div>
             <div id="head_authorization_1_registration" class="auth_block">
                 <a href="user.html">
@@ -55,7 +56,7 @@
     </div>
 </div>
 <div id="midl_p">
-        <form id="form2"></form>
+        <form id="form2" onsubmit="ButtonClickOK(); return false;"></form>
         <div class="block_detal">
             <h3>Раздел</h3>
             <select id="sblock_detal" class="edt" form="form2">
@@ -80,7 +81,7 @@
             <input id="isblock_detal_release" type="text" class="edt" form="form2">
         </div>
         <div class="block_detal">
-                <button id="block_detal_b_ok" class="btn_e" onclick="ButtonClickOK()" form="form2">ОК</button>
+                <button id="block_detal_b_ok" class="btn_e" form="form2">ОК</button>
                 <button class="btn_e" onclick="ButtonClickOtmena()">Отмена</button>
         </div>
 </div>
