@@ -11,7 +11,7 @@
     <property name="dir.lib" value="./lib"/>
     <property name="dir.resource" value="./src/resource"/>
     <property name="build.dir" value="./web"/>
-    <!--property name="file.log" value="C:/Documents and Settings/atarasevich/IdeaProjects/Getman/log_file - LibraryBook.log"/-->
+    <property name="file.log" value="C:/Documents and Settings/atarasevich/IdeaProjects/LibraryBook/log_file - LibraryBook.log"/>
 
     <property name="tomcat.webapps" value="${tomcat}/webapps"/>
     <property name="tomcat.bin" value="${tomcat}/bin"/>
@@ -25,7 +25,8 @@
         <pathelement location="lib/javax.servlet.jar"/>
         <pathelement location="lib/gson-2.2.2.jar"/>
         <pathelement location="lib/mysql-connector-java-5.1.39-bin.jar"/>
-        <!--pathelement location="src/main/resources/log4j.properties"/-->
+        <pathelement location="lib/log4j-1.2.15.jar"/>
+        <pathelement location="src/main/resources/log4j.properties"/>
     </path>
 
     <target name="1. clear">
@@ -35,7 +36,7 @@
         <delete dir="${tomcat.webapps}/ROOT"/>
         <delete file="${tomcat.webapps}/${project.name}.war"/>
         <delete file="${tomcat.bin}/log_prog.txt"/><!--Собственный лог, после подключения log4j удалить-->
-        <!--delete file="${file.log}"/-->
+        <delete file="${file.log}"/>
     </target>
 
     <target name="2. make_dest_dir">
@@ -60,6 +61,11 @@
         <copy todir="web/WEB-INF/resource">
             <fileset dir="${dir.resource}/">
                 <include name="*.*"/>
+            </fileset>
+        </copy>
+        <copy todir="${dest.dir}">
+            <fileset dir="${dir.resource}/">
+                <include name="log4j.*"/>
             </fileset>
         </copy>
     </target>

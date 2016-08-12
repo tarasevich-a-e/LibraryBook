@@ -2,9 +2,9 @@ package ru.library.UserInterface;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import org.apache.log4j.Logger;
 import ru.library.Factory.FactoryService;
 import ru.library.Services.Services;
-import ru.library.ToolsUserInterface.LogF;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -19,7 +19,7 @@ import java.io.PrintWriter;
  * Created by atarasevich on 19.07.16.
  */
 public class ServletStart extends HttpServlet{
-    LogF logF;
+    final static Logger logger = Logger.getLogger(ServletStart.class);
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////Конструктор////////////////////////////////////////////////////////
@@ -30,30 +30,38 @@ public class ServletStart extends HttpServlet{
     //////////////////////////////////////////////POST (/index.html)////////////////////////////////////////////////////
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        logger.info("------------------------------------------------------------------------------------------------");
+        /////////////////////////////////////////////////Проверяем сессию///////////////////////////////////////////////
+        logger.info("Получаем информацию о времени сессии по умолчанию у Tomcat'a. Timout session = " + req.getSession().getMaxInactiveInterval());
+        logger.info("POST запрос принят.");
         /////////////////////////////////Задаем формат запроса и ответа/////////////////////////////////////////////////
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("application/json; charset=UTF-8");
         ///////////////////////////////////Получем информацию от клиента////////////////////////////////////////////////
+        logger.info("Извлекаем переданные данные из request'a");
         BufferedReader breader = null;
         try {
             breader = req.getReader();
         } catch (Exception e) {
-            logF.writeLog(">ServletStart: Ошибка при чтении POST-запроса");
+            logger.info(">ServletStart: Ошибка при чтении POST-запроса");
         }
         JsonObject parametriRequest = CommonMetodForUI.getParametersOfTheReguest(breader);
+        logger.info("Данные из request'a извлечены");
         //////////////////////////////////Получем информацию из сервисов////////////////////////////////////////////////
         //Получаем информацию о библиотеке
+        logger.info("Получаем информацию о библиотеке");
         Services biblio = FactoryService.getService("Biblio");
         String infoAboutBiblio = biblio.getAllElements();
         //Получаем информацию о книгах
+        logger.info("Получаем информацию о книгах");
         Services book = FactoryService.getService("Book");
         String listBook = book.getAllElements();
         //Получаем информацию о новостях
+        logger.info("Получаем информацию о новостях");
         Services news = FactoryService.getService("News");
         String listNews = news.getAllElements();
-        /////////////////////////////////////////////////Проверяем сессию///////////////////////////////////////////////
-        System.err.println("Timout session = " + req.getSession().getMaxInactiveInterval());
         //Проверяем авторизовался ли пользователь
+        logger.info("Проверяем авторизовался ли пользователь");
         boolean statusUser = false;
         Cookie[] mas_cook = req.getCookies();
         String find_cook = "";
@@ -67,44 +75,25 @@ public class ServletStart extends HttpServlet{
             //Пользователь авторизован
             statusUser = true;
         }
+        logger.info("Пользователь авторизован: " + (statusUser? "ДА":"НЕТ"));
 
-
-        /*
-        if(parametriRequest.has("login")) {
-            Services user = FactoryService.getService("User");
-             statusUser = user.inspectionElement(parametriRequest.get("login").toString());
-        }
-        */
         ///////////////////////////////Формируем JSON для отправки клиенту//////////////////////////////////////////////
         /*Ошибка в формате передачи, для разбора необходимо чтобы на клиенте строка распозновалась как объект JSON*/
-        logF.writeLog(">ServletStart: *****************");
-        logF.writeLog(">ServletStart: " + infoAboutBiblio);
-        logF.writeLog(">ServletStart: " + listBook);
-        logF.writeLog(">ServletStart: " + listNews);
-        logF.writeLog(">ServletStart: *****************");
-
-        /*
-        //Good test
-        String strJSON = "{\"biblio\":"+ "5" +"," +
-                "\"book\":"+ "5" + "," +
-                "\"news\":"+ "5" + "," +
-                "\"user\":"+ "{\"online\":" + statusUser  +"}" +
-                "}";
-        */
+        logger.info("Готовим информацию для передачи клиенту");
         String strJSON = "{\"biblio\":"+ infoAboutBiblio +"," +
                 "\"book\":"+ listBook + "," +
                 "\"news\":"+ listNews + "," +
                 "\"user\":"+ "{\"online\":" + statusUser  +"}" +
                 "}";
-
-
+        logger.info("Информация для передачи клиенту: " + strJSON);
         Gson gson = new Gson();
         strJSON = gson.toJson(strJSON);
+        logger.info("Конвертация в JSON прошла успешно");
         ///////////////////////////////////////Ложим данные в ответ/////////////////////////////////////////////////////
         PrintWriter printWriter = resp.getWriter();
         printWriter.print(strJSON);
         printWriter.flush();
-        /////////////////////////////////////////Пишем лог в файл///////////////////////////////////////////////////////
-        logF.writeLog(">ServletStart: Сервлет ServletStart работает!");
+        logger.info("Данные отправлены клиенту, работа в сервлете закончена.");
+        logger.info("------------------------------------------------------------------------------------------------");
     }
 }

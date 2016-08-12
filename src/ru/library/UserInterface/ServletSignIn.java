@@ -3,10 +3,10 @@ package ru.library.UserInterface;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import org.apache.log4j.Logger;
 import ru.library.Entity.User;
 import ru.library.Factory.FactoryService;
 import ru.library.Services.Services;
-import ru.library.ToolsUserInterface.LogF;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -21,7 +21,7 @@ import java.io.PrintWriter;
  * Created by atarasevich on 19.07.16.
  */
 public class ServletSignIn extends HttpServlet {
-    LogF logF;
+    final static Logger logger = Logger.getLogger(ServletSignIn.class);
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////Конструктор////////////////////////////////////////////////////////
@@ -32,7 +32,7 @@ public class ServletSignIn extends HttpServlet {
     ////////////////////////////////////////////////POST (/signin)//////////////////////////////////////////////////////
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logF.writeLog(">ServletSignIn: Сервлет ServletSignIn работает!");
+        logger.info(">ServletSignIn: Сервлет ServletSignIn работает!");
         /////////////////////////////////Задаем формат запроса и ответа/////////////////////////////////////////////////
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("application/json; charset=UTF-8");
@@ -41,7 +41,7 @@ public class ServletSignIn extends HttpServlet {
         try {
             breader = req.getReader();
         } catch (Exception e) {
-            logF.writeLog(">ServletSignIn: Ошибка при чтении POST-запроса");
+            logger.info(">ServletSignIn: Ошибка при чтении POST-запроса");
         }
         JsonObject parametriRequest = CommonMetodForUI.getParametersOfTheReguest(breader);
         //////////////////////////////////Получем информацию из сервисов////////////////////////////////////////////////
@@ -89,7 +89,7 @@ public class ServletSignIn extends HttpServlet {
             }
         }
         ///////////////////////////////Формируем JSON для отправки клиенту//////////////////////////////////////////////
-        logF.writeLog(">ServletSignIn: statusUser = " + statusUser);
+        logger.info(">ServletSignIn: statusUser = " + statusUser);
 
         String strJSON = "{\"user\":"+ "{\"online\":" + statusUser  +"}" +
                 "}";

@@ -2,10 +2,10 @@ package ru.library.UserInterface;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import org.apache.log4j.Logger;
 import ru.library.Entity.User;
 import ru.library.Factory.FactoryService;
 import ru.library.Services.Services;
-import ru.library.ToolsUserInterface.LogF;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -20,7 +20,8 @@ import java.io.PrintWriter;
  * Created by atarasevich on 19.07.16.
  */
 public class ServletSingUp extends HttpServlet {
-    LogF logF;
+    final static Logger logger = Logger.getLogger(ServletSingUp.class);
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////Конструктор////////////////////////////////////////////////////////
@@ -39,7 +40,7 @@ public class ServletSingUp extends HttpServlet {
         try {
             breader = req.getReader();
         } catch (Exception e) {
-            logF.writeLog(">ServletStart: Ошибка при чтении POST-запроса");
+            logger.info(">ServletStart: Ошибка при чтении POST-запроса");
         }
         JsonObject parametriRequest = CommonMetodForUI.getParametersOfTheReguest(breader);
         //////////////////////////////////Получем информацию из сервисов////////////////////////////////////////////////
@@ -62,7 +63,7 @@ public class ServletSingUp extends HttpServlet {
 
         String flagAddUser = user.addElement(user1);
         if(flagAddUser.equals("true")) {
-            logF.writeLog(">ServletSingUp: Запись добавлена");
+            logger.info(">ServletSingUp: Запись добавлена");
         }
         ///////////////////////////////Формируем JSON для отправки клиенту//////////////////////////////////////////////
         String strJSON = "{\"user\":"+ "{\"status\":" + flagAddUser  +"}" +
@@ -74,7 +75,7 @@ public class ServletSingUp extends HttpServlet {
         printWriter.print(strJSON);
         printWriter.flush();
         /////////////////////////////////////////Пишем лог в файл///////////////////////////////////////////////////////
-        logF.writeLog(">ServletStart: Сервлет ServletStart работает!");
+        logger.info(">ServletStart: Сервлет ServletStart работает!");
     }
 
 

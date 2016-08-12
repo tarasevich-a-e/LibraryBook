@@ -1,17 +1,17 @@
 package ru.library.Factory;
 
+import org.apache.log4j.Logger;
 import ru.library.Services.Services;
 import ru.library.Services.impl.BiblioServiceimpl;
 import ru.library.Services.impl.BookServiceimpl;
 import ru.library.Services.impl.NewsServiceimpl;
 import ru.library.Services.impl.UserServiceimpl;
-import ru.library.ToolsUserInterface.LogF;
 
 /**
  * Created by atarasevich on 21.07.16.
  */
 public class FactoryService {
-    static LogF logF;
+    final static Logger logger = Logger.getLogger(FactoryService.class);
 
     public static Services getService(String nameFunction) {
         switch (nameFunction) {
@@ -24,7 +24,7 @@ public class FactoryService {
             case "News":
                 return new NewsServiceimpl();
             default:
-                logF.writeLog("Service " + nameFunction + "отсутствует!");
+                logger.info("Service " + nameFunction + "отсутствует!");
                 return null;
         }
 

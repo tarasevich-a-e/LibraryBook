@@ -1,6 +1,6 @@
 package ru.library.UserInterface;
 
-import ru.library.ToolsUserInterface.LogF;
+import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +12,8 @@ import java.io.IOException;
  * Created by atarasevich on 19.07.16.
  */
 public class ServletUser extends HttpServlet {
-    LogF logF;
+    final static Logger logger = Logger.getLogger(ServletSingUp.class);
+
 
     public ServletUser() {
     }

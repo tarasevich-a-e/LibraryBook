@@ -1,10 +1,10 @@
 package ru.library.DAO.impl;
 
 import com.google.gson.Gson;
+import org.apache.log4j.Logger;
 import ru.library.DAO.iDAO;
 import ru.library.Entity.Biblio;
 import ru.library.Entity.User;
-import ru.library.ToolsUserInterface.LogF;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import java.util.Properties;
 public class BiblioDAOimpl implements iDAO {
     Connection connection;
     Statement statement;
-    LogF logF;
+    final static Logger logger = Logger.getLogger(BiblioDAOimpl.class);
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////Соединение с БД//////////////////////////////////////////////////////
@@ -43,8 +43,8 @@ public class BiblioDAOimpl implements iDAO {
         if(connection != null) {
             try {
                 connection.close();
-            } catch (SQLException var3) { this.logF.writeLog("Connect is not close!"); var3.printStackTrace(); }
-            this.logF.writeLog("Disconnect OK!");
+            } catch (SQLException var3) { this.logger.info("Connect is not close!"); var3.printStackTrace(); }
+            this.logger.info("Disconnect OK!");
         }
     }
 

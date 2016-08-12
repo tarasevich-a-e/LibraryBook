@@ -1,10 +1,11 @@
 package ru.library.DAO.impl;
 
 import com.google.gson.Gson;
+import org.apache.log4j.Logger;
 import ru.library.DAO.iDAO;
 import ru.library.Entity.Book;
 import ru.library.Entity.User;
-import ru.library.ToolsUserInterface.LogF;
+
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -19,7 +20,7 @@ import java.util.Properties;
 public class BookDAOimpl implements iDAO {
     Connection connection;
     Statement statement;
-    LogF logF;
+    final static Logger logger = Logger.getLogger(BookDAOimpl.class);
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////Соединение с БД//////////////////////////////////////////////////////
@@ -44,8 +45,8 @@ public class BookDAOimpl implements iDAO {
         if(connection != null) {
             try {
                 connection.close();
-            } catch (SQLException var3) { this.logF.writeLog("Connect is not close!"); var3.printStackTrace(); }
-            this.logF.writeLog("Disconnect OK!");
+            } catch (SQLException var3) { this.logger.info("Connect is not close!"); var3.printStackTrace(); }
+            this.logger.info("Disconnect OK!");
         }
     }
 
@@ -109,10 +110,10 @@ public class BookDAOimpl implements iDAO {
         } catch (SQLException var5) { var5.printStackTrace(); }
         if(result != 0) {
 
-            logF.writeLog(">BookDAOimpl: Добавлено записей - " + result);
+            logger.info(">BookDAOimpl: Добавлено записей - " + result);
             return true;
         }
-        logF.writeLog(">BookDAOimpl: Запись не добавлена");
+        logger.info(">BookDAOimpl: Запись не добавлена");
         return false;
     }
 
@@ -202,10 +203,10 @@ public class BookDAOimpl implements iDAO {
         } catch (SQLException var5) { var5.printStackTrace(); }
         if(result != 0) {
 
-            logF.writeLog(">BookDAOimpl: Изменено записей - " + result);
+            logger.info(">BookDAOimpl: Изменено записей - " + result);
             return true;
         }
-        logF.writeLog(">BookDAOimpl: Запись не изменена");
+        logger.info(">BookDAOimpl: Запись не изменена");
         return false;
     }
 
@@ -221,10 +222,10 @@ public class BookDAOimpl implements iDAO {
         } catch (SQLException var5) { var5.printStackTrace(); }
         if(result != 0) {
 
-            logF.writeLog(">BookDAOimpl: Удалено записей - " + result);
+            logger.info(">BookDAOimpl: Удалено записей - " + result);
             return true;
         }
-        logF.writeLog(">BookDAOimpl: Запись не удалена");
+        logger.info(">BookDAOimpl: Запись не удалена");
         return false;
     }
 }

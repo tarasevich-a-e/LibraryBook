@@ -2,10 +2,10 @@ package ru.library.UserInterface;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import org.apache.log4j.Logger;
 import ru.library.Entity.Book;
 import ru.library.Factory.FactoryService;
 import ru.library.Services.Services;
-import ru.library.ToolsUserInterface.LogF;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -22,7 +22,7 @@ import java.util.Date;
  * Created by atarasevich on 19.07.16.
  */
 public class ServletRedactBook extends HttpServlet {
-    LogF logF;
+    final static Logger logger = Logger.getLogger(ServletRedactBook.class);
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////Конструктор////////////////////////////////////////////////////////
@@ -41,7 +41,7 @@ public class ServletRedactBook extends HttpServlet {
         try {
             breader = req.getReader();
         } catch (Exception e) {
-            logF.writeLog(">ServletRedactBook: Ошибка при чтении POST-запроса");
+            logger.info(">ServletRedactBook: Ошибка при чтении POST-запроса");
         }
         JsonObject parametriRequest = CommonMetodForUI.getParametersOfTheReguest(breader);
         //////////////////////////////////Получем информацию из сервисов////////////////////////////////////////////////

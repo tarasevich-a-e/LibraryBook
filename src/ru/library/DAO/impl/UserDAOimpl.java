@@ -1,8 +1,8 @@
 package ru.library.DAO.impl;
 
+import org.apache.log4j.Logger;
 import ru.library.DAO.iDAO;
 import ru.library.Entity.User;
-import ru.library.ToolsUserInterface.LogF;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -17,7 +17,7 @@ import java.util.Properties;
 public class UserDAOimpl implements iDAO {
     Connection connection;
     Statement statement;
-    LogF logF;
+    final static Logger logger = Logger.getLogger(UserDAOimpl.class);
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////Соединение с БД//////////////////////////////////////////////////////
@@ -42,8 +42,8 @@ public class UserDAOimpl implements iDAO {
         if(connection != null) {
             try {
                 connection.close();
-            } catch (SQLException var3) { this.logF.writeLog(">UserDAOimpl: Connect is not close!"); var3.printStackTrace(); }
-            this.logF.writeLog(">UserDAOimpl: Disconnect OK!");
+            } catch (SQLException var3) { this.logger.info(">UserDAOimpl: Connect is not close!"); var3.printStackTrace(); }
+            this.logger.info(">UserDAOimpl: Disconnect OK!");
         }
     }
 
@@ -113,10 +113,10 @@ public class UserDAOimpl implements iDAO {
         } catch (SQLException var5) { var5.printStackTrace(); }
         if(result != 0) {
 
-            logF.writeLog(">UserDAOimpl: Добавлено записей - " + result);
+            logger.info(">UserDAOimpl: Добавлено записей - " + result);
             return true;
         }
-        logF.writeLog(">UserDAOimpl: Запись не добавлена");
+        logger.info(">UserDAOimpl: Запись не добавлена");
         return false;
     }
 
@@ -135,11 +135,11 @@ public class UserDAOimpl implements iDAO {
         } catch (SQLException var5) { var5.printStackTrace(); }
         if(result != 0) {
 
-            logF.writeLog(">UserDAOimpl: Авторизация прошла успешно!");
+            logger.info(">UserDAOimpl: Авторизация прошла успешно!");
             if (status.equals("false")) {return false;}
             else {return true;}
         }
-        logF.writeLog(">UserDAOimpl: Авторизация не прошла!");
+        logger.info(">UserDAOimpl: Авторизация не прошла!");
         return false;
     }
 

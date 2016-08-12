@@ -2,10 +2,10 @@ package ru.library.UserInterface;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import org.apache.log4j.Logger;
 import ru.library.Entity.Book;
 import ru.library.Factory.FactoryService;
 import ru.library.Services.Services;
-import ru.library.ToolsUserInterface.LogF;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -20,7 +20,7 @@ import java.io.PrintWriter;
  * Created by atarasevich on 19.07.16.
  */
 public class ServletFindBook extends HttpServlet {
-    LogF logF;
+    final static Logger logger = Logger.getLogger(ServletFindBook.class);
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////Конструктор////////////////////////////////////////////////////////
@@ -68,9 +68,9 @@ public class ServletFindBook extends HttpServlet {
         String listBook = book.getElements(el_book); //возможен null, если нет книг удовлетворяющих запросу
         //listBook = listBook.substring(1, listBook.length()-1);
         ///////////////////////////////Формируем JSON для отправки клиенту//////////////////////////////////////////////
-        logF.writeLog(">ServletFindBook: *****************");
-        logF.writeLog(">ServletFindBook: listBook = " + listBook);
-        logF.writeLog(">ServletFindBook: *****************");
+        logger.info(">ServletFindBook: *****************");
+        logger.info(">ServletFindBook: listBook = " + listBook);
+        logger.info(">ServletFindBook: *****************");
         String strJSON = "{\"book\":"+ listBook +  "," +
                 "\"user\":"+ "{\"online\":" + statusUser  +"}" +
                 "}";
