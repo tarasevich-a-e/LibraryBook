@@ -12,7 +12,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Properties;
 
 /**
  * Created by atarasevich on 21.07.16.
@@ -21,33 +20,27 @@ public class BookDAOimpl implements iDAO {
     Connection connection;
     Statement statement;
     final static Logger logger = Logger.getLogger(BookDAOimpl.class);
+    final static Logger loggerDAO = Logger.getLogger("file3");
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////Соединение с БД//////////////////////////////////////////////////////
     @Override
     public void connectionToBD() {
-        ////////////////////////////Получение параметров для подключения к БД///////////////////////////////////////////
-        Properties properties = CommonMetodForDAO.getPropertyOfTheFile("Заглушка");
-
         ////////////////////////////Получение connection с БД///////////////////////////////////////////////////////////
-        connection = CommonMetodForDAO.getConnection(
-                properties.getProperty("driver.name"),
-                properties.getProperty("db.URL"),
-                properties.getProperty("db.USERNAME"),
-                properties.getProperty("db.PASS")
-        );
+        logger.info("----------------------------------------------------");
+        logger.info("Take me connection");
+        long start = System.currentTimeMillis();
+        connection = DBCoonectionPoll.getConnection();
+        long finish = System.currentTimeMillis();
+        logger.info("Time - " + (finish - start));
+
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////Закрываем соединение с БД/////////////////////////////////////////////////
     @Override
     public void disconnectWithBD() {
-        if(connection != null) {
-            try {
-                connection.close();
-            } catch (SQLException var3) { this.logger.info("Connect is not close!"); var3.printStackTrace(); }
-            this.logger.info("Disconnect OK!");
-        }
+        DBCoonectionPoll.freeConnection(connection);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -59,6 +52,8 @@ public class BookDAOimpl implements iDAO {
         try {
             statement = connection.createStatement();
             String zapros = "SELECT * FROM db_library.book";
+
+            loggerDAO.info("Query :" + zapros);
             ResultSet resultSet = statement.executeQuery(zapros);
 
             while(resultSet.next()) {
@@ -105,6 +100,7 @@ public class BookDAOimpl implements iDAO {
                     "," + book.getType_b() +
                     ")";
 
+            loggerDAO.info("Query :" + zapros);
             result = statement.executeUpdate(zapros);
             statement.close();
         } catch (SQLException var5) { var5.printStackTrace(); }
@@ -153,6 +149,7 @@ public class BookDAOimpl implements iDAO {
             if (book.getDateloadbd_b().equals("-1") == false){ zapros = zapros + " dateloadbd_b=" + book.getDateloadbd_b() + " AND ";}*/
             zapros = zapros.substring(0, zapros.length()-5);
 
+            loggerDAO.info("Query :" + zapros);
             ResultSet resultSet = statement.executeQuery(zapros);
 
             while(resultSet.next()) {
@@ -198,6 +195,7 @@ public class BookDAOimpl implements iDAO {
                     zapros = zapros.substring(0,zapros.length()-1);
                     zapros = zapros + " WHERE id_b=" + book.getId_b();
 
+            loggerDAO.info("Query :" + zapros);
             result = statement.executeUpdate(zapros);
             statement.close();
         } catch (SQLException var5) { var5.printStackTrace(); }
@@ -217,6 +215,7 @@ public class BookDAOimpl implements iDAO {
             statement = connection.createStatement();
             String zapros = "DELETE FROM db_library.book WHERE id_b=" + idElement;
 
+            loggerDAO.info("Query :" + zapros);
             result = statement.executeUpdate(zapros);
             statement.close();
         } catch (SQLException var5) { var5.printStackTrace(); }

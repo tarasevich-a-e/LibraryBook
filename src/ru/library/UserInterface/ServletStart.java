@@ -20,17 +20,15 @@ import java.io.PrintWriter;
  */
 public class ServletStart extends HttpServlet{
     final static Logger logger = Logger.getLogger(ServletStart.class);
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////Конструктор////////////////////////////////////////////////////////
-    public ServletStart() {
-    }
+    final static Logger loggerDAO = Logger.getLogger("file3");
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////POST (/index.html)////////////////////////////////////////////////////
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         logger.info("------------------------------------------------------------------------------------------------");
+        loggerDAO.info("------------------------------------------------------------------------------------------------");
+        loggerDAO.info("Инициализация первой страницы");
         /////////////////////////////////////////////////Проверяем сессию///////////////////////////////////////////////
         logger.info("Получаем информацию о времени сессии по умолчанию у Tomcat'a. Timout session = " + req.getSession().getMaxInactiveInterval());
         logger.info("POST запрос принят.");
@@ -43,21 +41,33 @@ public class ServletStart extends HttpServlet{
         try {
             breader = req.getReader();
         } catch (Exception e) {
-            logger.info(">ServletStart: Ошибка при чтении POST-запроса");
+            logger.error("Ошибка при чтении POST-запроса");
         }
         JsonObject parametriRequest = CommonMetodForUI.getParametersOfTheReguest(breader);
         logger.info("Данные из request'a извлечены");
+        loggerDAO.info("Входящий запрос: " + parametriRequest);
         //////////////////////////////////Получем информацию из сервисов////////////////////////////////////////////////
         //Получаем информацию о библиотеке
         logger.info("Получаем информацию о библиотеке");
+        loggerDAO.info("Получаем информацию о библиотеке");
         Services biblio = FactoryService.getService("Biblio");
         String infoAboutBiblio = biblio.getAllElements();
         //Получаем информацию о книгах
         logger.info("Получаем информацию о книгах");
+        loggerDAO.info("Получаем информацию о книгах");
         Services book = FactoryService.getService("Book");
         String listBook = book.getAllElements();
+        if (listBook == null){
+            logger.warn("Информация о книгах не получена");
+            loggerDAO.warn("Информация о книгах не получена");
+        }
+        else {
+            logger.info("Информация о книгах получена");
+            loggerDAO.info("Информация о книгах получена");
+        }
         //Получаем информацию о новостях
         logger.info("Получаем информацию о новостях");
+        loggerDAO.info("Получаем информацию о новостях");
         Services news = FactoryService.getService("News");
         String listNews = news.getAllElements();
         //Проверяем авторизовался ли пользователь
@@ -76,9 +86,8 @@ public class ServletStart extends HttpServlet{
             statusUser = true;
         }
         logger.info("Пользователь авторизован: " + (statusUser? "ДА":"НЕТ"));
-
+        loggerDAO.info("Пользователь авторизован: " + (statusUser? "ДА":"НЕТ"));
         ///////////////////////////////Формируем JSON для отправки клиенту//////////////////////////////////////////////
-        /*Ошибка в формате передачи, для разбора необходимо чтобы на клиенте строка распозновалась как объект JSON*/
         logger.info("Готовим информацию для передачи клиенту");
         String strJSON = "{\"biblio\":"+ infoAboutBiblio +"," +
                 "\"book\":"+ listBook + "," +
@@ -95,5 +104,6 @@ public class ServletStart extends HttpServlet{
         printWriter.flush();
         logger.info("Данные отправлены клиенту, работа в сервлете закончена.");
         logger.info("------------------------------------------------------------------------------------------------");
+        loggerDAO.info("------------------------------------------------------------------------------------------------");
     }
 }

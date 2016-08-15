@@ -26,7 +26,8 @@
         <pathelement location="lib/gson-2.2.2.jar"/>
         <pathelement location="lib/mysql-connector-java-5.1.39-bin.jar"/>
         <pathelement location="lib/log4j-1.2.15.jar"/>
-        <pathelement location="src/main/resources/log4j.properties"/>
+        <pathelement location="${dir.resource}/log4j.properties"/>
+        <pathelement location="${dir.resource}/app.properties"/>
     </path>
 
     <target name="1. clear">
@@ -82,11 +83,11 @@
     </target>
 
     <target name="6. copy2" depends="5. war">
-        <copy todir="${tomcat.webapps}">
+        <!--copy todir="${tomcat.webapps}">
             <fileset dir="./">
                 <include name="*.war"/>
             </fileset>
-        </copy>
+        </copy-->
         <!--Put in to ROOT-->
         <copy todir="${tomcat.webapps}/ROOT">
             <fileset dir="${build.dir}"/>

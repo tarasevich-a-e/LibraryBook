@@ -10,6 +10,10 @@
 
     </session-config-->
 
+    <listener>
+        <listener-class>ru.library.Listener.InitListener</listener-class>
+    </listener>
+
     <servlet>
         <servlet-name>ServletStart</servlet-name>
         <servlet-class>ru.library.UserInterface.ServletStart</servlet-class>

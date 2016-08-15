@@ -24,30 +24,33 @@ import java.util.logging.SimpleFormatter;
  */
 public class ServletAddBook extends HttpServlet {
     final static Logger logger = Logger.getLogger(ServletAddBook.class);
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////Конструктор////////////////////////////////////////////////////////
-    public ServletAddBook() {
-    }
+    final static Logger loggerDAO = Logger.getLogger("file3");
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////POST (/add_book)/////////////////////////////////////////////////////
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        logger.info("------------------------------------------------------------------------------------------------");
+        loggerDAO.info("------------------------------------------------------------------------------------------------");
+        loggerDAO.info("Добавление книги");
         /////////////////////////////////Задаем формат запроса и ответа/////////////////////////////////////////////////
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("application/json; charset=UTF-8");
         ///////////////////////////////////Получем информацию от клиента////////////////////////////////////////////////
+        logger.info("Извлекаем переданные данные из request'a");
         BufferedReader breader = null;
         try {
             breader = req.getReader();
         } catch (Exception e) {
-            logger.info(">ServletAddBook: Ошибка при чтении POST-запроса");
+            logger.error("Ошибка при чтении POST-запроса");
         }
         JsonObject parametriRequest = CommonMetodForUI.getParametersOfTheReguest(breader);
+        logger.info("Данные из request'a извлечены");
+        loggerDAO.info("Входящий запрос: " + parametriRequest);
         //////////////////////////////////Получем информацию из сервисов////////////////////////////////////////////////
         ///////////////////////////////////////////
         //Проверяем авторизовался ли пользователь
+        logger.info("Проверяем авторизовался ли пользователь");
         boolean statusUser = false;
         Cookie[] mas_cook = req.getCookies();
         String find_cook = "";
@@ -61,10 +64,13 @@ public class ServletAddBook extends HttpServlet {
             //Пользователь авторизован
             statusUser = true;
         }
+        logger.info("Пользователь авторизован: " + (statusUser? "ДА":"НЕТ"));
+        loggerDAO.info("Пользователь авторизован: " + (statusUser? "ДА":"НЕТ"));
         ///////////////////////////////////////////
         //Ищем книгу
         String listBook = null;
         if(statusUser == true) {
+            logger.info("Получаем информацию о книгах");
             Services book = FactoryService.getService("Book");
 
             //Формируем дату для добавления в БД
@@ -80,19 +86,33 @@ public class ServletAddBook extends HttpServlet {
                     parametriRequest.get("book_release").getAsInt(),
                     parametriRequest.get("rasdel").getAsInt()
             );
+
             listBook = book.addElement(el_book);
 
         }
+        if (listBook == null){
+            logger.warn("Информация о книгах не получена");
+            loggerDAO.warn("Информация о книгах не получена");
+        }
+        else {
+            logger.info("Информация о книгах получена");
+            loggerDAO.info("Информация о книгах получена");
+        }
         ///////////////////////////////Формируем JSON для отправки клиенту//////////////////////////////////////////////
+        logger.info("Готовим информацию для передачи клиенту");
         String strJSON = "{\"book\":"+ listBook +  "," +
                 "\"user\":"+ "{\"online\":" + statusUser  +"}" +
                 "}";
+        logger.info("Информация для передачи клиенту: " + strJSON);
         Gson gson = new Gson();
         strJSON = gson.toJson(strJSON);
+        logger.info("Конвертация в JSON прошла успешно");
         ///////////////////////////////////////Ложим данные в ответ/////////////////////////////////////////////////////
         PrintWriter printWriter = resp.getWriter();
         printWriter.print(strJSON);
         printWriter.flush();
-
+        logger.info("Данные отправлены клиенту, работа в сервлете закончена.");
+        logger.info("------------------------------------------------------------------------------------------------");
+        loggerDAO.info("------------------------------------------------------------------------------------------------");
     }
 }

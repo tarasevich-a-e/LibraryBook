@@ -9,7 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Properties;
 
 /**
  * Created by atarasevich on 22.07.16.
@@ -18,33 +17,26 @@ public class UserDAOimpl implements iDAO {
     Connection connection;
     Statement statement;
     final static Logger logger = Logger.getLogger(UserDAOimpl.class);
+    final static Logger loggerDAO = Logger.getLogger("file3");
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////Соединение с БД//////////////////////////////////////////////////////
     @Override
     public void connectionToBD() {
-////////////////////////////Получение параметров для подключения к БД///////////////////////////////////////////
-        Properties properties = CommonMetodForDAO.getPropertyOfTheFile("Заглушка");
-
         ////////////////////////////Получение connection с БД///////////////////////////////////////////////////////////
-        connection = CommonMetodForDAO.getConnection(
-                properties.getProperty("driver.name"),
-                properties.getProperty("db.URL"),
-                properties.getProperty("db.USERNAME"),
-                properties.getProperty("db.PASS")
-        );
+        logger.info("----------------------------------------------------");
+        logger.info("Take me connection");
+        long start = System.currentTimeMillis();
+        connection = DBCoonectionPoll.getConnection();
+        long finish = System.currentTimeMillis();
+        logger.info("Time - " + (finish - start));
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////Закрываем соединение с БД/////////////////////////////////////////////////
     @Override
     public void disconnectWithBD() {
-        if(connection != null) {
-            try {
-                connection.close();
-            } catch (SQLException var3) { this.logger.info(">UserDAOimpl: Connect is not close!"); var3.printStackTrace(); }
-            this.logger.info(">UserDAOimpl: Disconnect OK!");
-        }
+        DBCoonectionPoll.freeConnection(connection);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -63,6 +55,8 @@ public class UserDAOimpl implements iDAO {
         try {
             statement = connection.createStatement();
             String zapros = "SELECT * FROM db_library.user WHERE login_u = " + name;
+
+            loggerDAO.info("Query :" + zapros);
             ResultSet resultSet = statement.executeQuery(zapros);
 
             while(resultSet.next()) {
@@ -108,6 +102,8 @@ public class UserDAOimpl implements iDAO {
                     ",\"" +  user.isStatus_u() + "\""+
                     "," + user.getUsercol() +
                     ")";
+
+            loggerDAO.info("Query :" + zapros);
             result = statement.executeUpdate(zapros);
             statement.close();
         } catch (SQLException var5) { var5.printStackTrace(); }
@@ -130,6 +126,8 @@ public class UserDAOimpl implements iDAO {
                     " WHERE (" +
                     "login_u=" + login +
                     ")";
+
+            loggerDAO.info("Query :" + zapros);
             result = statement.executeUpdate(zapros);
             statement.close();
         } catch (SQLException var5) { var5.printStackTrace(); }
