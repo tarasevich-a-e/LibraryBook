@@ -124,7 +124,7 @@ public class DBCoonectionPoll {
         }
         return conn;
     }
-    public static void freeConnection(Connection conn) {
+    public static synchronized void freeConnection(Connection conn) {
         if((conn !=null) && (freeConnectoins.size() <= maxConn)){
             logger.info("Free connection");
             freeConnectoins.add(conn);

@@ -2,6 +2,7 @@ package ru.library.UserInterface;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.sun.org.apache.xalan.internal.utils.FeatureManager;
 import org.apache.log4j.Logger;
 import ru.library.Factory.FactoryService;
 import ru.library.Services.Services;
@@ -14,6 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 /**
  * Created by atarasevich on 19.07.16.
@@ -50,6 +55,13 @@ public class ServletStart extends HttpServlet{
         //Получаем информацию о библиотеке
         logger.info("Получаем информацию о библиотеке");
         loggerDAO.info("Получаем информацию о библиотеке");
+        /*ExecutorService executorService = Executors.newCachedThreadPool();
+        Future<String> inf_biblio = executorService.submit(new Thread(
+        @Override
+        public String call(){
+        return;
+        }
+        ));*/
         Services biblio = FactoryService.getService("Biblio");
         String infoAboutBiblio = biblio.getAllElements();
         //Получаем информацию о книгах

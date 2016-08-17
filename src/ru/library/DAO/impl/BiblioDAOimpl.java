@@ -23,12 +23,16 @@ public class BiblioDAOimpl implements iDAO {
     @Override
     public void connectionToBD() {
         ////////////////////////////Получение connection с БД///////////////////////////////////////////////////////////
-        logger.info("----------------------------------------------------");
-        logger.info("Take me connection");
+        if (logger.isInfoEnabled()) {
+            logger.info("----------------------------------------------------");
+            logger.info("Take me connection");
+        }
         long start = System.currentTimeMillis();
         connection = DBCoonectionPoll.getConnection();
         long finish = System.currentTimeMillis();
-        logger.info("Time - " + (finish - start));
+        if (logger.isInfoEnabled()) {
+            logger.info("Time - " + (finish - start));
+        }
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

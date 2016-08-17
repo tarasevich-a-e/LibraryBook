@@ -2,43 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5eec2d7-fbd8-4ac1-a497-01f52dbd4174" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/library/DAO/impl/DBCoonectionPoll.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/library/Listener/InitListener.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ru/library/DAO/impl/CommonMetodForDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/CommonMetodForDAO.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library.war" afterPath="$PROJECT_DIR$/library.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/BiblioDAOimpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/BiblioDAOimpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/BookDAOimpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/BookDAOimpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/NewsDAOimpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/NewsDAOimpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/UserDAOimpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/UserDAOimpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletAddBook.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletAddBook.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletDeleteBook.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletDeleteBook.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletFindBook.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletFindBook.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletRedactBook.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletRedactBook.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletSignIn.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletSignIn.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletSingUp.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletSingUp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletStart.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletUser.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/UserInterface/ServletUser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/DBCoonectionPoll.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/DAO/impl/DBCoonectionPoll.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resource/app.properties" afterPath="$PROJECT_DIR$/src/resource/app.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resource/log4j.properties" afterPath="$PROJECT_DIR$/src/resource/log4j.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/DAO/impl/BiblioDAOimpl.java" afterPath="$PROJECT_DIR$/src/ru/library/DAO/impl/BiblioDAOimpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/DAO/impl/BookDAOimpl.java" afterPath="$PROJECT_DIR$/src/ru/library/DAO/impl/BookDAOimpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/DAO/impl/NewsDAOimpl.java" afterPath="$PROJECT_DIR$/src/ru/library/DAO/impl/NewsDAOimpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/DAO/impl/UserDAOimpl.java" afterPath="$PROJECT_DIR$/src/ru/library/DAO/impl/UserDAOimpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletAddBook.java" afterPath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletAddBook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletDeleteBook.java" afterPath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletDeleteBook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletFindBook.java" afterPath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletFindBook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletRedactBook.java" afterPath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletRedactBook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletSignIn.java" afterPath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletSignIn.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletSingUp.java" afterPath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletSingUp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/DAO/impl/DBCoonectionPoll.java" afterPath="$PROJECT_DIR$/src/ru/library/DAO/impl/DBCoonectionPoll.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletStart.java" afterPath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletStart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletUser.java" afterPath="$PROJECT_DIR$/src/ru/library/UserInterface/ServletUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/log4j.properties" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/resource/app.properties" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/app.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/resource/log4j.properties" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
     </list>
     <ignored path="LibraryBook.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,8 +32,64 @@
       <file leaf-file-name="ServletStart.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletStart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="391">
+              <caret line="64" column="44" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BiblioDAOimpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/BiblioDAOimpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+              <folding>
+                <marker date="1471415356018" expanded="true" signature="2168:2199" ph=" SELECT statement (BIBLIO)" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserServiceimpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/library/Services/impl/UserServiceimpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="log4j.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resource/log4j.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBCoonectionPoll.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/DBCoonectionPoll.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InitListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/library/Listener/InitListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -130,10 +155,8 @@
         <option value="$PROJECT_DIR$/build.xml" />
         <option value="$PROJECT_DIR$/src/ru/library/ToolsUI/DBCoonectionPoll.java" />
         <option value="$PROJECT_DIR$/src/ru/library/Listener/InitListener.java" />
-        <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/DBCoonectionPoll.java" />
         <option value="$PROJECT_DIR$/src/resource/log4j.properties" />
         <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletDeleteBook.java" />
-        <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/BiblioDAOimpl.java" />
         <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/NewsDAOimpl.java" />
         <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/UserDAOimpl.java" />
         <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletAddBook.java" />
@@ -141,9 +164,11 @@
         <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletRedactBook.java" />
         <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletSignIn.java" />
         <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletSingUp.java" />
-        <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletStart.java" />
         <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletUser.java" />
         <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/BookDAOimpl.java" />
+        <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/DBCoonectionPoll.java" />
+        <option value="$PROJECT_DIR$/src/ru/library/DAO/impl/BiblioDAOimpl.java" />
+        <option value="$PROJECT_DIR$/src/ru/library/UserInterface/ServletStart.java" />
       </list>
     </option>
   </component>
@@ -188,7 +213,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -236,28 +260,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LibraryBook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LibraryBook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resource" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -439,8 +441,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -736,29 +739,29 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14589989" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32305935" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32232347" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32762557" sideWeight="0.5021299" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14164004" sideWeight="0.493266" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10330138" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14164004" sideWeight="0.506734" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31506848" sideWeight="0.4978701" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31506848" sideWeight="0.4978701" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -936,7 +939,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1207">
           <caret line="71" column="18" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1029,7 +1031,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1360">
           <caret line="80" column="83" selection-start-line="80" selection-start-column="83" selection-end-line="80" selection-end-column="83" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1038,7 +1039,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1053,7 +1053,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1061,7 +1060,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1069,7 +1067,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="818">
           <caret line="60" column="60" selection-start-line="38" selection-start-column="4" selection-end-line="60" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1077,7 +1074,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1085,7 +1081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1093,9 +1088,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="68" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1113,18 +1105,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
-          <folding>
-            <element signature="e#981#982#0" expanded="false" />
-            <element signature="e#1008#1009#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/Services/impl/UserServiceimpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1149,10 +1129,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
-          <folding>
-            <element signature="e#1034#1035#0" expanded="true" />
-            <element signature="e#1061#1062#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1176,7 +1152,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1184,68 +1159,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/CommonMetodForDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="33" column="42" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/Listener/InitListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2029#2044#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/DBCoonectionPoll.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resource/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/BiblioDAOimpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="50" column="47" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1547#1548#0" expanded="true" />
-            <element signature="e#1606#1607#0" expanded="true" />
-            <marker date="1471260168062" expanded="true" signature="2060:2091" ph=" SELECT statement (BIBLIO)" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/CommonMetodForDAO.java" />
     <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/NewsDAOimpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="60" column="47" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1471260191781" expanded="true" signature="2402:2431" ph=" SELECT statement (NEWS)" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1254,7 +1175,7 @@
         <state relative-caret-position="1173">
           <caret line="129" column="47" selection-start-line="129" selection-start-column="47" selection-end-line="129" selection-end-column="47" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <marker date="1471260231625" expanded="true" signature="2417:2442" ph=" SELECT statement" />
             <marker date="1471260231625" expanded="true" signature="3709:3736" ph=" INSERT statement" />
             <marker date="1471260231625" expanded="true" signature="4929:4965" ph=" UPDATE statement" />
@@ -1275,7 +1196,7 @@
         <state relative-caret-position="1683">
           <caret line="99" column="123" selection-start-line="99" selection-start-column="123" selection-end-line="99" selection-end-column="123" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1285,7 +1206,7 @@
         <state relative-caret-position="476">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1295,7 +1216,7 @@
         <state relative-caret-position="425">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1305,7 +1226,7 @@
         <state relative-caret-position="425">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1315,7 +1236,7 @@
         <state relative-caret-position="408">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1333,9 +1254,9 @@
         <state relative-caret-position="285">
           <caret line="201" column="25" selection-start-line="201" selection-start-column="25" selection-end-line="201" selection-end-column="25" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1636#1637#0" expanded="true" />
-            <element signature="e#1695#1696#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1636#1637#0" expanded="false" />
+            <element signature="e#1695#1696#0" expanded="false" />
             <marker date="1471259085953" expanded="true" signature="2144:2173" ph=" SELECT statement (BOOK)" />
             <marker date="1471259085953" expanded="true" signature="3313:3340" ph=" INSERT statement" />
             <marker date="1471259085953" expanded="true" signature="3313:3447" ph=" INSERT statement (BOOK)" />
@@ -1354,16 +1275,62 @@
         <state relative-caret-position="442">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/Listener/InitListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/DBCoonectionPoll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resource/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/DAO/impl/BiblioDAOimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+          <folding>
+            <marker date="1471415356018" expanded="true" signature="2168:2199" ph=" SELECT statement (BIBLIO)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/library/Services/impl/UserServiceimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/library/UserInterface/ServletStart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="391">
+          <caret line="64" column="44" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
