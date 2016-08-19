@@ -1,0 +1,55 @@
+2016-08-19 18:18:09 INFO  ListenerTest:47 - --------------------------------------------------------------------------------------------------------------------------------------
+2016-08-19 18:18:09 INFO  ListenerTest:48 - Test InitListener - Start
+2016-08-19 18:18:09 INFO  ListenerTest:57 - Path file (app.properties) - C:\Documents and Settings\atarasevich\IdeaProjects\LibraryBook\src\resource\app.properties
+2016-08-19 18:18:09 INFO  ListenerTest:105 - Property: {db.URL=jdbc:mysql://localhost:3306/, db.PASS=, db.USERNAME=root, CP.maxConnection=10, driver.name=com.mysql.jdbc.Driver, db.name=db_library}
+2016-08-19 18:18:09 INFO  ListenerTest:110 - Test InitListener - Finish
+2016-08-19 18:19:03 INFO  DBConnectionPoolTest:37 - --------------------------------------------------------------------------------------------------------------------------------------
+2016-08-19 18:19:03 INFO  DBConnectionPoolTest:38 - Test DBConnectionPoolTest - Start
+2016-08-19 18:19:03 INFO  DBConnectionPoolTest:44 - Входные параметры для создания ConnectionPool : {driver=com.mysql.jdbc.Driver, PASS=, USERNAME=root, CPmaxConnection=10, bd_name=db_library, URL=jdbc:mysql://localhost:3306/}
+2016-08-19 18:19:03 INFO  DBCoonectionPoll:30 - Initialisation ConnectionPool
+2016-08-19 18:19:03 INFO  DBCoonectionPoll:39 - Create ConnectionPool
+2016-08-19 18:19:03 INFO  DBCoonectionPoll:48 - Load driver for BD : com.mysql.jdbc.Driver
+2016-08-19 18:19:03 INFO  DBCoonectionPoll:49 - Max connection for BD : 10
+2016-08-19 18:19:03 INFO  DBCoonectionPoll:58 - Driver load successfully!
+2016-08-19 18:19:03 INFO  DBCoonectionPoll:51 - ConnectionPool create successfully!
+2016-08-19 18:19:03 INFO  DBConnectionPoolTest:51 - Test DBConnectionPoolTest - Finish
+2016-08-19 18:20:38 INFO  DBConnectionPoolTest:30 - --------------------------------------------------------------------------------------------------------------------------------------
+2016-08-19 18:20:38 INFO  DBConnectionPoolTest:31 - Test DBConnectionPoolTest - Start
+2016-08-19 18:20:38 INFO  DBConnectionPoolTest:37 - Входные параметры для создания ConnectionPool : {driver=com.mysql.jdbc.Driver, PASS=, USERNAME=root, CPmaxConnection=10, bd_name=db_library, URL=jdbc:mysql://localhost:3306/}
+2016-08-19 18:20:38 INFO  DBCoonectionPoll:30 - Initialisation ConnectionPool
+2016-08-19 18:20:38 INFO  DBCoonectionPoll:39 - Create ConnectionPool
+2016-08-19 18:20:38 INFO  DBCoonectionPoll:48 - Load driver for BD : com.mysql.jdbc.Driver
+2016-08-19 18:20:38 INFO  DBCoonectionPoll:49 - Max connection for BD : 10
+2016-08-19 18:20:38 INFO  DBCoonectionPoll:58 - Driver load successfully!
+2016-08-19 18:20:38 INFO  DBCoonectionPoll:51 - ConnectionPool create successfully!
+2016-08-19 18:20:38 INFO  DBConnectionPoolTest:44 - Test DBConnectionPoolTest - Finish
+2016-08-19 18:21:14 INFO  ListenerTest:44 - --------------------------------------------------------------------------------------------------------------------------------------
+2016-08-19 18:21:14 INFO  ListenerTest:45 - Test InitListener - Start
+2016-08-19 18:21:14 INFO  ListenerTest:54 - Path file (app.properties) - C:\Documents and Settings\atarasevich\IdeaProjects\LibraryBook\src\resource\app.properties
+2016-08-19 18:21:14 INFO  ListenerTest:102 - Property: {db.URL=jdbc:mysql://localhost:3306/, db.PASS=, db.USERNAME=root, CP.maxConnection=10, driver.name=com.mysql.jdbc.Driver, db.name=db_library}
+2016-08-19 18:21:14 INFO  ListenerTest:107 - Test InitListener - Finish
+2016-08-19 18:22:29 INFO  ListenerTest:44 - --------------------------------------------------------------------------------------------------------------------------------------
+2016-08-19 18:22:29 INFO  ListenerTest:45 - Test InitListener - Start
+2016-08-19 18:22:29 INFO  ListenerTest:54 - Path file (app.properties) - C:\Documents and Settings\atarasevich\IdeaProjects\LibraryBook\src\resource\app.properties
+2016-08-19 18:22:29 INFO  ListenerTest:102 - Property: {db.URL=jdbc:mysql://localhost:3306/, db.PASS=, db.USERNAME=root, CP.maxConnection=10, driver.name=com.mysql.jdbc.Driver, db.name=db_library}
+2016-08-19 18:22:29 INFO  ListenerTest:107 - Test InitListener - Finish
+2016-08-19 18:22:57 INFO  DBConnectionPoolTest:30 - --------------------------------------------------------------------------------------------------------------------------------------
+2016-08-19 18:22:57 INFO  DBConnectionPoolTest:31 - Test DBConnectionPoolTest - Start
+2016-08-19 18:22:57 INFO  DBConnectionPoolTest:37 - Входные параметры для создания ConnectionPool : {driver=com.mysql.jdbc.Driver, PASS=, USERNAME=root, CPmaxConnection=10, bd_name=db_library, URL=jdbc:mysql://localhost:3306/}
+2016-08-19 18:22:57 INFO  DBCoonectionPoll:30 - Initialisation ConnectionPool
+2016-08-19 18:22:57 INFO  DBCoonectionPoll:39 - Create ConnectionPool
+2016-08-19 18:22:57 INFO  DBCoonectionPoll:48 - Load driver for BD : com.mysql.jdbc.Driver
+2016-08-19 18:22:57 INFO  DBCoonectionPoll:49 - Max connection for BD : 10
+2016-08-19 18:22:57 INFO  DBCoonectionPoll:58 - Driver load successfully!
+2016-08-19 18:22:57 INFO  DBCoonectionPoll:51 - ConnectionPool create successfully!
+2016-08-19 18:22:57 INFO  DBConnectionPoolTest:44 - Test DBConnectionPoolTest - Finish
+2016-08-19 18:23:05 INFO  ListenerTest:44 - --------------------------------------------------------------------------------------------------------------------------------------
+2016-08-19 18:23:05 INFO  ListenerTest:45 - Test InitListener - Start
+2016-08-19 18:23:05 INFO  ListenerTest:54 - Path file (app.properties) - C:\Documents and Settings\atarasevich\IdeaProjects\LibraryBook\src\resource\app.properties
+2016-08-19 18:23:05 INFO  ListenerTest:102 - Property: {db.URL=jdbc:mysql://localhost:3306/, db.PASS=, db.USERNAME=root, CP.maxConnection=10, driver.name=com.mysql.jdbc.Driver, db.name=db_library}
+2016-08-19 18:23:05 INFO  ListenerTest:107 - Test InitListener - Finish
+2016-08-19 18:23:20 INFO  ListenerTest:44 - --------------------------------------------------------------------------------------------------------------------------------------
+2016-08-19 18:23:20 INFO  ListenerTest:45 - Test InitListener - Start
+2016-08-19 18:23:20 INFO  ListenerTest:54 - Path file (app.properties) - C:\Documents and Settings\atarasevich\IdeaProjects\LibraryBook\src\resource\app.properties
+2016-08-19 18:23:20 INFO  ListenerTest:102 - Property: {db.URL=jdbc:mysql://localhost:3306/, db.PASS=, db.USERNAME=root, CP.maxConnection=10, driver.name=com.mysql.jdbc.Driver, db.name=db_library}
+2016-08-19 18:23:20 INFO  ListenerTest:107 - Test InitListener - Finish

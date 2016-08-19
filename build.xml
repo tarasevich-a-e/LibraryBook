@@ -7,9 +7,11 @@
 
     <property name="project.name" value="Library"/>
 
+    <property name="dest.dir.test" value="web/WEB-INF/test"/>
     <property name="dest.dir" value="web/WEB-INF/classes"/>
     <property name="dir.lib" value="./lib"/>
     <property name="dir.resource" value="./src/resource"/>
+    <property name="dir.test" value="./src/test"/>
     <property name="build.dir" value="./web"/>
     <property name="file.log" value="C:/Documents and Settings/atarasevich/IdeaProjects/LibraryBook/log_file - LibraryBook.log"/>
 
@@ -26,12 +28,14 @@
         <pathelement location="lib/gson-2.2.2.jar"/>
         <pathelement location="lib/mysql-connector-java-5.1.39-bin.jar"/>
         <pathelement location="lib/log4j-1.2.15.jar"/>
+        <pathelement location="lib/junit-4.12.jar"/>
         <pathelement location="${dir.resource}/log4j.properties"/>
         <pathelement location="${dir.resource}/app.properties"/>
     </path>
 
     <target name="1. clear">
         <delete dir="${tomcat}/logs"/>
+        <delete dir="test_logs"/>
         <delete dir="${dest.dir}"/>
         <delete dir="${tomcat.webapps}/${project.name}"/>
         <delete dir="${tomcat.webapps}/ROOT"/>
@@ -43,6 +47,7 @@
     <target name="2. make_dest_dir">
         <mkdir dir="${dest.dir}"/>
         <mkdir dir="${tomcat.webapps}/ROOT"/>
+        <mkdir dir="${dest.dir.test}"/>
     </target>
 
     <target name="3. compile" depends="1. clear, 2. make_dest_dir">
@@ -155,5 +160,37 @@
             <arg value="${host}:${port}/"/>
         </exec>
     </target>
+
+   <!-- <target name="_testListener" depends="1. clear, 2. make_dest_dir">
+     &lt;!&ndash;   <javac srcdir="./src/test" destdir="${dest.dir.test}" failonerror="true" fork="true" encoding="UTF-8" debug="on">
+            &lt;!&ndash;failonerror=true - если при компиляции какого-либо из файлов произойдет ошибка, ни одного файла classes не появится&ndash;&gt;
+            &lt;!&ndash;fork=true - используется отдельная виртуальная машина&ndash;&gt;
+            <classpath refid="common_library"/>
+        </javac>&ndash;&gt;
+        <junit printsummary="on" showoutput="on">
+            <test name="ru.library.ListenerTest"/>
+            <classpath>
+                <pathelement location="./lib/log4j-1.2.15.jar"/>
+                <pathelement location="./lib/junit-4.12.jar"/>
+            </classpath>
+            &lt;!&ndash;<batchtest fork="yes">
+                <fileset dir="${dir.test}" includes="*Test.java"/>
+            </batchtest>&ndash;&gt;
+        </junit>
+&lt;!&ndash;        <java classname="ru.library.ListenerTest">
+            <arg value="-h"/>
+            <classpath>
+                <pathelement location="./lib/log4j-1.2.15.jar"/>
+                <pathelement location="./lib/junit-4.12.jar"/>
+            </classpath>
+        </java>&ndash;&gt;
+    </target>-->
+    <!--
+    Атрибуты junit
+        printsummary="yes" - в конце прогона будет выдана сумма пройденных и не пройденных тестов
+        haltonerror="yes" - остановить процесс сборки при возникновении ошибки ( unexpected exception)
+        haltonfailure="yes" - остановить процесс сборки, если условие assert вернуло false
+        fork="yes" - запуск на отдельной JVM
+    -->
 
 </project>
