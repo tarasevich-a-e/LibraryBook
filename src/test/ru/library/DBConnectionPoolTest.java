@@ -17,12 +17,14 @@ public class DBConnectionPoolTest {
     private final static Logger loggerTest = Logger.getLogger(DBConnectionPoolTest.class);
     private static HashMap<String,String> map = new HashMap<String,String>();
     static {
+        loggerTest.info("TYT");
         map.put("CPmaxConnection", "10");
         map.put("driver", "com.mysql.jdbc.Driver");
         map.put("bd_name", "db_library");
         map.put("URL", "jdbc:mysql://localhost:3306/");
         map.put("USERNAME", "root");
         map.put("PASS", "");
+        loggerTest.info("I TYT");
     }
 
     @Before

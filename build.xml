@@ -1,107 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="library" default="9.1. start.tomcat">
+<project name="library" default="7.3. Start browser(ROOT)">
 
     <property name="tomcat" value="C:/Program Files/Apache Software Foundation/apache-tomcat-8.5.4"/>
     <property name="mysql.dir" value="D:/WORK/App/MySQLSRV"/>
     <property name="brawser" value="C:/Program Files/Google/Chrome/Application/chrome.exe"/>
+    <property name="dir.test.log" value="C:/Documents and Settings/atarasevich/IdeaProjects/LibraryBook/test_logs"/>
 
     <property name="project.name" value="Library"/>
-
-    <property name="dest.dir.test" value="web/WEB-INF/test"/>
-    <property name="dest.dir" value="web/WEB-INF/classes"/>
+    <property name="dir.webinf" value="web/WEB-INF"/>
     <property name="dir.lib" value="./lib"/>
-    <property name="dir.resource" value="./src/resource"/>
-    <property name="dir.test" value="./src/test"/>
+    <property name="dir.src" value="./src"/>
+    <property name="dir.target" value="./target"/>
     <property name="build.dir" value="./web"/>
-    <property name="file.log" value="C:/Documents and Settings/atarasevich/IdeaProjects/LibraryBook/log_file - LibraryBook.log"/>
-
-    <property name="tomcat.webapps" value="${tomcat}/webapps"/>
-    <property name="tomcat.bin" value="${tomcat}/bin"/>
 
     <property name="host" value="http://localhost"/>
     <property name="port" value="8080"/>
-
-
 
     <path id="common_library">
         <pathelement location="lib/javax.servlet.jar"/>
         <pathelement location="lib/gson-2.2.2.jar"/>
         <pathelement location="lib/mysql-connector-java-5.1.39-bin.jar"/>
         <pathelement location="lib/log4j-1.2.15.jar"/>
+    </path>
+    <!--Для тестов-->
+    <path id="test_library">
+        <pathelement location="lib/log4j-1.2.15.jar"/>
         <pathelement location="lib/junit-4.12.jar"/>
-        <pathelement location="${dir.resource}/log4j.properties"/>
-        <pathelement location="${dir.resource}/app.properties"/>
+        <pathelement location="lib/hamcrest-core-1.3.jar"/>
     </path>
 
-    <target name="1. clear">
+    <target name="1. Clear and create directory">
+        <!--Чистим папку target (JAR and WAR)-->
+        <delete dir="${dir.target}"/>
+        <!--Чистим WEB-INF-->
+        <delete dir="${dir.webinf}/classes"/>
+        <delete dir="${dir.webinf}/test"/>
+        <delete dir="${dir.webinf}/lib"/>
+        <delete dir="${dir.webinf}/resource"/>
+        <!--Чистим папки Tomcat-->
+        <delete dir="${tomcat}/webapps/${project.name}"/>
+        <delete dir="${tomcat}/webapps/ROOT"/>
+        <delete file="${tomcat}/webapps/${project.name}.war"/>
+        <!--Чистим логи-->
+        <delete dir="${dir.test.log}"/>
         <delete dir="${tomcat}/logs"/>
-        <delete dir="test_logs"/>
-        <delete dir="${dest.dir}"/>
-        <delete dir="${tomcat.webapps}/${project.name}"/>
-        <delete dir="${tomcat.webapps}/ROOT"/>
-        <delete file="${tomcat.webapps}/${project.name}.war"/>
-        <delete file="${tomcat.bin}/log_prog.txt"/><!--Собственный лог, после подключения log4j удалить-->
-        <delete file="${file.log}"/>
+
+        <!--Создаем папку target для хранения JAR и WAR файлов-->
+        <mkdir dir="${dir.target}"/>
+        <!--Создаем папки в "web/WEB-INF/"-->
+        <mkdir dir="${dir.webinf}/classes"/>
+        <mkdir dir="${dir.webinf}/resource"/>
+        <mkdir dir="${dir.webinf}/test"/>
+        <mkdir dir="${dir.webinf}/lib"/>
+        <!--Восстанавливаем "ROOT" в Tomcat'e-->
+        <mkdir dir="${tomcat}/webapps/ROOT"/>
+        <!--Восстанавливаем папку "test_logs"-->
+        <mkdir dir="${dir.test.log}"/>
     </target>
 
-    <target name="2. make_dest_dir">
-        <mkdir dir="${dest.dir}"/>
-        <mkdir dir="${tomcat.webapps}/ROOT"/>
-        <mkdir dir="${dest.dir.test}"/>
-    </target>
-
-    <target name="3. compile" depends="1. clear, 2. make_dest_dir">
-        <javac srcdir="src" destdir="${dest.dir}" failonerror="true" fork="true" encoding="UTF-8" debug="on">
+    <target name="2. Compile project" depends="1. Clear and create directory">
+        <!--Для нового проекта изменить структуру и добавить в настройки по дефолту srcdir-->
+        <javac srcdir="src/ru" destdir="${dir.webinf}/classes" failonerror="true" fork="true" encoding="UTF-8" debug="on">
         <!--failonerror=true - если при компиляции какого-либо из файлов произойдет ошибка, ни одного файла classes не появится-->
         <!--fork=true - используется отдельная виртуальная машина-->
         <classpath refid="common_library"/>
         </javac>
-    </target>
-
-    <target name="4. copy" depends="3. compile">
-        <copy todir="web/WEB-INF/lib">
+        <!--Собираем из скомпилированных файлов JAR файл-->
+        <jar destfile="${dir.target}/${project.name}.jar">
+            <fileset dir="${dir.webinf}/classes">
+                <include name="**/*.class"/>
+            </fileset>
+        </jar>
+        <!--Копируем библиотеки и файлы ресурсов в папку собираемого проекта-->
+        <copy todir="${dir.webinf}/lib">
             <fileset dir="${dir.lib}/">
                 <include name="*.*"/>
             </fileset>
         </copy>
-        <copy todir="web/WEB-INF/resource">
-            <fileset dir="${dir.resource}/">
+        <!--Настройки логера ложим в папку ресурсов-->
+        <copy todir="${dir.webinf}/resource">
+            <fileset dir="${dir.src}/resource/">
                 <include name="*.*"/>
             </fileset>
         </copy>
-        <copy todir="${dest.dir}">
-            <fileset dir="${dir.resource}/">
+        <!--Дубликат настроек логера, в настоящий момент логер приходится хранить в папке с классами-->
+        <copy todir="${dir.webinf}/classes">
+            <fileset dir="${dir.src}/resource/">
                 <include name="log4j.*"/>
             </fileset>
         </copy>
     </target>
 
-    <target name="5. war" depends="4. copy">
-        <delete file="./${project.name}.war"/>
+    <target name="3. Create WAR" depends="2. Compile project">
         <war
                 compress = "true"
                 encoding = "utf-8"
-                warfile = "./${project.name}.war"
-                webxml="web/WEB-INF/web.xml">
+                warfile = "${dir.target}/${project.name}.war"
+                webxml="${dir.webinf}/web.xml">
             <fileset dir="${build.dir}" excludes="WEB-INF/web.xml"/>
         </war>
     </target>
 
-    <target name="6. copy2" depends="5. war">
-        <!--copy todir="${tomcat.webapps}">
-            <fileset dir="./">
+    <target name="4. Copy to ROOT" depends="3. Create WAR">
+        <!--<copy todir="${tomcat}/webapps">
+            &lt;!&ndash;Не факт что нужен последний /&ndash;&gt;
+            <fileset dir="${dir.target}/">
                 <include name="*.war"/>
             </fileset>
-        </copy-->
+        </copy>-->
         <!--Put in to ROOT-->
-        <copy todir="${tomcat.webapps}/ROOT">
+        <copy todir="${tomcat}/webapps/ROOT">
             <fileset dir="${build.dir}"/>
         </copy>
 
     </target>
 
     <!--Для работы с MySQL-->
-    <target name="7.1. MySQL.start">
+    <target name="5.1. MySQL.start">
         <exec executable="cmd" dir="${mysql.dir}" spawn="true">
             <arg value="/c"/>
             <arg value="_start MYSQL.cmd"/>
@@ -109,7 +124,7 @@
         <!--spawn=”true” (выполнение задачи в отдельном потоке)-->
     </target>
 
-    <target name="7.2. MySQL.stop">
+    <target name="5.2. MySQL.stop">
         <exec executable="cmd" dir="${mysql.dir}" spawn="true">
             <arg value="/c"/>
             <arg value="_shutdown MYSQL.cmd"/>
@@ -118,79 +133,112 @@
     </target>
     <!---->
 
+    <!--&lt;!&ndash;Открытие собственного лога&ndash;&gt;
     <target name="8. mylog.open">
         <exec executable="notepad" spawn="true">
-            <arg value="${tomcat.bin}/log_prog.txt"/>
+            <arg value="${tomcat}/bin/log_prog.txt"/>
         </exec>
-        <!--spawn=”true” (выполнение задачи в отдельном потоке)-->
-    </target>
+        &lt;!&ndash;spawn=”true” (выполнение задачи в отдельном потоке)&ndash;&gt;
+    </target>-->
 
-    <target name="9. debug.tomcat" depends="6. copy2, 7.1. MySQL.start">
-        <exec executable="cmd" dir="${tomcat.bin}">
+    <target name="6. DEBUG" depends="4. Copy to ROOT, 5.1. MySQL.start">
+        <exec executable="cmd" dir="${tomcat}/bin">
             <arg value="/c"/>
             <arg value="catalina.bat jpda start"/>
         </exec>
     </target>
 
-    <target name="9.1. start.tomcat" depends="6. copy2, 7.1. MySQL.start">
-        <exec executable="startup.bat" dir="${tomcat.bin}">
-        </exec>
-    </target>
-
-    <target name="9.2. stop.tomcat" depends="7.2. MySQL.stop">
-        <exec executable="cmd" dir="${tomcat.bin}">
+    <target name="7.1. Start TOMCAT" depends="4. Copy to ROOT, 5.1. MySQL.start">
+        <!--<exec executable="startup.bat" dir="${tomcat}/bin">-->
+        <exec executable="cmd" dir="${tomcat}/bin">
             <arg value="/c"/>
-            <arg value="shutdown.bat"/>
+            <arg value="catalina.bat start"/>
         </exec>
     </target>
 
-    <!--Видимо парамметр dir="${tomcat.bin} является лишним, позднее разобраться-->
-    <target name="9.3. start.browser" depends="9.1. start.tomcat">
-        <exec executable="cmd" dir="${tomcat.bin}">
+    <target name="7.2. Stop TOMCAT" depends="5.2. MySQL.stop">
+        <exec executable="cmd" dir="${tomcat}/bin">
+            <arg value="/c"/>
+            <arg value="catalina.bat stop"/>
+        </exec>
+    </target>
+
+    <!--Видимо парамметр dir="${tomcat}/bin является лишним, позднее разобраться-->
+    <!--<target name="9.4. start.browser" depends="9.1. Start TOMCAT">
+        <exec executable="cmd" dir="${tomcat}/bin">
             <arg value="/c"/>
             <arg value="${brawser}"/>
             <arg value="${host}:${port}/${project.name}/"/>
         </exec>
-    </target>
+    </target>-->
 
-    <target name="9.4. start.browser(ROOT)" depends="9.1. start.tomcat">
-        <exec executable="cmd" dir="${tomcat.bin}">
+    <target name="7.3. Start browser(ROOT)" depends="7.1. Start TOMCAT">
+        <exec executable="cmd" dir="${tomcat}/bin">
             <arg value="/c"/>
             <arg value="${brawser}"/>
             <arg value="${host}:${port}/"/>
         </exec>
     </target>
 
-   <!-- <target name="_testListener" depends="1. clear, 2. make_dest_dir">
-     &lt;!&ndash;   <javac srcdir="./src/test" destdir="${dest.dir.test}" failonerror="true" fork="true" encoding="UTF-8" debug="on">
-            &lt;!&ndash;failonerror=true - если при компиляции какого-либо из файлов произойдет ошибка, ни одного файла classes не появится&ndash;&gt;
-            &lt;!&ndash;fork=true - используется отдельная виртуальная машина&ndash;&gt;
-            <classpath refid="common_library"/>
-        </javac>&ndash;&gt;
-        <junit printsummary="on" showoutput="on">
+    <target name="_Compile TEST" depends="2. Compile project">
+        <!--Добавляем файл со свойствами логера-->
+        <copy todir="${dir.webinf}/test">
+            <fileset file="./src/test/log4j.properties"/>
+        </copy>
+
+        <javac srcdir="src/test" destdir="${dir.webinf}/test" failonerror="true" fork="true" encoding="UTF-8" debug="on">
+            <classpath>
+                <!--Добавляем к тестам скомпилированные исходники программы-->
+                <pathelement location="${dir.target}/${project.name}.jar"/>
+                <!--Добавляем к тестам библиотеки необходимые для работы тестов-->
+                <path refid="test_library"/>
+            </classpath>
+        </javac>
+
+    </target>
+
+    <target name="__TEST - Listener" depends="_Compile TEST">
+        <!--
+                Атрибуты junit
+                    printsummary="yes" - в конце прогона будет выдана сумма пройденных и не пройденных тестов
+                    haltonerror="yes" - остановить процесс сборки при возникновении ошибки ( unexpected exception)
+                    haltonfailure="yes" - остановить процесс сборки, если условие assert вернуло false
+                    fork="yes" - запуск на отдельной JVM
+                -->
+        <junit printsummary="yes" haltonerror="no" haltonfailure="no" fork="yes">
+            <!--Тег formatter задает параметры отображения результатов тестирования. Параметр type="plain" указывает,
+            что результаты тестирования должны отображаться в виде обычного текста, а параметр usefile="false"
+            обеспечивает вывод результатов на экран, а не в файл.-->
+            <formatter type="plain" usefile="false"/>
+
+            <classpath>
+                <!--Добавляем сами скомпилированные тесты-->
+                <pathelement location="${dir.webinf}/test"/>
+                <!--Добавляем к тестам библиотеки необходимые для работы тестов-->
+                <path refid="test_library"/>
+            </classpath>
+            <!--Запуск теста по имени исходника-->
             <test name="ru.library.ListenerTest"/>
-            <classpath>
-                <pathelement location="./lib/log4j-1.2.15.jar"/>
-                <pathelement location="./lib/junit-4.12.jar"/>
-            </classpath>
-            &lt;!&ndash;<batchtest fork="yes">
-                <fileset dir="${dir.test}" includes="*Test.java"/>
-            </batchtest>&ndash;&gt;
         </junit>
-&lt;!&ndash;        <java classname="ru.library.ListenerTest">
-            <arg value="-h"/>
+    </target>
+
+    <target name="__TEST - DBConnectionPool" depends="_Compile TEST">
+        <junit printsummary="yes" haltonerror="no" haltonfailure="no" fork="yes">
+            <formatter type="plain" usefile="false"/>
             <classpath>
-                <pathelement location="./lib/log4j-1.2.15.jar"/>
-                <pathelement location="./lib/junit-4.12.jar"/>
+                <!--Добавляем к тестам скомпилированные исходники программы-->
+                <!--<pathelement location="${dir.target}/${project.name}.jar"/>-->
+                <pathelement location="${dir.webinf}/classes"/>
+                <!--Добавляем сами скомпилированные тесты-->
+                <pathelement location="${dir.webinf}/test"/>
+                <!--Добавляем к тестам библиотеки необходимые для работы тестов-->
+                <path refid="test_library"/>
             </classpath>
-        </java>&ndash;&gt;
-    </target>-->
-    <!--
-    Атрибуты junit
-        printsummary="yes" - в конце прогона будет выдана сумма пройденных и не пройденных тестов
-        haltonerror="yes" - остановить процесс сборки при возникновении ошибки ( unexpected exception)
-        haltonfailure="yes" - остановить процесс сборки, если условие assert вернуло false
-        fork="yes" - запуск на отдельной JVM
-    -->
+            <!--Запуск теста по имени исходника-->
+            <test name="ru.library.DBConnectionPoolTest"/>
+        </junit>
+    </target>
+
+    <target name="__ALL TEST" depends="__TEST - Listener, __TEST - DBConnectionPool"/>
 
 </project>
