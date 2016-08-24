@@ -3,3 +3,4 @@ ALTER TABLE db_library.user CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_c
 
 необходимо положить в connection при подключении к бд
 properties.setProperty("characterEncoding","UTF-8");
+
