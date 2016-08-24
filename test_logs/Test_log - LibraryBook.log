@@ -1,5 +1,0 @@
-2016-08-22 18:36:58 INFO  ListenerTest:44 - --------------------------------------------------------------------------------------------------------------------------------------
-2016-08-22 18:36:58 INFO  ListenerTest:45 - Test InitListener - Start
-2016-08-22 18:36:58 INFO  ListenerTest:54 - Path file (app.properties) - C:\Documents and Settings\atarasevich\IdeaProjects\LibraryBook\src\resource\app.properties
-2016-08-22 18:36:58 INFO  ListenerTest:102 - Property: {db.URL=jdbc:mysql://localhost:3306/, db.PASS=, db.USERNAME=root, CP.maxConnection=10, driver.name=com.mysql.jdbc.Driver, db.name=db_library}
-2016-08-22 18:36:58 INFO  ListenerTest:107 - Test InitListener - Finish

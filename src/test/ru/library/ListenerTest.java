@@ -1,6 +1,7 @@
 package ru.library;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.helpers.Loader;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,32 +17,12 @@ import static org.junit.Assert.fail;
  * Created by atarasevich on 19.08.16.
  */
 public class ListenerTest {
-    private final static Logger loggerTest = Logger.getLogger(ListenerTest.class);
-    private Properties properties = new Properties();
-
-    static {
-        /*
-        //Конструкция по динамическому добавлению аппендера для log4j
-        try {
-            Appender appender = new FileAppender(new PatternLayout("%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"), "test_logs/Test_log - LibraryBook.log");
-            loggerTest.addAppender(appender);
-            loggerTest.info("Appender" + appender);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
-
-        HashMap<String,String> hashMapProp = new HashMap<String,String>();
-        hashMapProp.put("CPmaxConnection", "10");
-        hashMapProp.put("driver", "com.mysql.jdbc.Driver");
-        hashMapProp.put("bd_name", "db_library");
-        hashMapProp.put("URL", "jdbc:mysql://localhost:3306/");
-        hashMapProp.put("USERNAME", "root");
-        hashMapProp.put("PASS", "");
-    }
+    private final static Logger loggerTest = Logger.getLogger("file5");
 
     @Before
     public void beforStartTest() {
         loggerTest.info("--------------------------------------------------------------------------------------------------------------------------------------");
+        loggerTest.info("Test InitListener - Start" + System.getProperty("log4j.properties"));
         loggerTest.info("Test InitListener - Start");
     }
 
@@ -64,6 +45,7 @@ public class ListenerTest {
             fail("Файл с property не найден!");
             e.printStackTrace();
         }
+
 
         //Проверка необходимых настроек для инициализации приложения
         if(properties.getProperty("CP.maxConnection") == null){

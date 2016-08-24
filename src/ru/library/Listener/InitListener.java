@@ -20,8 +20,11 @@ public class InitListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
+        //System.setProperty("log4j.configuration",servletContextEvent.getServletContext().getRealPath("/WEB-INF/resource/log4j.properties"));
         logger.info("------------------------------------------------------------------------------------------------");
+        logger.info("Приложение запущено отсюда - " + servletContextEvent.getServletContext().getRealPath("/"));
         logger.info("Инициализация контекста");
+//        logger.info("Путь к файлу log4j - " + servletContextEvent.getServletContext().getRealPath("/WEB-INF/resource/log4j.properties"));
         //Получаем данные из файла с проперти
         logger.info("Извлекаем файнные из файла property");
         getProperty(servletContextEvent.getServletContext());
@@ -42,6 +45,8 @@ public class InitListener implements ServletContextListener {
 
         logger.info("Инициализируем файл с property");
         String path_config = servletContext.getRealPath("/WEB-INF/resource/app.properties");
+
+        logger.info("Путь к файлу с property - " + path_config);
         FileInputStream fileInputStream = null;
         Properties properties = new Properties();
         HashMap<String,String> hashMapProp = new HashMap<String,String>();
