@@ -1,0 +1,8 @@
+.idea/
+logs/
+out/
+src/resource/
+target/
+temp/
+web/WEB-INF/
+!web/WEB-INF/web.xml

@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5eec2d7-fbd8-4ac1-a497-01f52dbd4174" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/log4j.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test_logs/Test_log - LibraryBook.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/log4j.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/test/log4j.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/test/ru/library/DBConnectionPoolTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/test/ru/library/ListenerTest.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/LibraryBook/ru/library/DBConnectionPoolTest.class" afterPath="$PROJECT_DIR$/out/test/LibraryBook/ru/library/DBConnectionPoolTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/LibraryBook/ru/library/ListenerTest.class" afterPath="$PROJECT_DIR$/out/test/LibraryBook/ru/library/ListenerTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Library.jar" afterPath="$PROJECT_DIR$/target/Library.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Listener/InitListener.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ru/library/Listener/InitListener.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LibraryBook/resource/app.properties" afterPath="$PROJECT_DIR$/out/production/LibraryBook/resource/app.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LibraryBook/resource/log4j.properties" afterPath="$PROJECT_DIR$/out/production/LibraryBook/resource/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LibraryBook/test/log4j.properties" afterPath="$PROJECT_DIR$/out/production/LibraryBook/test/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/LibraryBook/log4j.properties" afterPath="$PROJECT_DIR$/out/test/LibraryBook/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resource/app.properties" afterPath="$PROJECT_DIR$/src/resource/app.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resource/log4j.properties" afterPath="$PROJECT_DIR$/src/resource/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/library/Listener/InitListener.java" afterPath="$PROJECT_DIR$/src/ru/library/Listener/InitListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/ru/library/DBConnectionPoolTest.java" afterPath="$PROJECT_DIR$/src/test/ru/library/DBConnectionPoolTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/ru/library/ListenerTest.java" afterPath="$PROJECT_DIR$/src/test/ru/library/ListenerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/resource/app.properties" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/app.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/resource/log4j.properties" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/log4j.properties" />
     </list>
     <ignored path="LibraryBook.iws" />
     <ignored path=".idea/workspace.xml" />
